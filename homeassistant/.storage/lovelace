@@ -1,0 +1,102 @@
+{
+    "version": 1,
+    "key": "lovelace",
+    "data": {
+        "config": {
+            "title": "Casa mia",
+            "views": [
+                {
+                    "path": "default_view",
+                    "title": "Home",
+                    "badges": [
+                        {
+                            "entity": "binary_sensor.updater"
+                        },
+                        {
+                            "entity": "person.ezio_vergine"
+                        },
+                        {
+                            "entity": "sun.sun"
+                        }
+                    ],
+                    "cards": [
+                        {
+                            "type": "weather-forecast",
+                            "entity": "weather.casa_mia"
+                        },
+                        {
+                            "type": "vertical-stack",
+                            "cards": [
+                                {
+                                    "type": "entity",
+                                    "entity": "sensor.casa_sala_umidita"
+                                },
+                                {
+                                    "type": "thermostat",
+                                    "entity": "climate.casa_sala_termostato"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vertical-stack",
+                            "cards": [
+                                {
+                                    "type": "entity",
+                                    "entity": "sensor.casa_zona_notte_umidita"
+                                },
+                                {
+                                    "type": "thermostat",
+                                    "entity": "climate.casa_zona_notte_termostato"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vertical-stack",
+                            "cards": [
+                                {
+                                    "type": "entity",
+                                    "entity": "sensor.casa_bagno_umidita"
+                                },
+                                {
+                                    "type": "thermostat",
+                                    "entity": "climate.casa_bagno_termostato"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vertical-stack",
+                            "cards": [
+                                {
+                                    "type": "gauge",
+                                    "entity": "sensor.casa_cucina_temperatura",
+                                    "min": 0,
+                                    "name": "Cucina (temperatura)",
+                                    "severity": {
+                                        "green": 0,
+                                        "yellow": 22,
+                                        "red": 28
+                                    },
+                                    "max": 100
+                                },
+                                {
+                                    "type": "gauge",
+                                    "entity": "sensor.casa_cucina_umidita",
+                                    "min": 0,
+                                    "max": 100
+                                }
+                            ]
+                        },
+                        {
+                            "type": "button",
+                            "tap_action": {
+                                "action": "toggle"
+                            },
+                            "entity": "switch.pompa_laboratorio",
+                            "name": "Laboratorio"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

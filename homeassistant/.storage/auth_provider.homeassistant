@@ -1,0 +1,12 @@
+{
+    "version": 1,
+    "key": "auth_provider.homeassistant",
+    "data": {
+        "users": [
+            {
+                "username": "virgolus",
+                "password": "JDJiJDEyJDNWLkh5d1JhbnA5QVlNMHVxalN2MWU1cmVHNDkwWi9PdWNSMjEySC9SOXl6dmhRVkpZNVNP"
+            }
+        ]
+    }
+}

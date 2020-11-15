@@ -1,0 +1,217 @@
+{
+    "version": 1,
+    "key": "core.restore_state",
+    "data": [
+        {
+            "state": {
+                "entity_id": "person.ezio_vergine",
+                "state": "unknown",
+                "attributes": {
+                    "editable": true,
+                    "id": "ezio_vergine",
+                    "source": "person.ezio_vergine",
+                    "user_id": "734bd21808fc4e32b551d1ba89a2a729",
+                    "friendly_name": "Ezio Vergine"
+                },
+                "last_changed": "2020-11-15T21:20:41.011285+00:00",
+                "last_updated": "2020-11-15T21:20:41.011285+00:00",
+                "context": {
+                    "id": "a3c92bc8fa903de7e521cf92d0a60c39",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2020-11-15T21:20:47.935194+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "input_select.thermostat_mode",
+                "state": "auto",
+                "attributes": {
+                    "options": [
+                        "auto",
+                        "off"
+                    ],
+                    "editable": false,
+                    "friendly_name": "Thermostat Mode",
+                    "icon": "mdi:calendar-clock"
+                },
+                "last_changed": "2020-11-15T21:20:43.425520+00:00",
+                "last_updated": "2020-11-15T21:20:43.425520+00:00",
+                "context": {
+                    "id": "50ef2e5f78befb2d9aae6aa9a8974dad",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2020-11-15T21:20:47.935194+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "climate.casa_sala_termostato",
+                "state": "off",
+                "attributes": {
+                    "hvac_modes": [
+                        "heat",
+                        "off"
+                    ],
+                    "min_temp": 16.0,
+                    "max_temp": 25.0,
+                    "current_temperature": null,
+                    "temperature": 20.0,
+                    "hvac_action": "off",
+                    "friendly_name": "Casa Sala (termostato)",
+                    "supported_features": 1
+                },
+                "last_changed": "2020-11-15T21:20:43.649079+00:00",
+                "last_updated": "2020-11-15T21:20:43.649079+00:00",
+                "context": {
+                    "id": "4c44b9e768b23e9981edade7f7cfac28",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2020-11-15T21:20:47.935194+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "climate.casa_zona_notte_termostato",
+                "state": "off",
+                "attributes": {
+                    "hvac_modes": [
+                        "heat",
+                        "off"
+                    ],
+                    "min_temp": 16.0,
+                    "max_temp": 25.0,
+                    "current_temperature": null,
+                    "temperature": 20.0,
+                    "hvac_action": "off",
+                    "friendly_name": "Casa zona notte (termostato)",
+                    "supported_features": 1
+                },
+                "last_changed": "2020-11-15T21:20:43.649861+00:00",
+                "last_updated": "2020-11-15T21:20:43.649861+00:00",
+                "context": {
+                    "id": "74f5d1697c93f03703a886d48fa238cd",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2020-11-15T21:20:47.935194+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "climate.casa_bagno_termostato",
+                "state": "off",
+                "attributes": {
+                    "hvac_modes": [
+                        "heat",
+                        "off"
+                    ],
+                    "min_temp": 16.0,
+                    "max_temp": 25.0,
+                    "current_temperature": null,
+                    "temperature": 20.0,
+                    "hvac_action": "off",
+                    "friendly_name": "Casa bagno (termostato)",
+                    "supported_features": 1
+                },
+                "last_changed": "2020-11-15T21:20:43.650534+00:00",
+                "last_updated": "2020-11-15T21:20:43.650534+00:00",
+                "context": {
+                    "id": "5324b5dcad9efd1451adde274d855d23",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2020-11-15T21:20:47.935194+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "device_tracker.mi_9_se",
+                "state": "unknown",
+                "attributes": {
+                    "source_type": "gps",
+                    "friendly_name": "Mi 9 SE"
+                },
+                "last_changed": "2020-11-15T21:20:46.181009+00:00",
+                "last_updated": "2020-11-15T21:20:46.181009+00:00",
+                "context": {
+                    "id": "a1b90f6937780ba6a3b55f0b56b49297",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2020-11-15T21:20:47.935194+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "switch.pompa_sala",
+                "state": "off",
+                "attributes": {
+                    "friendly_name": "pompa_sala"
+                },
+                "last_changed": "2020-11-15T21:20:46.221964+00:00",
+                "last_updated": "2020-11-15T21:20:46.221964+00:00",
+                "context": {
+                    "id": "e0f034e7f54d3f57b559b85c2320af9e",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2020-11-15T21:20:47.935194+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "switch.pompa_zona_notte",
+                "state": "off",
+                "attributes": {
+                    "friendly_name": "pompa_zona_notte"
+                },
+                "last_changed": "2020-11-15T21:20:46.228550+00:00",
+                "last_updated": "2020-11-15T21:20:46.228550+00:00",
+                "context": {
+                    "id": "9cb3a1403f6d51986a1f6611e167d89c",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2020-11-15T21:20:47.935194+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "switch.pompa_bagno",
+                "state": "off",
+                "attributes": {
+                    "friendly_name": "pompa_bagno"
+                },
+                "last_changed": "2020-11-15T21:20:46.231971+00:00",
+                "last_updated": "2020-11-15T21:20:46.231971+00:00",
+                "context": {
+                    "id": "1c2edb37a9a383b75bb14120cb83b1bd",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2020-11-15T21:20:47.935194+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "switch.pompa_laboratorio",
+                "state": "off",
+                "attributes": {
+                    "friendly_name": "pompa_laboratorio"
+                },
+                "last_changed": "2020-11-15T21:20:46.232877+00:00",
+                "last_updated": "2020-11-15T21:20:46.232877+00:00",
+                "context": {
+                    "id": "650250e165f80517b3cd37deee1fb007",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2020-11-15T21:20:47.935194+00:00"
+        }
+    ]
+}

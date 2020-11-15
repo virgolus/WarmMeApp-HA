@@ -1,0 +1,46 @@
+2020-11-15 22:37:14 WARNING (Recorder) [homeassistant.components.recorder] Ended unfinished session (id=6 from 2020-11-15 21:20:36.590008)
+2020-11-15 22:37:32 WARNING (MainThread) [homeassistant.components.device_tracker] Updating device list from legacy took longer than the scheduled scan interval 0:00:12
+2020-11-15 22:37:44 WARNING (MainThread) [homeassistant.components.device_tracker] Updating device list from legacy took longer than the scheduled scan interval 0:00:12
+2020-11-15 22:37:56 WARNING (MainThread) [homeassistant.components.device_tracker] Updating device list from legacy took longer than the scheduled scan interval 0:00:12
+2020-11-15 22:38:08 WARNING (MainThread) [homeassistant.components.device_tracker] Updating device list from legacy took longer than the scheduled scan interval 0:00:12
+2020-11-15 22:38:20 WARNING (MainThread) [homeassistant.components.device_tracker] Updating device list from legacy took longer than the scheduled scan interval 0:00:12
+2020-11-15 22:38:32 WARNING (MainThread) [homeassistant.components.device_tracker] Updating device list from legacy took longer than the scheduled scan interval 0:00:12
+2020-11-15 22:38:44 WARNING (MainThread) [homeassistant.components.device_tracker] Updating device list from legacy took longer than the scheduled scan interval 0:00:12
+2020-11-15 22:38:52 WARNING (Thread-5) [homeassistant.components.mqtt] Disconnected from MQTT server 192.168.1.49:1883 (1)
+2020-11-15 22:38:55 ERROR (Thread-5) [paho.mqtt.client] failed to receive on socket: [Errno 104] Connection reset by peer
+2020-11-15 22:38:55 WARNING (Thread-5) [homeassistant.components.mqtt] Disconnected from MQTT server 192.168.1.49:1883 (1)
+2020-11-15 22:39:08 WARNING (MainThread) [homeassistant.components.device_tracker] Updating device list from legacy took longer than the scheduled scan interval 0:00:12
+2020-11-15 22:39:20 WARNING (MainThread) [homeassistant.components.device_tracker] Updating device list from legacy took longer than the scheduled scan interval 0:00:12
+2020-11-15 22:39:32 WARNING (MainThread) [homeassistant.components.device_tracker] Updating device list from legacy took longer than the scheduled scan interval 0:00:12
+2020-11-15 22:39:44 WARNING (MainThread) [homeassistant.components.device_tracker] Updating device list from legacy took longer than the scheduled scan interval 0:00:12
+2020-11-15 22:39:56 WARNING (MainThread) [homeassistant.components.device_tracker] Updating device list from legacy took longer than the scheduled scan interval 0:00:12
+2020-11-15 22:39:59 WARNING (Thread-5) [homeassistant.components.mqtt] Disconnected from MQTT server 192.168.1.49:1883 (1)
+2020-11-15 22:40:08 WARNING (MainThread) [homeassistant.components.device_tracker] Updating device list from legacy took longer than the scheduled scan interval 0:00:12
+2020-11-15 22:40:32 WARNING (MainThread) [homeassistant.components.device_tracker] Updating device list from legacy took longer than the scheduled scan interval 0:00:12
+2020-11-15 22:40:44 WARNING (MainThread) [homeassistant.components.device_tracker] Updating device list from legacy took longer than the scheduled scan interval 0:00:12
+2020-11-15 22:40:56 WARNING (MainThread) [homeassistant.components.device_tracker] Updating device list from legacy took longer than the scheduled scan interval 0:00:12
+2020-11-15 22:41:08 WARNING (MainThread) [homeassistant.components.device_tracker] Updating device list from legacy took longer than the scheduled scan interval 0:00:12
+2020-11-15 22:41:20 WARNING (MainThread) [homeassistant.components.device_tracker] Updating device list from legacy took longer than the scheduled scan interval 0:00:12
+2020-11-15 22:41:32 WARNING (MainThread) [homeassistant.components.device_tracker] Updating device list from legacy took longer than the scheduled scan interval 0:00:12
+2020-11-15 22:41:44 WARNING (MainThread) [homeassistant.components.device_tracker] Updating device list from legacy took longer than the scheduled scan interval 0:00:12
+2020-11-15 22:42:08 WARNING (MainThread) [homeassistant.components.device_tracker] Updating device list from legacy took longer than the scheduled scan interval 0:00:12
+2020-11-15 22:42:20 WARNING (MainThread) [homeassistant.components.device_tracker] Updating device list from legacy took longer than the scheduled scan interval 0:00:12
+2020-11-15 22:42:32 WARNING (MainThread) [homeassistant.components.device_tracker] Updating device list from legacy took longer than the scheduled scan interval 0:00:12
+2020-11-15 22:42:44 WARNING (MainThread) [homeassistant.components.device_tracker] Updating device list from legacy took longer than the scheduled scan interval 0:00:12
+2020-11-15 22:42:56 WARNING (MainThread) [homeassistant.components.device_tracker] Updating device list from legacy took longer than the scheduled scan interval 0:00:12
+2020-11-15 22:43:20 WARNING (MainThread) [homeassistant.components.device_tracker] Updating device list from legacy took longer than the scheduled scan interval 0:00:12
+2020-11-15 22:43:32 WARNING (MainThread) [homeassistant.components.device_tracker] Updating device list from legacy took longer than the scheduled scan interval 0:00:12
+2020-11-15 22:43:44 WARNING (MainThread) [homeassistant.components.device_tracker] Updating device list from legacy took longer than the scheduled scan interval 0:00:12
+2020-11-15 22:43:56 WARNING (MainThread) [homeassistant.components.device_tracker] Updating device list from legacy took longer than the scheduled scan interval 0:00:12
+2020-11-15 22:44:20 WARNING (MainThread) [homeassistant.components.device_tracker] Updating device list from legacy took longer than the scheduled scan interval 0:00:12
+2020-11-15 22:44:32 WARNING (MainThread) [homeassistant.components.device_tracker] Updating device list from legacy took longer than the scheduled scan interval 0:00:12
+2020-11-15 22:44:44 WARNING (MainThread) [homeassistant.components.device_tracker] Updating device list from legacy took longer than the scheduled scan interval 0:00:12
+2020-11-15 22:44:56 WARNING (MainThread) [homeassistant.components.device_tracker] Updating device list from legacy took longer than the scheduled scan interval 0:00:12
+2020-11-15 22:45:08 WARNING (MainThread) [homeassistant.components.device_tracker] Updating device list from legacy took longer than the scheduled scan interval 0:00:12
+2020-11-15 22:45:20 WARNING (MainThread) [homeassistant.components.device_tracker] Updating device list from legacy took longer than the scheduled scan interval 0:00:12
+2020-11-15 22:45:44 WARNING (MainThread) [homeassistant.components.device_tracker] Updating device list from legacy took longer than the scheduled scan interval 0:00:12
+2020-11-15 22:45:56 WARNING (MainThread) [homeassistant.components.device_tracker] Updating device list from legacy took longer than the scheduled scan interval 0:00:12
+2020-11-15 22:46:08 WARNING (MainThread) [homeassistant.components.device_tracker] Updating device list from legacy took longer than the scheduled scan interval 0:00:12
+2020-11-15 22:46:20 WARNING (MainThread) [homeassistant.components.device_tracker] Updating device list from legacy took longer than the scheduled scan interval 0:00:12
+2020-11-15 22:46:32 WARNING (MainThread) [homeassistant.components.device_tracker] Updating device list from legacy took longer than the scheduled scan interval 0:00:12
+2020-11-15 22:46:44 WARNING (MainThread) [homeassistant.components.device_tracker] Updating device list from legacy took longer than the scheduled scan interval 0:00:12

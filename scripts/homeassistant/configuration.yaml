@@ -1,0 +1,171 @@
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+sensor mqtt_temperature_1:
+  - platform: mqtt
+    state_topic: "home-assistant/th/1"
+    name: "Casa Sala (temperatura)"
+    unit_of_measurement: '°C'
+    value_template: "{{ (value_json.temperature | float ) | round(1) }}"
+    device_class: "temperature"
+
+sensor mqtt_humidity_1:
+  - platform: mqtt
+    state_topic: "home-assistant/th/1"
+    name: "Casa Sala (umidita)"
+    unit_of_measurement: '%'
+    value_template: "{{ (value_json.humidity | float ) | round(1) }}"
+
+sensor mqtt_temperature_2:
+  - platform: mqtt
+    state_topic: "home-assistant/th/2"
+    name: "Casa Zona notte (temperatura)"
+    unit_of_measurement: '°C'
+    value_template: "{{ (value_json.temperature | float ) | round(1) }}"
+    device_class: "temperature"
+
+sensor mqtt_humidity_2:
+  - platform: mqtt
+    state_topic: "home-assistant/th/2"
+    name: "Casa Zona notte (umidita)"
+    unit_of_measurement: '%'
+    value_template: "{{ (value_json.humidity | float ) | round(1) }}"
+
+sensor mqtt_temperature_3:
+  - platform: mqtt
+    state_topic: "home-assistant/th/3"
+    name: "Casa Bagno (temperatura)"
+    unit_of_measurement: '°C'
+    value_template: "{{ value_json.temperature }}"
+    device_class: "temperature"
+
+sensor mqtt_humidity_3:
+  - platform: mqtt
+    state_topic: "home-assistant/th/3"
+    name: "Casa Bagno (umidita)"
+    unit_of_measurement: '%'
+    value_template: "{{ (value_json.humidity | float ) | round(1) }}"
+
+sensor mqtt_temperature_4:
+  - platform: mqtt
+    state_topic: "home-assistant/th/4"
+    name: "Casa Cucina (temperatura)"
+    unit_of_measurement: '°C'
+    value_template: "{{ (value_json.temperature | float ) | round(1) }}"
+    device_class: "temperature"
+
+sensor mqtt_humidity_4:
+  - platform: mqtt
+    state_topic: "home-assistant/th/4"
+    name: "Casa Cucina (umidità)"
+    unit_of_measurement: '%'
+    value_template: "{{ (value_json.humidity | float ) | round(1) }}"
+
+climate casa_sala:
+  - platform: generic_thermostat
+    name: "Casa Sala (termostato)"
+    target_sensor: sensor.casa_sala_temperatura
+    heater: switch.pompa_sala
+    min_temp: 16
+    max_temp: 25
+    ac_mode: false
+    target_temp: 20
+    min_cycle_duration:
+      seconds: 30
+    initial_hvac_mode: "off"
+    hot_tolerance: 0.2
+    cold_tolerance: 0.2
+
+climate casa_zona_notte:
+  - platform: generic_thermostat
+    name: "Casa zona notte (termostato)"
+    target_sensor: sensor.casa_zona_notte_temperatura
+    heater: switch.pompa_zona_notte
+    min_temp: 16
+    max_temp: 25
+    ac_mode: false
+    target_temp: 20
+    min_cycle_duration:
+      seconds: 30
+    initial_hvac_mode: "off"
+    hot_tolerance: 0.2
+    cold_tolerance: 0.2
+
+climate casa_bagno:
+  - platform: generic_thermostat
+    name: "Casa bagno (termostato)"
+    target_sensor: sensor.casa_bagno_temperatura
+    heater: switch.pompa_bagno
+    min_temp: 16
+    max_temp: 25
+    ac_mode: false
+    target_temp: 20
+    min_cycle_duration:
+      seconds: 30
+    initial_hvac_mode: "off"
+    hot_tolerance: 0.2
+    cold_tolerance: 0.2
+
+switch pompa_sala:
+  - platform: mqtt
+    name: pompa_sala
+    state_topic: "home-assistant/pump/1/state"
+    command_topic: "home-assistant/pump/1/command"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+
+switch pompa_zona_notte:
+  - platform: mqtt
+    name: pompa_zona_notte
+    state_topic: "home-assistant/pump/2/state"
+    command_topic: "home-assistant/pump/2/command"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+
+switch pompa_bagno:
+  - platform: mqtt
+    name: pompa_bagno
+    state_topic: "home-assistant/pump/3/state"
+    command_topic: "home-assistant/pump/3/command"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+
+switch pompa_laboratorio:
+  - platform: mqtt
+    name: pompa_laboratorio
+    state_topic: "home-assistant/pump/4/state"
+    command_topic: "home-assistant/pump/4/command"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+
+# Define input_select
+input_select:
+  thermostat_mode:
+    name: Thermostat Mode
+    options:
+      - "auto"
+      - "off"
+    icon: mdi:calendar-clock
+
+device_tracker:
+  - platform: nmap_tracker
+    hosts: 192.168.1.0/24
+    scan_options: " --privileged -sn "
