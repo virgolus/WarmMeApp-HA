@@ -97,3 +97,6 @@
 2020-11-15 22:58:44 WARNING (MainThread) [homeassistant.components.device_tracker] Updating device list from legacy took longer than the scheduled scan interval 0:00:12
 2020-11-15 22:59:08 WARNING (MainThread) [homeassistant.components.device_tracker] Updating device list from legacy took longer than the scheduled scan interval 0:00:12
 2020-11-15 22:59:20 WARNING (MainThread) [homeassistant.components.device_tracker] Updating device list from legacy took longer than the scheduled scan interval 0:00:12
+2020-11-15 22:59:32 WARNING (MainThread) [homeassistant.components.device_tracker] Updating device list from legacy took longer than the scheduled scan interval 0:00:12
+2020-11-15 22:59:44 WARNING (MainThread) [homeassistant.components.device_tracker] Updating device list from legacy took longer than the scheduled scan interval 0:00:12
+2020-11-15 22:59:56 WARNING (MainThread) [homeassistant.components.device_tracker] Updating device list from legacy took longer than the scheduled scan interval 0:00:12
