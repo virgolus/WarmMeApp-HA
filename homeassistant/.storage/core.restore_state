@@ -9,19 +9,18 @@
                 "attributes": {
                     "editable": true,
                     "id": "ezio_vergine",
-                    "source": "person.ezio_vergine",
                     "user_id": "734bd21808fc4e32b551d1ba89a2a729",
                     "friendly_name": "Ezio Vergine"
                 },
                 "last_changed": "2020-11-15T21:37:15.602439+00:00",
-                "last_updated": "2020-11-15T21:37:15.602439+00:00",
+                "last_updated": "2020-11-15T21:38:47.257077+00:00",
                 "context": {
-                    "id": "c06c88c5fcdc9c2c6a71e76e09f83af2",
+                    "id": "f1d8c95ac9b1f06c27770ca9bb3ef7a3",
                     "parent_id": null,
                     "user_id": null
                 }
             },
-            "last_seen": "2020-11-15T21:38:47.255762+00:00"
+            "last_seen": "2020-11-15T21:53:47.254969+00:00"
         },
         {
             "state": {
@@ -44,7 +43,7 @@
                     "user_id": null
                 }
             },
-            "last_seen": "2020-11-15T21:38:47.255762+00:00"
+            "last_seen": "2020-11-15T21:53:47.254969+00:00"
         },
         {
             "state": {
@@ -57,21 +56,21 @@
                     ],
                     "min_temp": 16.0,
                     "max_temp": 25.0,
-                    "current_temperature": null,
-                    "temperature": 20.0,
+                    "current_temperature": 24.0,
+                    "temperature": 25.0,
                     "hvac_action": "off",
                     "friendly_name": "Casa Sala (termostato)",
                     "supported_features": 1
                 },
-                "last_changed": "2020-11-15T21:37:20.365192+00:00",
-                "last_updated": "2020-11-15T21:37:20.365192+00:00",
+                "last_changed": "2020-11-15T21:42:08.488128+00:00",
+                "last_updated": "2020-11-15T21:42:08.488128+00:00",
                 "context": {
-                    "id": "9f39c2c68206ea4d287c7c64ec5f454d",
+                    "id": "40ba19a0b071850333cfea2fb432a0f5",
                     "parent_id": null,
-                    "user_id": null
+                    "user_id": "734bd21808fc4e32b551d1ba89a2a729"
                 }
             },
-            "last_seen": "2020-11-15T21:38:47.255762+00:00"
+            "last_seen": "2020-11-15T21:53:47.254969+00:00"
         },
         {
             "state": {
@@ -84,21 +83,21 @@
                     ],
                     "min_temp": 16.0,
                     "max_temp": 25.0,
-                    "current_temperature": null,
+                    "current_temperature": 16.6,
                     "temperature": 20.0,
                     "hvac_action": "off",
                     "friendly_name": "Casa zona notte (termostato)",
                     "supported_features": 1
                 },
-                "last_changed": "2020-11-15T21:37:20.366094+00:00",
-                "last_updated": "2020-11-15T21:37:20.366094+00:00",
+                "last_changed": "2020-11-15T21:41:42.162381+00:00",
+                "last_updated": "2020-11-15T21:41:42.162381+00:00",
                 "context": {
-                    "id": "554b3bf3947013354b185fc6b4ef0e05",
+                    "id": "08707f39d850659f0d1fc1c24371571d",
                     "parent_id": null,
-                    "user_id": null
+                    "user_id": "734bd21808fc4e32b551d1ba89a2a729"
                 }
             },
-            "last_seen": "2020-11-15T21:38:47.255762+00:00"
+            "last_seen": "2020-11-15T21:53:47.254969+00:00"
         },
         {
             "state": {
@@ -111,21 +110,21 @@
                     ],
                     "min_temp": 16.0,
                     "max_temp": 25.0,
-                    "current_temperature": null,
+                    "current_temperature": 23.7,
                     "temperature": 20.0,
                     "hvac_action": "off",
                     "friendly_name": "Casa bagno (termostato)",
                     "supported_features": 1
                 },
-                "last_changed": "2020-11-15T21:37:20.366780+00:00",
-                "last_updated": "2020-11-15T21:37:20.366780+00:00",
+                "last_changed": "2020-11-15T21:41:35.729959+00:00",
+                "last_updated": "2020-11-15T21:41:35.729959+00:00",
                 "context": {
-                    "id": "e458890e62b9a9085c6fa729c6b7c546",
+                    "id": "3aa8bd31ab82517599b6ba9042d82ea5",
                     "parent_id": null,
-                    "user_id": null
+                    "user_id": "734bd21808fc4e32b551d1ba89a2a729"
                 }
             },
-            "last_seen": "2020-11-15T21:38:47.255762+00:00"
+            "last_seen": "2020-11-15T21:53:47.254969+00:00"
         },
         {
             "state": {
@@ -143,7 +142,7 @@
                     "user_id": null
                 }
             },
-            "last_seen": "2020-11-15T21:38:47.255762+00:00"
+            "last_seen": "2020-11-15T21:53:47.254969+00:00"
         },
         {
             "state": {
@@ -152,32 +151,32 @@
                 "attributes": {
                     "friendly_name": "pompa_sala"
                 },
-                "last_changed": "2020-11-15T21:37:22.694677+00:00",
-                "last_updated": "2020-11-15T21:37:22.694677+00:00",
+                "last_changed": "2020-11-15T21:42:08.517226+00:00",
+                "last_updated": "2020-11-15T21:42:08.517226+00:00",
                 "context": {
-                    "id": "4300b8992b44e3efe1015f1d6f1c04cf",
+                    "id": "40ba19a0b071850333cfea2fb432a0f5",
                     "parent_id": null,
-                    "user_id": null
+                    "user_id": "734bd21808fc4e32b551d1ba89a2a729"
                 }
             },
-            "last_seen": "2020-11-15T21:38:47.255762+00:00"
+            "last_seen": "2020-11-15T21:53:47.254969+00:00"
         },
         {
             "state": {
                 "entity_id": "switch.pompa_zona_notte",
-                "state": "off",
+                "state": "on",
                 "attributes": {
                     "friendly_name": "pompa_zona_notte"
                 },
-                "last_changed": "2020-11-15T21:37:22.695608+00:00",
-                "last_updated": "2020-11-15T21:37:22.695608+00:00",
+                "last_changed": "2020-11-15T21:41:49.749333+00:00",
+                "last_updated": "2020-11-15T21:41:49.749333+00:00",
                 "context": {
-                    "id": "aec91e64ce96c3597cf7269fa2d441e5",
+                    "id": "0d64c567da0b9e2e41bdd76da1e2d1f6",
                     "parent_id": null,
                     "user_id": null
                 }
             },
-            "last_seen": "2020-11-15T21:38:47.255762+00:00"
+            "last_seen": "2020-11-15T21:53:47.254969+00:00"
         },
         {
             "state": {
@@ -186,15 +185,15 @@
                 "attributes": {
                     "friendly_name": "pompa_bagno"
                 },
-                "last_changed": "2020-11-15T21:37:22.699595+00:00",
-                "last_updated": "2020-11-15T21:37:22.699595+00:00",
+                "last_changed": "2020-11-15T21:40:03.399653+00:00",
+                "last_updated": "2020-11-15T21:40:03.399653+00:00",
                 "context": {
-                    "id": "f2c58b0535e05f51cb533878dcc761db",
+                    "id": "1f402fc9c6938951c667a049997bbb6a",
                     "parent_id": null,
                     "user_id": null
                 }
             },
-            "last_seen": "2020-11-15T21:38:47.255762+00:00"
+            "last_seen": "2020-11-15T21:53:47.254969+00:00"
         },
         {
             "state": {
@@ -203,15 +202,15 @@
                 "attributes": {
                     "friendly_name": "pompa_laboratorio"
                 },
-                "last_changed": "2020-11-15T21:37:22.701926+00:00",
-                "last_updated": "2020-11-15T21:37:22.701926+00:00",
+                "last_changed": "2020-11-15T21:43:15.177320+00:00",
+                "last_updated": "2020-11-15T21:43:15.177320+00:00",
                 "context": {
-                    "id": "cea91c0b640cf3303b8051c16170d560",
+                    "id": "81f41a38f7c6f43b4b68b5c10198cf00",
                     "parent_id": null,
-                    "user_id": null
+                    "user_id": "734bd21808fc4e32b551d1ba89a2a729"
                 }
             },
-            "last_seen": "2020-11-15T21:38:47.255762+00:00"
+            "last_seen": "2020-11-15T21:53:47.254969+00:00"
         }
     ]
 }
