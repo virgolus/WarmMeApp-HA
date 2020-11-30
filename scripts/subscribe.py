@@ -1,41 +1,38 @@
+# -*- coding: utf-8 -*-
+
 import time
 import paho.mqtt.client as mqtt
 import pathlib
 import os
+import configparser
 
-broker="192.168.1.49"
+# Read properties
+config = configparser.ConfigParser()
+config.read('mammata.properties')
+
+# mqtt client
+broker=config['mqtt']['url']
 
 def on_connect(mqttc, obj, flags, rc):
-    print("rc: " + str(rc))
-
+    print("connected to mqtt")
 
 def on_message(mqttc, obj, msg):
-    print(msg.topic + " " + str(msg.qos) + " " + str(msg.payload))
+    #print("topic: " + msg.topic + " qos: " + str(msg.qos) + " payload: " + str(msg.payload))
+    print("topic: " + msg.topic + " payload: " + str(msg.payload))
+    # set state according to src message body
     clean_payload = str(msg.payload).split("'")[1]
     path = pathlib.PurePath(str(msg.topic))
     state_topic = os.path.join(*path.parts[:-1]) + '/state'
-    print(state_topic)
+    #print(state_topic)
     mqttc.publish(state_topic, clean_payload)
 
 def on_subscribe(mqttc, obj, mid, granted_qos):
-    print("Subscribed: " + str(mid) + " " + str(granted_qos))
+    print("Subscribed: " + str(mid) + " qos: " + str(granted_qos))
 
-
-def on_log(mqttc, obj, level, string):
-    print(string)
-
-
-# If you want to use a specific client id, use
-# mqttc = mqtt.Client("client-id")
-# but note that the client id must be unique on the broker. Leaving the client
-# id parameter empty will generate a random id for you.
+#Âconnect to mqtt
 mqttc = mqtt.Client()
 mqttc.on_message = on_message
-#mqttc.on_connect = on_connect
-#mqttc.on_subscribe = on_subscribe
-# Uncomment to enable debug messages
-# mqttc.on_log = on_log
 mqttc.connect(broker)
-mqttc.subscribe("home-assistant/pump/+/command", 0)
+mqttc.subscribe(config['mqtt']['command_all_topic'], 0)
 
 mqttc.loop_forever()
