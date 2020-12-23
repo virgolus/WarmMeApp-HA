@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import time
 import paho.mqtt.client as mqtt
 import random
@@ -6,7 +8,7 @@ import configparser
 
 # Read properties
 config = configparser.ConfigParser()
-config.read('mammata.properties')
+config.read('/home/pi/warmme.properties')
 
 broker=config['mqtt']['url']
 
