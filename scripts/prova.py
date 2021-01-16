@@ -13,3 +13,5 @@ while (True):
     GPIO.output(20, GPIO.LOW)
     time.sleep(0.5)
     GPIO.output(21, GPIO.HIGH)
+
+GPIO.cleanup()
