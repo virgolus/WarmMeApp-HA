@@ -1,0 +1,9 @@
+[Unit]
+Description=Start Adapter and subscribe to Mqtt
+After=multi-user.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/pi/WarmMeApp-HA/scripts/warmme-adapter.py &>> /home/pi/logs/warmme-adapter.log
+
+[Install]
+WantedBy=multi-user.target
