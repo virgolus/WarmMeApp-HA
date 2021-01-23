@@ -7,6 +7,17 @@ import pathlib
 import os
 import configparser
 import logging
+import RPi.GPIO as GPIO
+import time
+
+GPIO.setmode(GPIO.BCM)
+
+PumpsMapping={
+    '1':16, #sala
+    '2':20, #notte
+    '3':21  #bagno
+}
+
 
 # Read properties
 config = configparser.ConfigParser()
@@ -17,23 +28,36 @@ logging.basicConfig(filename='/home/pi/WarmMeApp-HA/logs/warmme-adapter.log', fi
 # mqtt client
 broker=config['mqtt']['url']
 
+def sendstate(msg):
+    clean_payload = str(msg.payload).split("'")[1]
+    path=pathlib.PurePath(str(msg.topic))
+    state_topic=os.path.join(path.parents[0],'state')
+    logging.debug("state topic: "+state_topic+" payload: "+str(clean_payload))
+    mqttc.publish(state_topic,clean_payload)
+
+def setRelays(msg):
+    clean_payload = str(msg.payload).split("'")[1]
+    path=pathlib.PurePath(str(msg.topic))
+    PumpNumber=path.parents[0].name
+    GpioNumber=PumpsMapping[PumpNumber]
+    if clean_payload=='ON':
+        GPIO.output(GpioNumber,GPIO.HIGH)
+    else:
+        GPIO.output(GpioNumber,GPIO.LOW)    
+    return True
+
 def on_connect(mqttc, obj, flags, rc):
     logging.debug("connected to mqtt")
 
 def on_message(mqttc, obj, msg):
-    #print("topic: " + msg.topic + " qos: " + str(msg.qos) + " payload: " + str(msg.payload))
-    logging.debug("topic: " + msg.topic + " payload: " + str(msg.payload))
-    # set state according to src message body
-    clean_payload = str(msg.payload).split("'")[1]
-    path = pathlib.PurePath(str(msg.topic))
-    state_topic = os.path.join(*path.parts[:-1]) + '/state'
-    #print(state_topic)
-    mqttc.publish(state_topic, clean_payload)
+    # if relais activation is ok, set state according to src message body
+    if (setRelays(msg)):sendstate(msg)
+
 
 def on_subscribe(mqttc, obj, mid, granted_qos):
     logging.debug("Subscribed: " + str(mid) + " qos: " + str(granted_qos))
 
-#Âconnect to mqtt
+#ï¿½connect to mqtt
 mqttc = mqtt.Client()
 mqttc.on_message = on_message
 mqttc.connect(broker)
