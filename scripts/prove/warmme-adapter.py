@@ -33,7 +33,7 @@ def on_message(mqttc, obj, msg):
 def on_subscribe(mqttc, obj, mid, granted_qos):
     logging.debug("Subscribed: " + str(mid) + " qos: " + str(granted_qos))
 
-#ï¿½connect to mqtt
+#Âconnect to mqtt
 mqttc = mqtt.Client()
 mqttc.on_message = on_message
 mqttc.connect(broker)
