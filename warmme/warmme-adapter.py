@@ -46,7 +46,6 @@ def setRelays(msg):
     else:
         GPIO.output(GpioNumber,GPIO.LOW)    
     logging.debug('GPIO '+str(GpioNumber)+' set: '+str(GPIO.input(GpioNumber)))
-
     return True
 
 def on_connect(mqttc, obj, flags, rc):
