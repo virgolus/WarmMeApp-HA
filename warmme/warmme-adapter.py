@@ -16,7 +16,10 @@ PumpsMapping={
     '1':16, #sala
     '2':20, #notte
     '3':21  #bagno
+    '4':19  #laboratorio
 }
+for GpioOut in PumpsMapping.values():
+    GPIO.setup(GpioOut,GPIO.OUT)
 
 # Read properties
 config = configparser.ConfigParser()

@@ -12,7 +12,7 @@ import logging
 config = configparser.ConfigParser()
 config.read('/home/pi/warmme.properties')
 
-logging.basicConfig(filename='/home/pi/logs/subscribe.log', filemode='w',format='%(asctime)s - %(message)s', level=logging.DEBUG)
+logging.basicConfig(filename='/home/pi/WarmMeApp-HA/logs/warmme-adapter.log', filemode='w',format='%(asctime)s - %(message)s', level=logging.DEBUG)
 
 # mqtt client
 broker=config['mqtt']['url']
