@@ -10,12 +10,12 @@ import logging
 import RPi.GPIO as GPIO
 import time
 
-# pumps an GPIO mapping
+# HomeAssistant pumps topic - GPIO mapping
 GPIO.setmode(GPIO.BCM)
 PumpsMapping={
     '1':16, #sala
     '2':20, #notte
-    '3':21,  #bagno
+    '3':21, #bagno
     '4':19  #laboratorio
 }
 for GpioOut in PumpsMapping.values():
