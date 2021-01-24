@@ -10,8 +10,8 @@ import logging
 import RPi.GPIO as GPIO
 import time
 
+# pumps an GPIO mapping
 GPIO.setmode(GPIO.BCM)
-
 PumpsMapping={
     '1':16, #sala
     '2':20, #notte
@@ -24,7 +24,6 @@ for GpioOut in PumpsMapping.values():
 # Read properties
 config = configparser.ConfigParser()
 config.read('/home/pi/warmme.properties')
-
 logging.basicConfig(filename='/home/pi/WarmMeApp-HA/logs/warmme-adapter.log', filemode='w',format='%(asctime)s - %(message)s', level=logging.DEBUG)
 
 # mqtt client
