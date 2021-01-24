@@ -62,6 +62,8 @@ def on_subscribe(mqttc, obj, mid, granted_qos):
 #�connect to mqtt
 mqttc = mqtt.Client()
 mqttc.on_message = on_message
+mqttc.on_subscribe= on_subscribe
+mqttc.on_connect=on_connect
 mqttc.connect(broker)
 mqttc.subscribe(config['mqtt']['command_all_topic'], 0)
 
