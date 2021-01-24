@@ -15,7 +15,7 @@ GPIO.setmode(GPIO.BCM)
 PumpsMapping={
     '1':16, #sala
     '2':20, #notte
-    '3':21  #bagno
+    '3':21,  #bagno
     '4':19  #laboratorio
 }
 for GpioOut in PumpsMapping.values():
@@ -46,6 +46,8 @@ def setRelays(msg):
         GPIO.output(GpioNumber,GPIO.HIGH)
     else:
         GPIO.output(GpioNumber,GPIO.LOW)    
+    logging.debug('GPIO '+str(GpioNumber)+' set: '+str(GPIO.input(GpioNumber)))
+
     return True
 
 def on_connect(mqttc, obj, flags, rc):
