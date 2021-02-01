@@ -1,0 +1,9 @@
+# Mqtt
+- start legge ultimo messaggio coda (anche se già letto), modificare conf oppure rimettere in campo il reset
+
+# Homeassistant
+- update
+- sensori batteria
+
+# Sensors
+- filter valori negativi

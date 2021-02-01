@@ -12,7 +12,7 @@ import logging
 config = configparser.ConfigParser()
 config.read('/home/pi/warmme.properties')
 
-logging.basicConfig(filename='/home/pi/logs/subscribe.log', filemode='w',format='%(asctime)s - %(message)s', level=logging.DEBUG)
+logging.basicConfig(filename='/home/pi/WarmMeApp-HA/logs/warmme-adapter.log', filemode='w',format='%(asctime)s - %(message)s', level=logging.DEBUG)
 
 # mqtt client
 broker=config['mqtt']['url']
@@ -33,7 +33,7 @@ def on_message(mqttc, obj, msg):
 def on_subscribe(mqttc, obj, mid, granted_qos):
     logging.debug("Subscribed: " + str(mid) + " qos: " + str(granted_qos))
 
-#Âconnect to mqtt
+#Ã‚connect to mqtt
 mqttc = mqtt.Client()
 mqttc.on_message = on_message
 mqttc.connect(broker)
