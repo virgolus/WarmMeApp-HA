@@ -39,4 +39,3 @@ mqttc.on_message = on_message
 mqttc.connect(broker)
 mqttc.subscribe(config['mqtt']['command_all_topic'], 0)
 
-mqttc.loop_forever()
