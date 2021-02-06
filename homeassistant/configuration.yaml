@@ -18,6 +18,14 @@ sensor mqtt_temperature_1:
     value_template: "{{ (value_json.temperature | float ) | round(1) }}"
     device_class: "temperature"
 
+sensor mqtt_Battery_1:
+  - platform: mqtt
+    state_topic: "home-assistant/sensor/1"
+    name: "Casa Sala (battery)"
+    unit_of_measurement: 'V'
+    value_template: "{{ (value_json.battery | float ) | round(1) }}"
+    device_class: "voltage"
+
 sensor mqtt_humidity_1:
   - platform: mqtt
     state_topic: "home-assistant/sensor/1"
@@ -32,6 +40,14 @@ sensor mqtt_temperature_2:
     unit_of_measurement: '°C'
     value_template: "{{ (value_json.temperature | float ) | round(1) }}"
     device_class: "temperature"
+
+sensor mqtt_Battery_2:
+  - platform: mqtt
+    state_topic: "home-assistant/sensor/2"
+    name: "Casa Zona notte (battery)"
+    unit_of_measurement: 'V'
+    value_template: "{{ (value_json.battery | float ) | round(1) }}"
+    device_class: "voltage"    
 
 sensor mqtt_humidity_2:
   - platform: mqtt
@@ -48,6 +64,14 @@ sensor mqtt_temperature_3:
     value_template: "{{ value_json.temperature }}"
     device_class: "temperature"
 
+sensor mqtt_Battery_3:
+  - platform: mqtt
+    state_topic: "home-assistant/sensor/3"
+    name: "Casa Bagno (battery)"
+    unit_of_measurement: 'V'
+    value_template: "{{ (value_json.battery | float ) | round(1) }}"
+    device_class: "voltage"    
+
 sensor mqtt_humidity_3:
   - platform: mqtt
     state_topic: "home-assistant/sensor/3"
@@ -62,6 +86,14 @@ sensor mqtt_temperature_4:
     unit_of_measurement: '°C'
     value_template: "{{ (value_json.temperature | float ) | round(1) }}"
     device_class: "temperature"
+
+sensor mqtt_Battery_4:
+  - platform: mqtt
+    state_topic: "home-assistant/sensor/4"
+    name: "Casa Cucina (battery)"
+    unit_of_measurement: 'V'
+    value_template: "{{ (value_json.battery | float ) | round(1) }}"
+    device_class: "voltage"  
 
 sensor mqtt_humidity_4:
   - platform: mqtt
