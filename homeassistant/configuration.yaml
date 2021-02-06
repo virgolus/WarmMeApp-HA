@@ -155,5 +155,15 @@ switch pompa_laboratorio:
     payload_off: "OFF"
     retain: true
 
+switch caldaia:
+  - platform: mqtt
+    name: caldaia
+    state_topic: "home-assistant/pump/5/state"
+    command_topic: "home-assistant/pump/5/command"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+
 python_script:
 logger:

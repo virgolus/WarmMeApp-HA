@@ -1,3 +1,4 @@
+
 #!/usr/bin/env python
 import sys
 from threading import Thread
@@ -13,7 +14,7 @@ import logging
 from random import randint
 
 config = configparser.ConfigParser()
-config.read('/home/pi/warmme.properties')  
+config.read('/home/pi/warmme.properties')
 logging.basicConfig(filename='/home/pi/WarmMeApp-HA/logs/Sensors.log', filemode='w',format='%(asctime)s - %(message)s', level=logging.DEBUG)
 broker=config['mqtt']['url']
 
@@ -23,27 +24,27 @@ class sensor:
         self.HAid=HAid
         self.temp=""
         self.hum=""
-        self.MsgReady=False    
+        self.battery=""
     def Updatevalue(self,value):
-        if "TMPA" in value:
+	msgReady=False
+	if "BATT" in value:
+	    self.battery=value[4:-1]
+        if "TMPA" in value and not '-' in value:
             self.temp=value[4:]
-            self.MsgReady=False
         if "HUM" in value:
             self.hum=value[3:]
-            self.MsgReady=True
-        else: self.MsgReady=False
-        return self.MsgReady
+            msgReady=True
+        return msgReady
 
 ListofSensors={
     '94':sensor('94','1'),
     '95':sensor('95','2'),
     '96':sensor('96','3'),
     '93':sensor('93','4')
-}  
+}
 
 def on_publish(client,userdata,result):
-    print "data published"
-    logging.debug("data published")    
+    logging.debug("data published")
 
 def inbound_message_processing():
   try:
@@ -52,7 +53,6 @@ def inbound_message_processing():
         fetch_messages(0);
         while len(rflib.processing_queue)>0:
             message = rflib.processing_queue.pop(0)
-            print (time.strftime("%c")+" "+message[0]+" "+message[1])
             logging.debug("sensorID: " + message[0] + " message: " +message[1])
             ######QUI FARE COSE
             if message[0] in ListofSensors:
@@ -60,15 +60,14 @@ def inbound_message_processing():
               if Mysensor.Updatevalue(message[1])==True:
                 jsonMessage={
                   'temperature':Mysensor.temp,
-                  'humidity':Mysensor.hum   
+                  'humidity':Mysensor.hum,
+		  'battery':Mysensor.battery
                 }
                 topic=config['mqtt']['sensor_topic']+"/"+Mysensor.HAid
                 client= mqtt.Client("pi_rf_"+str(randint(0, 100)))
                 client.on_publish=on_publish
                 client.connect(broker) #connect
                 client.publish(topic,payload=json.dumps(jsonMessage))
-                print topic
-                print json.dumps(jsonMessage)
                 logging.debug(topic)
                 logging.debug(json.dumps(jsonMessage))
 
@@ -77,8 +76,7 @@ def inbound_message_processing():
   except Exception as e: 
         template = "An exception of type {0} occurred. Arguments:\n{1!r}"
         message = template.format(type(e).__name__, e.args)
-        print message
-        print e
+        logging.error(e)
         rflib.event.set()
         exit()
 
@@ -86,17 +84,12 @@ def main():
   # client= mqtt.Client("pi_rf_"+str(randint(0, 100)))
   # client.on_publish=on_publish
   # client.connect(broker) #connect
-  
+
   rflib.init()
-  
+
   #start serial processing thread
   a=Thread(target=rf2serial, args=())
   a.start()
-  
-  request = request_reply("a01HELLO") 
-  if (request.rt==1):
-      for x in range(request.num_replies):
-          print str(request.id[x]) + str(request.message[x])
 
   #now start processing thread
   b=Thread(target=inbound_message_processing, args=())
@@ -109,12 +102,11 @@ def main():
           rflib.event.set()
           break
   print rflib.event.is_set()
-  
+
 if __name__ == "__main__":
     try:
-
       main()
-    except Exception as e: 
+    except Exception as e:
       template = "An exception of type {0} occurred. Arguments:\n{1!r}"
       message = template.format(type(e).__name__, e.args)
       print message
