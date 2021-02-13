@@ -1,1 +1,49 @@
-[]
+- id: '1612625540203'
+  alias: SWITCH caldaia OFF ---> spegnimento termostati
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: switch.caldaia
+    to: 'off'
+  condition: []
+  action:
+  - service: climate.turn_off
+    data: {}
+    entity_id: climate.casa_bagno_termostato
+  - service: climate.turn_off
+    data: {}
+    entity_id: climate.casa_sala_termostato
+  - service: climate.turn_off
+    data: {}
+    entity_id: climate.casa_zona_notte_termostato
+  - service: switch.turn_off
+    data: {}
+    entity_id: switch.pompa_laboratorio
+  mode: single
+- id: '1612718511945'
+  alias: se SWITCH caldaia OFF ogni ora alle .25 ---> spegnimento termostati
+  description: ''
+  trigger:
+  - platform: time_pattern
+    minutes: '25'
+  condition:
+  - condition: state
+    entity_id: switch.caldaia
+    state: 'off'
+  action:
+  - service: climate.turn_off
+    data: {}
+    entity_id: climate.casa_bagno_termostato
+  - service: climate.turn_off
+    data: {}
+    entity_id: climate.casa_sala_termostato
+  - service: climate.turn_off
+    data: {}
+    entity_id: climate.casa_zona_notte_termostato
+  - service: switch.turn_off
+    data: {}
+    entity_id: switch.pompa_laboratorio
+  - service: switch.turn_off
+    data: {}
+    entity_id: switch.pompa_zona_notte
+  mode: single
