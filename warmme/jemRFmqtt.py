@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python
 import sys
 from threading import Thread
@@ -7,11 +6,13 @@ from rflib import rf2serial, fetch_messages, request_reply
 import rflib
 from time import sleep
 import time
+from datetime import date, datetime
 import configparser
 import paho.mqtt.client as mqtt
 import json
 import logging
 from random import randint
+import threading
 
 config = configparser.ConfigParser()
 config.read('/home/pi/warmme.properties')
@@ -25,23 +26,43 @@ class sensor:
         self.temp=""
         self.hum=""
         self.battery=""
-    def Updatevalue(self,value):
-	msgReady=False
-	if "BATT" in value:
-	    self.battery=value[4:-1]
-        if "TMPA" in value and not '-' in value:
-            self.temp=value[4:]
-        if "HUM" in value:
-            self.hum=value[3:]
-            msgReady=True
-        return msgReady
+        self.lastReading=datetime.now()
 
-ListofSensors={
-    '94':sensor('94','1'),
-    '95':sensor('95','2'),
-    '96':sensor('96','3'),
-    '93':sensor('93','4')
-}
+    def Updatevalue(self,value):
+      msgReady=False
+      if "BATT" in value:
+        self.battery=value[4:-1]
+      if "TMPA" in value and not '-' in value:
+        self.temp=value[4:]
+      if "HUM" in value:
+        self.hum=value[3:]
+        msgReady=True
+      self.lastReading=datetime.now()
+      return msgReady
+
+ListofSensors=[sensor('94','1'), #sala
+               sensor('95','2'), #notte
+               sensor('96','3'), #bagno
+               sensor('93','4')] #cucina
+
+def findSensor(List,id):    
+    return next((x for x in List if x.id==id),None)
+
+def timer(myListofSensors):
+    checkSensorstatus(myListofSensors)
+    threading.Timer(600,timer,args=[myListofSensors]).start()
+
+def checkSensorstatus(ListofSensors):
+    for asensor in ListofSensors:
+        timeNow=datetime.now()
+        timediff=timeNow-asensor.lastReading    
+        logging.debug("sensorID: " + asensor.HAid + " diff from last reading: "+ str(timediff))
+        if timediff.seconds >600:
+          status_topic=config['mqtt']['sensor_topic']+"/"+asensor.HAid+"/status"
+          client= mqtt.Client("client_status"+str(randint(0, 100)))
+          client.on_publish=on_publish
+          client.connect(broker) #connect
+          client.publish(status_topic,payload="offline")
 
 def on_publish(client,userdata,result):
     logging.debug("data published")
@@ -54,20 +75,24 @@ def inbound_message_processing():
         while len(rflib.processing_queue)>0:
             message = rflib.processing_queue.pop(0)
             logging.debug("sensorID: " + message[0] + " message: " +message[1])
+            ### message[0]= sensor ID
+            ### message[1]= payload
             ######QUI FARE COSE
-            if message[0] in ListofSensors:
-              Mysensor=ListofSensors[message[0]]
+            Mysensor=findSensor(ListofSensors,message[0])
+            if not(Mysensor==None):
               if Mysensor.Updatevalue(message[1])==True:
                 jsonMessage={
                   'temperature':Mysensor.temp,
                   'humidity':Mysensor.hum,
-		  'battery':Mysensor.battery
+                  'battery':Mysensor.battery
                 }
                 topic=config['mqtt']['sensor_topic']+"/"+Mysensor.HAid
                 client= mqtt.Client("pi_rf_"+str(randint(0, 100)))
                 client.on_publish=on_publish
                 client.connect(broker) #connect
                 client.publish(topic,payload=json.dumps(jsonMessage))
+                status_topic=config['mqtt']['sensor_topic']+"/"+Mysensor.HAid+"/status"
+                client.publish(status_topic,payload="online")
                 logging.debug(topic)
                 logging.debug(json.dumps(jsonMessage))
 
@@ -94,6 +119,8 @@ def main():
   #now start processing thread
   b=Thread(target=inbound_message_processing, args=())
   b.start()
+  
+  timer(ListofSensors)
 
   while not rflib.event.is_set():
       try:

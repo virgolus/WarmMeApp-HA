@@ -13,6 +13,10 @@ scene: !include scenes.yaml
 sensor mqtt_temperature_1:
   - platform: mqtt
     state_topic: "home-assistant/sensor/1"
+    availability:
+      - topic: "home-assistant/sensor/1/status"
+    payload_available: "online"
+    payload_not_available: "offline"
     name: "Casa Sala (temperatura)"
     unit_of_measurement: '°C'
     value_template: "{{ (value_json.temperature | float ) | round(1) }}"
@@ -36,6 +40,10 @@ sensor mqtt_humidity_1:
 sensor mqtt_temperature_2:
   - platform: mqtt
     state_topic: "home-assistant/sensor/2"
+    availability:
+      - topic: "home-assistant/sensor/2/status"
+    payload_available: "online"
+    payload_not_available: "offline"
     name: "Casa Zona notte (temperatura)"
     unit_of_measurement: '°C'
     value_template: "{{ (value_json.temperature | float ) | round(1) }}"
@@ -59,6 +67,10 @@ sensor mqtt_humidity_2:
 sensor mqtt_temperature_3:
   - platform: mqtt
     state_topic: "home-assistant/sensor/3"
+    availability:
+      - topic: "home-assistant/sensor/3/status"
+    payload_available: "online"
+    payload_not_available: "offline"
     name: "Casa Bagno (temperatura)"
     unit_of_measurement: '°C'
     value_template: "{{ value_json.temperature }}"
@@ -82,6 +94,10 @@ sensor mqtt_humidity_3:
 sensor mqtt_temperature_4:
   - platform: mqtt
     state_topic: "home-assistant/sensor/4"
+    availability:
+      - topic: "home-assistant/sensor/4/status"
+    payload_available: "online"
+    payload_not_available: "offline"
     name: "Casa Cucina (temperatura)"
     unit_of_measurement: '°C'
     value_template: "{{ (value_json.temperature | float ) | round(1) }}"

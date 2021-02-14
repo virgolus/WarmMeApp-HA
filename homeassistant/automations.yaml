@@ -47,3 +47,42 @@
     data: {}
     entity_id: switch.pompa_zona_notte
   mode: single
+- id: '1613232519028'
+  alias: se Sensor/1/status=offline --> spengo termostato sala
+  description: ''
+  trigger:
+  - platform: mqtt
+    topic: home-assistant/sensor/1/status
+    payload: offline
+  condition: []
+  action:
+  - service: climate.turn_off
+    data: {}
+    entity_id: climate.casa_sala_termostato
+  mode: single
+- id: '1613233279494'
+  alias: se Sensor/2/status=offline --> spengo termostato notte
+  description: ''
+  trigger:
+  - platform: mqtt
+    topic: home-assistant/sensor/2/status
+    payload: offline
+  condition: []
+  action:
+  - service: climate.turn_off
+    data: {}
+    entity_id: climate.casa_zona_notte_termostato
+  mode: single
+- id: '1613233348661'
+  alias: se Sensor/3/status=offline --> spengo termostato bagno
+  description: ''
+  trigger:
+  - platform: mqtt
+    topic: home-assistant/sensor/3/status
+    payload: offline
+  condition: []
+  action:
+  - service: climate.turn_off
+    data: {}
+    entity_id: climate.casa_bagno_termostato
+  mode: single
