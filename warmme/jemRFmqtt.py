@@ -53,14 +53,14 @@ def findSensor(List,id):
 
 def timer(myListofSensors):
     checkSensorstatus(myListofSensors)
-    threading.Timer(600,timer,args=[myListofSensors]).start()
+    threading.Timer(timerSensorCheck,timer,args=[myListofSensors]).start()
 
 def checkSensorstatus(ListofSensors):
     for asensor in ListofSensors:
         timeNow=datetime.now()
         timediff=timeNow-asensor.lastReading
         logging.debug("sensorID: " + asensor.HAid + " diff from last reading: "+ str(timediff))
-        if timediff.seconds >600:
+        if timediff.seconds >timeOut:
           status_topic=config['mqtt']['sensor_topic']+"/"+asensor.HAid+"/status"
           client= mqtt.Client("client_status"+str(randint(0, 100)))
           client.on_publish=on_publish
