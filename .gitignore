@@ -1,5 +1,5 @@
 home-assistant.log
-.storage
+.storage/*
 home-assistant_v2.db
-logs
+logs/*
 homeassistant/.storage/
