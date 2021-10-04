@@ -25,5 +25,12 @@ docker run -it --name mosquitto -p 1883:1883 -v /home/pi/WarmMeApp-HA/mosquitto:
 ## Properties
 Copy warmme.properties.template as warmme.properties in the pi user home and fill the missing properties values.
 
-
+### Autostart
+For all files in directory WarmMeApp-HA/scripts/autostart_services:
+```
+- copy script into /etc/systemd/system/
+- sudo chmod 644
+- sudo systemctl daemon-reload
+- sudo systemctl enable name-of-your-service.service
+```
 

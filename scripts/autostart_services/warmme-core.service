@@ -1,8 +1,11 @@
 [Unit]
-Description=Start Adapter and subscribe to Mqtt
+Description=WarmMe MQTT listener
 After=multi-user.target
+Requires=network.target
 
 [Service]
+Type=idle
+User=pi
 ExecStart=/usr/bin/python3 /home/pi/WarmMeApp-HA/warmme/warmme-adapter.py
 
 [Install]
