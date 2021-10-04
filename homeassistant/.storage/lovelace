@@ -25,66 +25,29 @@
                             "entity": "weather.casa_mia"
                         },
                         {
-                            "type": "vertical-stack",
-                            "cards": [
-                                {
-                                    "type": "entity",
-                                    "entity": "sensor.casa_sala_umidita"
-                                },
-                                {
-                                    "type": "thermostat",
-                                    "entity": "climate.casa_sala_termostato"
-                                }
-                            ]
+                            "type": "button",
+                            "tap_action": {
+                                "action": "toggle"
+                            },
+                            "entity": "switch.caldaia",
+                            "show_state": true,
+                            "show_name": true,
+                            "icon": "hass:power"
                         },
                         {
-                            "type": "vertical-stack",
-                            "cards": [
-                                {
-                                    "type": "entity",
-                                    "entity": "sensor.casa_zona_notte_umidita"
-                                },
-                                {
-                                    "type": "thermostat",
-                                    "entity": "climate.casa_zona_notte_termostato"
-                                }
-                            ]
+                            "type": "thermostat",
+                            "entity": "climate.casa_sala_termostato",
+                            "name": "Sala"
                         },
                         {
-                            "type": "vertical-stack",
-                            "cards": [
-                                {
-                                    "type": "entity",
-                                    "entity": "sensor.casa_bagno_umidita"
-                                },
-                                {
-                                    "type": "thermostat",
-                                    "entity": "climate.casa_bagno_termostato"
-                                }
-                            ]
+                            "type": "thermostat",
+                            "entity": "climate.casa_bagno_termostato",
+                            "name": "Bagno"
                         },
                         {
-                            "type": "vertical-stack",
-                            "cards": [
-                                {
-                                    "type": "gauge",
-                                    "entity": "sensor.casa_cucina_temperatura",
-                                    "min": 0,
-                                    "name": "Cucina (temperatura)",
-                                    "severity": {
-                                        "green": 0,
-                                        "yellow": 22,
-                                        "red": 28
-                                    },
-                                    "max": 100
-                                },
-                                {
-                                    "type": "gauge",
-                                    "entity": "sensor.casa_cucina_umidita",
-                                    "min": 0,
-                                    "max": 100
-                                }
-                            ]
+                            "type": "thermostat",
+                            "entity": "climate.casa_zona_notte_termostato",
+                            "name": "Zona notte"
                         },
                         {
                             "type": "button",
@@ -92,7 +55,131 @@
                                 "action": "toggle"
                             },
                             "entity": "switch.pompa_laboratorio",
-                            "name": "Laboratorio"
+                            "name": "Laboratorio",
+                            "show_state": true,
+                            "show_name": true,
+                            "show_icon": true,
+                            "icon": "hass:thermometer"
+                        },
+                        {
+                            "type": "gauge",
+                            "entity": "sensor.casa_cucina_temperatura",
+                            "min": 0,
+                            "max": 100,
+                            "name": "cucina",
+                            "unit": "\u00b0C"
+                        }
+                    ]
+                },
+                {
+                    "title": "Schedulazione",
+                    "path": "schedulazione",
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "custom:scheduler-card",
+                            "include": [
+                                "climate.casa_bagno_termostato",
+                                "climate.casa_sala_termostato",
+                                "climate.casa_zona_notte_termostato",
+                                "input_select.thermostat_mode",
+                                "switch.pompa_bagno",
+                                "switch.pompa_laboratorio",
+                                "switch.pompa_sala",
+                                "switch.pompa_zona_notte"
+                            ],
+                            "time_step": 1,
+                            "title": "Schedulazione"
+                        }
+                    ]
+                },
+                {
+                    "title": "Stato pompe e batteria sensori",
+                    "path": "stato-pompe",
+                    "panel": false,
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "switch.pompa_sala"
+                                },
+                                {
+                                    "entity": "switch.pompa_bagno"
+                                },
+                                {
+                                    "entity": "switch.pompa_laboratorio"
+                                },
+                                {
+                                    "entity": "switch.pompa_zona_notte"
+                                },
+                                {
+                                    "entity": "switch.caldaia"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Stato pompe"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "sensor.casa_cucina_battery"
+                                },
+                                {
+                                    "entity": "sensor.casa_cucina_temperatura"
+                                },
+                                {
+                                    "entity": "sensor.casa_cucina_umidita"
+                                }
+                            ],
+                            "title": "Cucina"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "sensor.casa_sala_battery"
+                                },
+                                {
+                                    "entity": "sensor.casa_sala_temperatura"
+                                },
+                                {
+                                    "entity": "sensor.casa_sala_umidita"
+                                }
+                            ],
+                            "title": "Sala"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "sensor.casa_bagno_battery"
+                                },
+                                {
+                                    "entity": "sensor.casa_bagno_temperatura"
+                                },
+                                {
+                                    "entity": "sensor.casa_bagno_umidita"
+                                }
+                            ],
+                            "title": "Bagno"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "sensor.casa_zona_notte_battery"
+                                },
+                                {
+                                    "entity": "sensor.casa_zona_notte_temperatura"
+                                },
+                                {
+                                    "entity": "sensor.casa_zona_notte_umidita"
+                                }
+                            ],
+                            "title": "Notte"
                         }
                     ]
                 }

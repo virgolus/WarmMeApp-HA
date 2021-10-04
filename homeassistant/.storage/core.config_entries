@@ -20,43 +20,12 @@
                 "unique_id": null
             },
             {
-                "entry_id": "7ac00a0b3d872dc62481849d3c65e816",
-                "version": 1,
-                "domain": "mobile_app",
-                "title": "Mi 9 SE",
-                "data": {
-                    "app_id": "io.homeassistant.companion.android",
-                    "app_name": "Home Assistant",
-                    "app_version": "3.0.1-full (506)",
-                    "device_name": "Mi 9 SE",
-                    "manufacturer": "Xiaomi",
-                    "model": "Mi 9 SE",
-                    "os_name": "Android",
-                    "os_version": "29",
-                    "supports_encryption": false,
-                    "app_data": {
-                        "push_url": "https://mobile-apps.home-assistant.io/api/sendPush/android/v1",
-                        "push_token": "fMkLcAMPRz-FCX0jZ1N21o:APA91bGOWnT5tseu6whaZa5kR7oQRBhDpdplcf7fyNDELC6hSg-0g664owSXUnZpcWDPn7Wa_NztdHreyXZ2_08jumstYzI2bJYu0ePNWXYxgUDXWo01jk804nMrILLcmjVq6Vvw0xZ1"
-                    },
-                    "device_id": "abc5dd1bba4841f0",
-                    "webhook_id": "fa76b60cd58acacae4237df90ce2800c0ea59ca548566605ea83b4d6169b5af6",
-                    "user_id": "734bd21808fc4e32b551d1ba89a2a729"
-                },
-                "options": {},
-                "system_options": {
-                    "disable_new_entities": false
-                },
-                "source": "registration",
-                "connection_class": "cloud_push",
-                "unique_id": "io.homeassistant.companion.android-abc5dd1bba4841f0"
-            },
-            {
                 "entry_id": "880d2d4f00e063a1de100c1ce73a4801",
                 "version": 1,
                 "domain": "mqtt",
                 "title": "192.168.1.49",
                 "data": {
-                    "broker": "192.168.1.49",
+                    "broker": "192.168.1.39",
                     "port": 1883,
                     "birth_message": {
                         "topic": "homeassistant/status",
@@ -93,6 +62,45 @@
                 "source": "user",
                 "connection_class": "local_poll",
                 "unique_id": null
+            },
+            {
+                "entry_id": "da747aedae5852a9883fdeb50b53c61c",
+                "version": 1,
+                "domain": "hacs",
+                "title": "",
+                "data": {
+                    "token": "e46efc84a3e0af87eb014569f3d16c0a492daa74"
+                },
+                "options": {
+                    "sidepanel_title": "HACS",
+                    "sidepanel_icon": "hacs:hacs",
+                    "release_limit": 5,
+                    "country": "ALL",
+                    "appdaemon": false,
+                    "netdaemon": false,
+                    "debug": false,
+                    "experimental": false
+                },
+                "system_options": {
+                    "disable_new_entities": false
+                },
+                "source": "user",
+                "connection_class": "cloud_poll",
+                "unique_id": null
+            },
+            {
+                "entry_id": "3b2d40e80130215f98210f882c8e2169",
+                "version": 2,
+                "domain": "scheduler",
+                "title": "Scheduler integration",
+                "data": {},
+                "options": {},
+                "system_options": {
+                    "disable_new_entities": false
+                },
+                "source": "user",
+                "connection_class": "local_poll",
+                "unique_id": "174983a0a45f"
             }
         ]
     }

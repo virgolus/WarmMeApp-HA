@@ -6,10 +6,16 @@
             {
                 "name": "Ezio Vergine",
                 "user_id": "734bd21808fc4e32b551d1ba89a2a729",
-                "device_trackers": [
-                    "device_tracker.mi_9_se"
-                ],
-                "id": "ezio_vergine"
+                "device_trackers": [],
+                "id": "ezio_vergine",
+                "picture": null
+            },
+            {
+                "name": "Enrico Vergine",
+                "device_trackers": [],
+                "user_id": "936fdfcfb7174eaa9979eb8f76a34d34",
+                "picture": "/api/image/serve/937bead17c5804a59653239919b6df44/512x512",
+                "id": "enrico_vergine"
             }
         ]
     }

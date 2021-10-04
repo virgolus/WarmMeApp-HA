@@ -3,10 +3,14 @@
   "name": "Scheduler integration",
   "documentation": "https://github.com/nielsfaber/scheduler-component",
   "issue_tracker": "https://github.com/nielsfaber/scheduler-component/issues",
-  "dependencies": [],
+  "version": "v0.0.0",
+  "dependencies": [
+    "http"
+  ],
   "codeowners": [
     "@nielsfaber"
   ],
   "requirements": [],
-  "config_flow": true
+  "config_flow": true,
+  "iot_class": "local_push"
 }

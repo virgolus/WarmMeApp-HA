@@ -1,31 +1,31 @@
 """The Scheduler Integration."""
 import logging
+import voluptuous as vol
 from datetime import timedelta
 
+from homeassistant.helpers import config_validation as cv
 from homeassistant.components.switch import DOMAIN as PLATFORM
 from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import EVENT_HOMEASSISTANT_STARTED
-from homeassistant.core import HomeAssistant, asyncio
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers import service
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.event import async_call_later, async_track_state_change
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
-
-from .const import (
-    DOMAIN,
-    SCHEMA_ADD,
-    SERVICE_ADD,
-    SUN_ENTITY,
-    TIME_EVENT_DAWN,
-    TIME_EVENT_DUSK,
-    TIME_EVENT_SUNRISE,
-    TIME_EVENT_SUNSET,
-    VERSION,
-    WORKDAY_ENTITY,
+from homeassistant.const import (
+    EVENT_HOMEASSISTANT_STARTED,
+    ATTR_ENTITY_ID,
+    ATTR_NAME,
 )
-from .helpers import convert_days_to_numbers
+from homeassistant.core import HomeAssistant, asyncio, CoreState, callback
+from homeassistant.helpers import device_registry as dr
+from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from homeassistant.helpers.entity_registry import (
+    async_get_registry as get_entity_registry,
+)
+from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
+from homeassistant.helpers.dispatcher import (
+    async_dispatcher_send,
+)
+from homeassistant.helpers.event import async_call_later
 
+from . import const
+from .store import async_get_registry
+from .websockets import async_register_websockets
 _LOGGER = logging.getLogger(__name__)
 SCAN_INTERVAL = timedelta(seconds=30)
 
@@ -38,21 +38,21 @@ async def async_setup(hass, config):
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry):
     """Set up Scheduler integration from a config entry."""
     session = async_get_clientsession(hass)
-
-    coordinator = SchedulerCoordinator(hass, session, entry)
+    store = await async_get_registry(hass)
+    coordinator = SchedulerCoordinator(hass, session, entry, store)
 
     device_registry = await dr.async_get_registry(hass)
     device_registry.async_get_or_create(
         config_entry_id=entry.entry_id,
-        identifiers={(DOMAIN, coordinator.id)},
+        identifiers={(const.DOMAIN, coordinator.id)},
         name="Scheduler",
         model="Scheduler",
-        sw_version=VERSION,
+        sw_version=const.VERSION,
         manufacturer="@nielsfaber",
     )
 
-    hass.data.setdefault(DOMAIN, {})
-    hass.data[DOMAIN][entry.entry_id] = coordinator
+    hass.data.setdefault(const.DOMAIN, {})
+    hass.data[const.DOMAIN] = {"coordinator": coordinator, "schedules": {}}
 
     if entry.unique_id is None:
         hass.config_entries.async_update_entry(entry, unique_id=coordinator.id)
@@ -61,14 +61,95 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry):
         hass.config_entries.async_forward_entry_setup(entry, PLATFORM)
     )
 
-    async def async_service_add(data):
-        # TODO: add validation
+    await async_register_websockets(hass)
 
-        await coordinator.add_entity(data.data)
+    def service_create_schedule(service):
+        coordinator.async_create_schedule(dict(service.data))
 
-    service.async_register_admin_service(
-        hass, DOMAIN, SERVICE_ADD, async_service_add, SCHEMA_ADD
+    hass.services.async_register(
+        const.DOMAIN,
+        const.SERVICE_ADD,
+        service_create_schedule,
+        schema=const.SCHEDULE_SCHEMA
     )
+
+    async def async_service_edit_schedule(service):
+        match = None
+        for (schedule_id, entity) in hass.data[const.DOMAIN]["schedules"].items():
+            if entity.entity_id == service.data[const.ATTR_ENTITY_ID]:
+                match = schedule_id
+                continue
+        if not match:
+            raise vol.Invalid("Entity not found: {}".format(service.data[const.ATTR_ENTITY_ID]))
+        else:
+            data = dict(service.data)
+            del data[const.ATTR_ENTITY_ID]
+            await coordinator.async_edit_schedule(match, data)
+
+    hass.services.async_register(
+        const.DOMAIN,
+        const.SERVICE_EDIT,
+        async_service_edit_schedule,
+        schema=const.SCHEDULE_SCHEMA.extend({
+            vol.Required(ATTR_ENTITY_ID): cv.string
+        })
+    )
+
+    async def async_service_remove_schedule(service):
+        match = None
+        for (schedule_id, entity) in hass.data[const.DOMAIN]["schedules"].items():
+            if entity.entity_id == service.data["entity_id"]:
+                match = schedule_id
+                continue
+        if not match:
+            raise vol.Invalid("Entity not found: {}".format(service.data["entity_id"]))
+        else:
+            await coordinator.async_delete_schedule(match)
+
+    hass.services.async_register(
+        const.DOMAIN,
+        const.SERVICE_REMOVE,
+        async_service_remove_schedule,
+        schema=vol.Schema({
+            vol.Required(ATTR_ENTITY_ID): cv.string
+        })
+    )
+
+    def service_copy_schedule(service):
+        match = None
+        for (schedule_id, entity) in hass.data[const.DOMAIN]["schedules"].items():
+            if entity.entity_id == service.data[const.ATTR_ENTITY_ID]:
+                match = schedule_id
+                continue
+        if not match:
+            raise vol.Invalid("Entity not found: {}".format(service.data[const.ATTR_ENTITY_ID]))
+        else:
+            data = store.async_get_schedule(match)
+            del data[const.ATTR_SCHEDULE_ID]
+            if ATTR_NAME in service.data:
+                data[ATTR_NAME] = service.data[ATTR_NAME].strip()
+            coordinator.async_create_schedule(data)
+
+    hass.services.async_register(
+        const.DOMAIN,
+        const.SERVICE_COPY,
+        service_copy_schedule,
+        schema=vol.Schema({
+            vol.Required(ATTR_ENTITY_ID): cv.string,
+            vol.Optional(ATTR_NAME): vol.Any(cv.string, None),
+        })
+    )
+
+    return True
+
+
+async def async_migrate_entry(hass, config_entry: ConfigEntry):
+    """Migrate old entry."""
+    _LOGGER.debug("Migrating from version %s", config_entry.version)
+
+    if config_entry.version == 1:
+        config_entry.version = 2
+        config_entry.data = {"migrate_entities": True}
 
     return True
 
@@ -80,120 +161,158 @@ async def async_unload_entry(hass, entry):
             *[hass.config_entries.async_forward_entry_unload(entry, PLATFORM)]
         )
     )
-    if unload_ok:
-        hass.data[DOMAIN].pop(entry.entry_id)
     return unload_ok
+
+
+async def async_remove_entry(hass, entry):
+    """Remove Scheduler data."""
+    coordinator = hass.data[const.DOMAIN]["coordinator"]
+    await coordinator.async_delete_config()
+    del hass.data[const.DOMAIN]
 
 
 class SchedulerCoordinator(DataUpdateCoordinator):
     """Define an object to hold scheduler data."""
 
-    def __init__(self, hass, session, entry):
+    def __init__(self, hass, session, entry, store):
         """Initialize."""
         self.id = entry.unique_id
         self.hass = hass
-        self.sun_data = None
-        self.workday_data = None
-        self._sun_listeners = []
-        self._workday_listeners = []
-        self._startup_listeners = []
-        self.is_started = False
+        self.store = store
+        self.state = const.STATE_INIT
 
-        super().__init__(hass, _LOGGER, name=DOMAIN)
+        super().__init__(hass, _LOGGER, name=const.DOMAIN)
 
-        async_track_state_change(self.hass, SUN_ENTITY, self.async_sun_updated)
-        async_track_state_change(self.hass, WORKDAY_ENTITY, self.async_workday_updated)
+        # wait for 10 seconds after HA startup to allow entities to be initialized
+        @callback
+        def handle_startup(_event):
+            @callback
+            def async_timer_finished(_now):
+                self.state = const.STATE_READY
+                async_dispatcher_send(self.hass, const.EVENT_STARTED)
 
-        self.update_sun_data()
-        self.update_workday_data()
+            async_call_later(hass, 10, async_timer_finished)
 
-        def handle_startup(event):
-            hass.add_job(
-                async_call_later,
-                self.hass,
-                5,
-                self.async_start_schedules,
-            )
-
-        hass.bus.async_listen(EVENT_HOMEASSISTANT_STARTED, handle_startup)
-
-    async def async_start_schedules(self, _=None):
-        if self.is_started:
-            return
-        self.is_started = True
-        _LOGGER.debug("Scheduler coordinator is ready")
-        while len(self._startup_listeners):
-            await self._startup_listeners.pop()()
-
-    def check_ready(self):
-        if not self.sun_data or not self.workday_data:
-            return
-        elif not self.is_started:
-            self.hass.add_job(self.async_start_schedules)
-
-    async def async_sun_updated(self, entity, old_state, new_state):
-        self.update_sun_data()
-        if self.sun_data:
-            for item in self._sun_listeners:
-                await item(self.sun_data)
-
-    def update_sun_data(self):
-        sun_state = self.hass.states.get(SUN_ENTITY)
-        if not sun_state:
-            return
-
-        sun_data = {
-            TIME_EVENT_SUNRISE: sun_state.attributes["next_rising"],
-            TIME_EVENT_SUNSET: sun_state.attributes["next_setting"],
-            TIME_EVENT_DAWN: sun_state.attributes["next_dawn"],
-            TIME_EVENT_DUSK: sun_state.attributes["next_dusk"],
-        }
-        if not self.sun_data:
-            self.sun_data = sun_data
-            self.check_ready()
+        if hass.state == CoreState.running:
+            handle_startup(None)
         else:
-            self.sun_data = sun_data
+            hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STARTED, handle_startup)
 
-    async def async_workday_updated(self, entity, old_state, new_state):
-        self.update_workday_data()
-        if self.workday_data:
-            for item in self._workday_listeners:
-                await item(self.workday_data)
+    def async_get_schedule(self, schedule_id: str):
+        """fetch a schedule (websocket API hook)"""
+        if schedule_id not in self.hass.data[const.DOMAIN]["schedules"]:
+            return None
+        item = self.hass.data[const.DOMAIN]["schedules"][schedule_id]
+        return item.async_get_entity_state()
 
-    def update_workday_data(self):
-        workday_state = self.hass.states.get(WORKDAY_ENTITY)
-        if not workday_state:
+    def async_get_schedules(self):
+        """fetch a list of schedules (websocket API hook)"""
+        schedules = self.hass.data[const.DOMAIN]["schedules"]
+        data = []
+        for item in schedules.values():
+            config = item.async_get_entity_state()
+            data.append(config)
+        return data
+
+    def async_create_schedule(self, data):
+        """add a new schedule"""
+        tags = None
+        if const.ATTR_TAGS in data:
+            tags = data[const.ATTR_TAGS]
+            del data[const.ATTR_TAGS]
+        res = self.store.async_create_schedule(data)
+        if res:
+            self.async_assign_tags_to_schedule(res.schedule_id, tags)
+            async_dispatcher_send(self.hass, const.EVENT_ITEM_CREATED, res)
+
+    async def async_edit_schedule(self, schedule_id: str, data: dict):
+        """edit an existing schedule"""
+        if schedule_id not in self.hass.data[const.DOMAIN]["schedules"]:
             return
+        item = self.async_get_schedule(schedule_id)
 
-        workday_data = {
-            "workdays": convert_days_to_numbers(workday_state.attributes["workdays"]),
-            "today_is_workday": (workday_state.state == "on"),
-        }
-        if not self.workday_data:
-            self.workday_data = workday_data
-            self.check_ready()
+        if ATTR_NAME in data and item[ATTR_NAME] != data[ATTR_NAME]:
+            data[ATTR_NAME] = data[ATTR_NAME].strip()
+        elif ATTR_NAME in data:
+            del data[ATTR_NAME]
+
+        tags_updated = False
+        tags = None
+        if const.ATTR_TAGS in data:
+            tags_updated = True
+            tags = data[const.ATTR_TAGS]
+            del data[const.ATTR_TAGS]
+
+        entry = self.store.async_update_schedule(schedule_id, data)
+        if tags_updated:
+            self.async_assign_tags_to_schedule(schedule_id, tags)
+        entity = self.hass.data[const.DOMAIN]["schedules"][schedule_id]
+        if ATTR_NAME in data:
+            # if the name has been changed, the entity ID must change hence the entity should be destroyed
+            entity_registry = await get_entity_registry(self.hass)
+            entity_registry.async_remove(entity.entity_id)
+            async_dispatcher_send(self.hass, const.EVENT_ITEM_CREATED, entry)
         else:
-            self.workday_data = workday_data
+            async_dispatcher_send(self.hass, const.EVENT_ITEM_UPDATED, schedule_id)
+
+    async def async_delete_schedule(self, schedule_id: str):
+        """delete an existing schedule"""
+        if schedule_id not in self.hass.data[const.DOMAIN]["schedules"]:
+            return
+        entity = self.hass.data[const.DOMAIN]["schedules"][schedule_id]
+        entity_registry = await get_entity_registry(self.hass)
+        entity_registry.async_remove(entity.entity_id)
+        self.store.async_delete_schedule(schedule_id)
+        self.async_assign_tags_to_schedule(schedule_id, None)
+        self.hass.data[const.DOMAIN]["schedules"].pop(schedule_id, None)
+        async_dispatcher_send(self.hass, const.EVENT_ITEM_REMOVED, schedule_id)
 
     async def _async_update_data(self):
         """Update data via library."""
         return True
 
-    async def add_entity(self, data):
-        for item in self._listeners:
-            item(data)
+    async def async_delete_config(self):
+        await self.store.async_delete()
 
-    def add_sun_listener(self, cb_func):
-        self._sun_listeners.append(cb_func)
+    def async_get_tags(self):
+        """fetch a list of tags (websocket API hook)"""
+        tags = self.store.async_get_tags()
+        return list(tags.values())
 
-    def add_workday_listener(self, cb_func):
-        self._workday_listeners.append(cb_func)
+    def async_get_tags_for_schedule(self, schedule_id: str):
+        """fetch a list of tags for a schedule"""
+        tags = self.async_get_tags()
+        result = filter(lambda el: schedule_id in el[const.ATTR_SCHEDULES], tags)
+        result = list(map(lambda x: x[ATTR_NAME], result))
+        result = sorted(result)
+        return result
 
-    def add_startup_listener(self, cb_func):
-        self._startup_listeners.append(cb_func)
+    def async_assign_tags_to_schedule(self, schedule_id: str, new_tags: list):
+        if not new_tags:
+            new_tags = []
+        old_tags = self.async_get_tags_for_schedule(schedule_id)
+        for tag_name in old_tags:
+            if tag_name not in new_tags:
+                # remove old tag
+                el = self.store.async_get_tag(tag_name)
+                if len(el[const.ATTR_SCHEDULES]) > 1:
+                    self.store.async_update_tag(tag_name, {
+                        const.ATTR_SCHEDULES: [x for x in el[const.ATTR_SCHEDULES] if x != schedule_id]
+                    })
+                else:
+                    self.store.async_delete_tag(tag_name)
+            else:
+                new_tags.remove(tag_name)
 
-    async def async_request_state(self, entity_id):
-        state = self.hass.states.get(entity_id)
-        if state:
-            return state.state
-        return None
+        for tag_name in new_tags:
+            # assign new tag
+            el = self.store.async_get_tag(tag_name)
+            if el:
+                self.store.async_update_tag(tag_name, {
+                    const.ATTR_SCHEDULES: el[const.ATTR_SCHEDULES] + [schedule_id]
+                })
+            else:
+                self.store.async_create_tag({
+                    ATTR_NAME: tag_name,
+                    const.ATTR_SCHEDULES: [schedule_id]
+                })

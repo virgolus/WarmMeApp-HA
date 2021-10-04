@@ -48,7 +48,7 @@
     entity_id: switch.pompa_zona_notte
   mode: single
 - id: '1613232519028'
-  alias: se Sensor/1/status=offline --> spengo termostato sala
+  alias: se Sensor/1/status=offline --> spengo termostato sala + notifica
   description: ''
   trigger:
   - platform: mqtt
@@ -59,9 +59,17 @@
   - service: climate.turn_off
     data: {}
     entity_id: climate.casa_sala_termostato
+  - service: notify.mobile_app_nexus_5x
+    data:
+      title: Sensore OFFLINE!!
+      message: il sensore sala è offline
+  - service: notify.mobile_app_mi_9_se
+    data:
+      title: Sensore OFFLINE!!
+      message: il sensore sala è offline
   mode: single
 - id: '1613233279494'
-  alias: se Sensor/2/status=offline --> spengo termostato notte
+  alias: se Sensor/2/status=offline --> spengo termostato notte + notifica
   description: ''
   trigger:
   - platform: mqtt
@@ -72,6 +80,14 @@
   - service: climate.turn_off
     data: {}
     entity_id: climate.casa_zona_notte_termostato
+  - service: notify.mobile_app_nexus_5x
+    data:
+      title: Sensore OFFLINE!!
+      message: il sensore zona notte è offline
+  - service: notify.mobile_app_mi_9_se
+    data:
+      title: Sensore OFFLINE!!
+      message: il sensore zona notte è offline
   mode: single
 - id: '1613233348661'
   alias: se Sensor/3/status=offline --> spengo termostato bagno
@@ -85,4 +101,12 @@
   - service: climate.turn_off
     data: {}
     entity_id: climate.casa_bagno_termostato
+  - service: notify.mobile_app_nexus_5x
+    data:
+      title: Sensore OFFLINE!!
+      message: il sensore bagno è offline
+  - service: notify.mobile_app_mi_9_se
+    data:
+      title: Sensore OFFLINE!!
+      message: il sensore bagno è offline
   mode: single

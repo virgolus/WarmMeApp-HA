@@ -22,7 +22,7 @@ client.connect(broker) #connect
 print("publishing data to all sensors")
 
 send_msg1 = {
-    'temperature': random.uniform(16.0, 22.0),
+    'temperature':"" ,
     'humidity': round(random.randint(20, 80))
 }
 client.publish(config['mqtt']['sensor_topic']+"/1", payload=json.dumps(send_msg1))

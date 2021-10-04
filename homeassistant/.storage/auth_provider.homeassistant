@@ -5,7 +5,15 @@
         "users": [
             {
                 "username": "virgolus",
-                "password": "JDJiJDEyJDNWLkh5d1JhbnA5QVlNMHVxalN2MWU1cmVHNDkwWi9PdWNSMjEySC9SOXl6dmhRVkpZNVNP"
+                "password": "JDJiJDEyJHpOR0YxU0JaWVlCMDlOdW5tUmZYbGVYMTdMOHczN1JlUXNJRTBHRk02OXFsSk9pcFRDU2NP"
+            },
+            {
+                "username": "enrico",
+                "password": "JDJiJDEyJEFhSUg1MDRnQVdYb1pzdWg2dzRTei5BcjF1LnVrTzRUTFUzbmFaL09HWi9CaDlvZEtvbGtD"
+            },
+            {
+                "username": "enrico.vergine",
+                "password": "JDJiJDEyJE5Fd0tYb3JUZGtReVJ6SUZxRElyVWU4VzR0Zkx5WEwuQVRLNEI2M2tSMjdHWUFsM3ZuaVhH"
             }
         ]
     }

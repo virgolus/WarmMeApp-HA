@@ -56,7 +56,8 @@ def on_connect(mqttc, obj, flags, rc):
 def on_message(mqttc, obj, msg):
     # if relais activation is ok, set state according to src message body
     logging.debug("topic: " + msg.topic + " payload: " + str(msg.payload))
-    if (setRelays(msg)):sendstate(msg)
+    if (setRelays(msg)):
+        sendstate(msg)
 
 def on_subscribe(mqttc, obj, mid, granted_qos):
     logging.debug("Subscribed: " + str(mid) + " qos: " + str(granted_qos))

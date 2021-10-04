@@ -32,7 +32,7 @@ def on_message(mqttc, obj, msg):
     # mqttc.publish(state_topic, clean_payload)
 
 def on_subscribe(mqttc, obj, mid, granted_qos):
-    print("Subscribed. topic: "+config['mqtt']['sensor_topic'])
+    #print("Subscribed. topic: "+config['mqtt']['sensor_topic'])
     logging.debug("Subscribed: " + str(mid) + " qos: " + str(granted_qos))
 
 #�connect to mqtt
@@ -43,5 +43,6 @@ mqttc.on_subscribe=on_subscribe
 mqttc.connect(broker)
 # mqttc.subscribe(config['mqtt']['command_all_topic'], 0)
 mqttc.subscribe(config['mqtt']['sensor_topic']+"/#", 0)
+#mqttc.subscribe(config['mqtt']['sensor_topic']+"/+/status", 0)
 # mqttc.subscribe(config['mqtt']['sensor_topic'], 0)
 mqttc.loop_forever()
