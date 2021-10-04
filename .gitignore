@@ -2,3 +2,4 @@ home-assistant.log
 homeassistant/.storage/*
 home-assistant_v2.db
 logs/*
+*.pyc
