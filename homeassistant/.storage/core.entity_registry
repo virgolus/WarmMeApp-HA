@@ -89,23 +89,6 @@
                 "original_icon": "mdi:ip"
             },
             {
-                "entity_id": "sensor.hacs",
-                "config_entry_id": "da747aedae5852a9883fdeb50b53c61c",
-                "device_id": "1ffcbc0677b3e0d35998abb138d1501f",
-                "area_id": null,
-                "unique_id": "0717a0cd-745c-48fd-9b16-c8534c9704f9-bc944b0f-fd42-4a58-a072-ade38d1444cd",
-                "platform": "hacs",
-                "name": null,
-                "icon": null,
-                "disabled_by": null,
-                "capabilities": {},
-                "supported_features": 0,
-                "device_class": null,
-                "unit_of_measurement": "pending update(s)",
-                "original_name": "hacs",
-                "original_icon": "hacs:hacs"
-            },
-            {
                 "entity_id": "person.enrico_vergine",
                 "config_entry_id": null,
                 "device_id": null,
@@ -257,6 +240,23 @@
                 "unit_of_measurement": null,
                 "original_name": "Schedule #6c405a",
                 "original_icon": "mdi:calendar-clock"
+            },
+            {
+                "entity_id": "sensor.hacs",
+                "config_entry_id": "3b87d7c446cfe329c19c4bca30d9b288",
+                "device_id": "1ffcbc0677b3e0d35998abb138d1501f",
+                "area_id": null,
+                "unique_id": "0717a0cd-745c-48fd-9b16-c8534c9704f9-bc944b0f-fd42-4a58-a072-ade38d1444cd",
+                "platform": "hacs",
+                "name": null,
+                "icon": null,
+                "disabled_by": null,
+                "capabilities": null,
+                "supported_features": 0,
+                "device_class": null,
+                "unit_of_measurement": "pending update(s)",
+                "original_name": "hacs",
+                "original_icon": "hacs:hacs"
             }
         ]
     }

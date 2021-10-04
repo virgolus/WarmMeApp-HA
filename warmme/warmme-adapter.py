@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
@@ -46,12 +45,12 @@ def setRelays(msg):
     if clean_payload=='ON':
         GPIO.output(GpioNumber,GPIO.HIGH)
     else:
-        GPIO.output(GpioNumber,GPIO.LOW)    
+        GPIO.output(GpioNumber,GPIO.LOW)
     logging.debug('GPIO '+str(GpioNumber)+' set: '+str(GPIO.input(GpioNumber)))
     return True
 
 def on_connect(mqttc, obj, flags, rc):
-    logging.debug("connected to mqtt")
+    logging.debug("connected to mqtt" + config['mqtt']['url'])
 
 def on_message(mqttc, obj, msg):
     # if relais activation is ok, set state according to src message body
@@ -60,7 +59,7 @@ def on_message(mqttc, obj, msg):
         sendstate(msg)
 
 def on_subscribe(mqttc, obj, mid, granted_qos):
-    logging.debug("Subscribed: " + str(mid) + " qos: " + str(granted_qos))
+    logging.debug("subscribed to " + config['mqtt']['command_all_topic'])
 
 #�connect to mqtt
 mqttc = mqtt.Client()

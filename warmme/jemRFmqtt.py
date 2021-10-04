@@ -18,7 +18,7 @@ timerSensorCheck=3600		#intervallo check stato sensori
 
 config = configparser.ConfigParser()
 config.read('/home/pi/warmme.properties')
-logging.basicConfig(filename='/home/pi/WarmMeApp-HA/logs/Sensors.log', filemode='w',format='%(asctime)s - %(message)s', level=logging.DEBUG)
+logging.basicConfig(filename='/home/pi/WarmMeApp-HA/logs/jemRF-sensors.log', filemode='w',format='%(asctime)s - %(message)s', level=logging.DEBUG)
 broker=config['mqtt']['url']
 
 class sensor:
@@ -49,7 +49,7 @@ ListofSensors=[sensor('94','1'), #sala
                sensor('93','4')] #cucina
 
 def findSensor(List,id):
-    return next((x for x in List if x.id==id),None)
+    return next((x for x in List if x.id==id), None)
 
 def timer(myListofSensors):
     checkSensorstatus(myListofSensors)

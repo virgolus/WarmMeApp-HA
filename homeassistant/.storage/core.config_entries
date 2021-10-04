@@ -12,20 +12,19 @@
                     "track_home": true
                 },
                 "options": {},
-                "system_options": {
-                    "disable_new_entities": false
-                },
+                "pref_disable_new_entities": false,
+                "pref_disable_polling": false,
                 "source": "onboarding",
-                "connection_class": "cloud_poll",
-                "unique_id": null
+                "unique_id": null,
+                "disabled_by": null
             },
             {
                 "entry_id": "880d2d4f00e063a1de100c1ce73a4801",
                 "version": 1,
                 "domain": "mqtt",
-                "title": "192.168.1.49",
+                "title": "local MQTT",
                 "data": {
-                    "broker": "192.168.1.39",
+                    "broker": "127.0.0.1",
                     "port": 1883,
                     "birth_message": {
                         "topic": "homeassistant/status",
@@ -42,12 +41,11 @@
                     "discovery": true
                 },
                 "options": {},
-                "system_options": {
-                    "disable_new_entities": false
-                },
+                "pref_disable_new_entities": false,
+                "pref_disable_polling": false,
                 "source": "user",
-                "connection_class": "local_push",
-                "unique_id": null
+                "unique_id": null,
+                "disabled_by": null
             },
             {
                 "entry_id": "09210d8aae21972766f40bbb3694487c",
@@ -56,37 +54,11 @@
                 "title": "local_ip",
                 "data": {},
                 "options": {},
-                "system_options": {
-                    "disable_new_entities": false
-                },
+                "pref_disable_new_entities": false,
+                "pref_disable_polling": false,
                 "source": "user",
-                "connection_class": "local_poll",
-                "unique_id": null
-            },
-            {
-                "entry_id": "da747aedae5852a9883fdeb50b53c61c",
-                "version": 1,
-                "domain": "hacs",
-                "title": "",
-                "data": {
-                    "token": "e46efc84a3e0af87eb014569f3d16c0a492daa74"
-                },
-                "options": {
-                    "sidepanel_title": "HACS",
-                    "sidepanel_icon": "hacs:hacs",
-                    "release_limit": 5,
-                    "country": "ALL",
-                    "appdaemon": false,
-                    "netdaemon": false,
-                    "debug": false,
-                    "experimental": false
-                },
-                "system_options": {
-                    "disable_new_entities": false
-                },
-                "source": "user",
-                "connection_class": "cloud_poll",
-                "unique_id": null
+                "unique_id": null,
+                "disabled_by": null
             },
             {
                 "entry_id": "3b2d40e80130215f98210f882c8e2169",
@@ -95,12 +67,26 @@
                 "title": "Scheduler integration",
                 "data": {},
                 "options": {},
-                "system_options": {
-                    "disable_new_entities": false
-                },
+                "pref_disable_new_entities": false,
+                "pref_disable_polling": false,
                 "source": "user",
-                "connection_class": "local_poll",
-                "unique_id": "174983a0a45f"
+                "unique_id": "174983a0a45f",
+                "disabled_by": null
+            },
+            {
+                "entry_id": "3b87d7c446cfe329c19c4bca30d9b288",
+                "version": 1,
+                "domain": "hacs",
+                "title": "",
+                "data": {
+                    "token": "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"
+                },
+                "options": {},
+                "pref_disable_new_entities": false,
+                "pref_disable_polling": false,
+                "source": "user",
+                "unique_id": null,
+                "disabled_by": null
             }
         ]
     }

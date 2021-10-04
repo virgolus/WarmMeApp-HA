@@ -12,15 +12,15 @@
                     "user_id": "734bd21808fc4e32b551d1ba89a2a729",
                     "friendly_name": "Ezio Vergine"
                 },
-                "last_changed": "2021-10-04T10:26:49.949109+00:00",
-                "last_updated": "2021-10-04T10:32:03.148009+00:00",
+                "last_changed": "2021-10-04T21:18:13.925346+00:00",
+                "last_updated": "2021-10-04T21:18:39.520631+00:00",
                 "context": {
-                    "id": "a0b1b33e5968853ad247c74093019239",
+                    "id": "6ecccc1e0b3a0b25c634a1c064aa5a48",
                     "parent_id": null,
                     "user_id": null
                 }
             },
-            "last_seen": "2021-10-04T10:56:35.282502+00:00"
+            "last_seen": "2021-10-04T21:33:39.522540+00:00"
         },
         {
             "state": {
@@ -33,20 +33,20 @@
                     "friendly_name": "Enrico Vergine",
                     "entity_picture": "/api/image/serve/937bead17c5804a59653239919b6df44/512x512"
                 },
-                "last_changed": "2021-10-04T10:26:49.951450+00:00",
-                "last_updated": "2021-10-04T10:32:03.150449+00:00",
+                "last_changed": "2021-10-04T21:18:13.927640+00:00",
+                "last_updated": "2021-10-04T21:18:39.522546+00:00",
                 "context": {
-                    "id": "48e9cf7859779c3a24de5b0fdd1d2417",
+                    "id": "120619d50990853d7e6afc43cbd14bba",
                     "parent_id": null,
                     "user_id": null
                 }
             },
-            "last_seen": "2021-10-04T10:56:35.282502+00:00"
+            "last_seen": "2021-10-04T21:33:39.522540+00:00"
         },
         {
             "state": {
                 "entity_id": "climate.casa_sala_termostato",
-                "state": "heat",
+                "state": "off",
                 "attributes": {
                     "hvac_modes": [
                         "heat",
@@ -55,21 +55,21 @@
                     "min_temp": 16.0,
                     "max_temp": 25.0,
                     "target_temp_step": 0.1,
-                    "current_temperature": null,
-                    "temperature": 23.0,
-                    "hvac_action": "idle",
+                    "current_temperature": 22.3,
+                    "temperature": 25.0,
+                    "hvac_action": "off",
                     "friendly_name": "Casa Sala (termostato)",
                     "supported_features": 1
                 },
-                "last_changed": "2021-10-04T10:27:06.745795+00:00",
-                "last_updated": "2021-10-04T10:27:06.759917+00:00",
+                "last_changed": "2021-10-04T21:25:00.033721+00:00",
+                "last_updated": "2021-10-04T21:31:12.394766+00:00",
                 "context": {
-                    "id": "788263d33f63910ea4c4cf02810aa992",
+                    "id": "a5cec981edd66be06a6ddbe89bc9d4fd",
                     "parent_id": null,
                     "user_id": null
                 }
             },
-            "last_seen": "2021-10-04T10:56:35.282502+00:00"
+            "last_seen": "2021-10-04T21:33:39.522540+00:00"
         },
         {
             "state": {
@@ -83,21 +83,21 @@
                     "min_temp": 16.0,
                     "max_temp": 25.0,
                     "target_temp_step": 0.1,
-                    "current_temperature": null,
-                    "temperature": 20.0,
+                    "current_temperature": 22.3,
+                    "temperature": 23.0,
                     "hvac_action": "off",
                     "friendly_name": "Casa zona notte (termostato)",
                     "supported_features": 1
                 },
-                "last_changed": "2021-10-04T10:27:06.617046+00:00",
-                "last_updated": "2021-10-04T10:27:06.617046+00:00",
+                "last_changed": "2021-10-04T21:25:00.042620+00:00",
+                "last_updated": "2021-10-04T21:32:30.728829+00:00",
                 "context": {
-                    "id": "dc637497feeb3337a486e40f8e897870",
+                    "id": "09beeab875b1057e1854d88db51bcb6b",
                     "parent_id": null,
                     "user_id": null
                 }
             },
-            "last_seen": "2021-10-04T10:56:35.282502+00:00"
+            "last_seen": "2021-10-04T21:33:39.522540+00:00"
         },
         {
             "state": {
@@ -111,21 +111,21 @@
                     "min_temp": 16.0,
                     "max_temp": 25.0,
                     "target_temp_step": 0.1,
-                    "current_temperature": null,
-                    "temperature": 20.0,
+                    "current_temperature": 21.9,
+                    "temperature": 23.5,
                     "hvac_action": "off",
                     "friendly_name": "Casa bagno (termostato)",
                     "supported_features": 1
                 },
-                "last_changed": "2021-10-04T10:42:52.359496+00:00",
-                "last_updated": "2021-10-04T10:42:52.359496+00:00",
+                "last_changed": "2021-10-04T21:25:00.024626+00:00",
+                "last_updated": "2021-10-04T21:31:57.872592+00:00",
                 "context": {
-                    "id": "001111fdcef2db2c641d6fc639aee046",
+                    "id": "85504f9dcce0b340cbf0d9e266c6165e",
                     "parent_id": null,
-                    "user_id": "734bd21808fc4e32b551d1ba89a2a729"
+                    "user_id": null
                 }
             },
-            "last_seen": "2021-10-04T10:56:35.282502+00:00"
+            "last_seen": "2021-10-04T21:33:39.522540+00:00"
         },
         {
             "state": {
@@ -138,36 +138,36 @@
                     "id": "1612625540203",
                     "friendly_name": "SWITCH caldaia OFF ---> spegnimento termostati"
                 },
-                "last_changed": "2021-10-04T10:27:06.706594+00:00",
-                "last_updated": "2021-10-04T10:27:06.706594+00:00",
+                "last_changed": "2021-10-04T21:18:32.642074+00:00",
+                "last_updated": "2021-10-04T21:18:32.642074+00:00",
                 "context": {
-                    "id": "a6c0d6a8aad64d179b5c3eb0b811dfc2",
+                    "id": "fc34769c084dc9f310152408894a795a",
                     "parent_id": null,
                     "user_id": null
                 }
             },
-            "last_seen": "2021-10-04T10:56:35.282502+00:00"
+            "last_seen": "2021-10-04T21:33:39.522540+00:00"
         },
         {
             "state": {
                 "entity_id": "automation.nuova_automazione_2",
                 "state": "on",
                 "attributes": {
-                    "last_triggered": "2021-10-04T10:25:00.006289+00:00",
+                    "last_triggered": "2021-10-04T21:25:00.008012+00:00",
                     "mode": "single",
                     "current": 0,
                     "id": "1612718511945",
                     "friendly_name": "se SWITCH caldaia OFF ogni ora alle .25 ---> spegnimento termostati"
                 },
-                "last_changed": "2021-10-04T10:27:06.711601+00:00",
-                "last_updated": "2021-10-04T10:27:06.711601+00:00",
+                "last_changed": "2021-10-04T21:18:32.647215+00:00",
+                "last_updated": "2021-10-04T21:25:00.063912+00:00",
                 "context": {
-                    "id": "0c50fbb6593de79d6de3249c5f74e413",
+                    "id": "d807910d4dee16a09985c9ec54838d2c",
                     "parent_id": null,
                     "user_id": null
                 }
             },
-            "last_seen": "2021-10-04T10:56:35.282502+00:00"
+            "last_seen": "2021-10-04T21:33:39.522540+00:00"
         },
         {
             "state": {
@@ -180,15 +180,15 @@
                     "id": "1613232519028",
                     "friendly_name": "se Sensor/1/status=offline --> spengo termostato sala + notifica"
                 },
-                "last_changed": "2021-10-04T10:27:06.715796+00:00",
-                "last_updated": "2021-10-04T10:27:06.715796+00:00",
+                "last_changed": "2021-10-04T21:18:32.652482+00:00",
+                "last_updated": "2021-10-04T21:18:32.652482+00:00",
                 "context": {
-                    "id": "f506f2b0a8eac78131c6e3df8d59972e",
+                    "id": "a6d52c2474af06af133e80163d8eae4c",
                     "parent_id": null,
                     "user_id": null
                 }
             },
-            "last_seen": "2021-10-04T10:56:35.282502+00:00"
+            "last_seen": "2021-10-04T21:33:39.522540+00:00"
         },
         {
             "state": {
@@ -201,15 +201,15 @@
                     "id": "1613233279494",
                     "friendly_name": "se Sensor/2/status=offline --> spengo termostato notte + notifica"
                 },
-                "last_changed": "2021-10-04T10:27:06.720967+00:00",
-                "last_updated": "2021-10-04T10:27:06.720967+00:00",
+                "last_changed": "2021-10-04T21:18:32.656648+00:00",
+                "last_updated": "2021-10-04T21:18:32.656648+00:00",
                 "context": {
-                    "id": "7331c3d0f720c8cf9e338a07feb79625",
+                    "id": "470df2b72973ff7b10f5692e6d8ed6e1",
                     "parent_id": null,
                     "user_id": null
                 }
             },
-            "last_seen": "2021-10-04T10:56:35.282502+00:00"
+            "last_seen": "2021-10-04T21:33:39.522540+00:00"
         },
         {
             "state": {
@@ -222,15 +222,15 @@
                     "id": "1613233348661",
                     "friendly_name": "se Sensor/3/status=offline --> spengo termostato bagno"
                 },
-                "last_changed": "2021-10-04T10:27:06.726209+00:00",
-                "last_updated": "2021-10-04T10:27:06.726209+00:00",
+                "last_changed": "2021-10-04T21:18:32.661163+00:00",
+                "last_updated": "2021-10-04T21:18:32.661163+00:00",
                 "context": {
-                    "id": "e65613d9778d670bcb065cf80c0aa1e5",
+                    "id": "9d612029d217c0f6d129b7e6b314568c",
                     "parent_id": null,
                     "user_id": null
                 }
             },
-            "last_seen": "2021-10-04T10:56:35.282502+00:00"
+            "last_seen": "2021-10-04T21:33:39.522540+00:00"
         },
         {
             "state": {
@@ -239,15 +239,15 @@
                 "attributes": {
                     "friendly_name": "pompa_sala"
                 },
-                "last_changed": "2021-10-04T10:27:07.162187+00:00",
-                "last_updated": "2021-10-04T10:27:07.162187+00:00",
+                "last_changed": "2021-10-04T21:18:38.169189+00:00",
+                "last_updated": "2021-10-04T21:18:38.169189+00:00",
                 "context": {
-                    "id": "1d9637aff516bf5280918659ed0f871c",
+                    "id": "15f934c7d1a0ff553d4242ca0b944bcb",
                     "parent_id": null,
                     "user_id": null
                 }
             },
-            "last_seen": "2021-10-04T10:56:35.282502+00:00"
+            "last_seen": "2021-10-04T21:33:39.522540+00:00"
         },
         {
             "state": {
@@ -256,15 +256,15 @@
                 "attributes": {
                     "friendly_name": "pompa_zona_notte"
                 },
-                "last_changed": "2021-10-04T10:27:07.169363+00:00",
-                "last_updated": "2021-10-04T10:27:07.169363+00:00",
+                "last_changed": "2021-10-04T21:18:38.205256+00:00",
+                "last_updated": "2021-10-04T21:18:38.205256+00:00",
                 "context": {
-                    "id": "f433a37cc0eee03c67aa17135a012fb0",
+                    "id": "56df056fd531766c1e394159222a013a",
                     "parent_id": null,
                     "user_id": null
                 }
             },
-            "last_seen": "2021-10-04T10:56:35.282502+00:00"
+            "last_seen": "2021-10-04T21:33:39.522540+00:00"
         },
         {
             "state": {
@@ -273,15 +273,15 @@
                 "attributes": {
                     "friendly_name": "pompa_bagno"
                 },
-                "last_changed": "2021-10-04T10:27:07.189030+00:00",
-                "last_updated": "2021-10-04T10:27:07.189030+00:00",
+                "last_changed": "2021-10-04T21:18:38.255441+00:00",
+                "last_updated": "2021-10-04T21:18:38.255441+00:00",
                 "context": {
-                    "id": "cb175d5fa0a7defc9683977c16059e0c",
+                    "id": "2e9daf74b21a4441f6928fc56cabad1c",
                     "parent_id": null,
                     "user_id": null
                 }
             },
-            "last_seen": "2021-10-04T10:56:35.282502+00:00"
+            "last_seen": "2021-10-04T21:33:39.522540+00:00"
         },
         {
             "state": {
@@ -290,15 +290,15 @@
                 "attributes": {
                     "friendly_name": "pompa_laboratorio"
                 },
-                "last_changed": "2021-10-04T10:27:07.207262+00:00",
-                "last_updated": "2021-10-04T10:27:07.207262+00:00",
+                "last_changed": "2021-10-04T21:18:38.317676+00:00",
+                "last_updated": "2021-10-04T21:18:38.317676+00:00",
                 "context": {
-                    "id": "476450ee8fcd2986e087d5420c5702b5",
+                    "id": "4102bad82aabced84e2bd9259d06864a",
                     "parent_id": null,
                     "user_id": null
                 }
             },
-            "last_seen": "2021-10-04T10:56:35.282502+00:00"
+            "last_seen": "2021-10-04T21:33:39.522540+00:00"
         },
         {
             "state": {
@@ -307,15 +307,15 @@
                 "attributes": {
                     "friendly_name": "caldaia"
                 },
-                "last_changed": "2021-10-04T10:27:07.228557+00:00",
-                "last_updated": "2021-10-04T10:27:07.228557+00:00",
+                "last_changed": "2021-10-04T21:18:38.332633+00:00",
+                "last_updated": "2021-10-04T21:18:38.332633+00:00",
                 "context": {
-                    "id": "d39e46150d75f83469d35c6bf96d4c93",
+                    "id": "705349460a8c4383dce8be33549633ba",
                     "parent_id": null,
                     "user_id": null
                 }
             },
-            "last_seen": "2021-10-04T10:56:35.282502+00:00"
+            "last_seen": "2021-10-04T21:33:39.522540+00:00"
         },
         {
             "state": {
