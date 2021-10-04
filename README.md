@@ -2,8 +2,22 @@
 ## Install docker containers
 ### Home Assistant
 ```
-docker run --init -d --name="home-assistant" -e "TZ=Europe/Rome" -v /home/pi/homeassistant:/config --net=host --restart unless-stopped  homeassistant/raspberrypi3-homeassistant:stable
+docker pull ghcr.io/home-assistant/raspberrypi3-homeassistant:stable
+docker run -d \
+  --name home-assistant \
+  --privileged \
+  --restart=unless-stopped \
+  -e TZ=MY_TIME_ZONE \
+  -v /home/pi/WarmMeApp-HA/homeassistant:/config \
+  --network=host \
+  ghcr.io/home-assistant/raspberrypi3-homeassistant:stable
 ```
+### Home Assistant - HACS
+Dalla dirrectory WarmMe-HA/homeassistant lanciareil comando
+```
+wget -q -O - https://install.hacs.xyz | bash -
+```
+
 ### Mosquitto
 ```
 docker run -it --name mosquitto -p 1883:1883 -v /home/pi/WarmMeApp-HA/mosquitto:/mosquitto/ --restart unless-stopped eclipse-mosquitto
