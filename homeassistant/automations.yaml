@@ -1,31 +1,10 @@
-- id: '1612625540203'
-  alias: SWITCH caldaia OFF ---> spegnimento termostati
+- id: '1633387372844'
+  alias: Termostati OFF se spengo caldaia
   description: ''
   trigger:
   - platform: state
     entity_id: switch.caldaia
     to: 'off'
-  condition: []
-  action:
-  - service: climate.turn_off
-    data: {}
-    entity_id: climate.casa_bagno_termostato
-  - service: climate.turn_off
-    data: {}
-    entity_id: climate.casa_sala_termostato
-  - service: climate.turn_off
-    data: {}
-    entity_id: climate.casa_zona_notte_termostato
-  - service: switch.turn_off
-    data: {}
-    entity_id: switch.pompa_laboratorio
-  mode: single
-- id: '1612718511945'
-  alias: se SWITCH caldaia OFF ogni ora alle .25 ---> spegnimento termostati
-  description: ''
-  trigger:
-  - platform: time_pattern
-    minutes: '25'
   condition:
   - condition: state
     entity_id: switch.caldaia
@@ -46,67 +25,149 @@
   - service: switch.turn_off
     data: {}
     entity_id: switch.pompa_zona_notte
+  - service: switch.turn_off
+    target:
+      entity_id: switch.pompa_sala
+  - service: switch.turn_off
+    target:
+      entity_id: switch.pompa_bagno
+  - service: climate.turn_off
+    target:
+      entity_id: climate.casa_bagnino_termostato
   mode: single
-- id: '1613232519028'
-  alias: se Sensor/1/status=offline --> spengo termostato sala + notifica
+- id: '1633939987095'
+  alias: Caldaia ON SE attivo almeno un termostato
   description: ''
   trigger:
-  - platform: mqtt
-    topic: home-assistant/sensor/1/status
-    payload: offline
-  condition: []
+  - platform: state
+    entity_id: switch.pompa_laboratorio
+    to: 'on'
+  - platform: state
+    entity_id: switch.pompa_bagno
+    to: 'on'
+  - platform: state
+    entity_id: switch.pompa_sala
+    to: 'on'
+  - platform: state
+    entity_id: switch.pompa_zona_notte
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: switch.caldaia
+    state: 'off'
   action:
-  - service: climate.turn_off
-    data: {}
-    entity_id: climate.casa_sala_termostato
-  - service: notify.mobile_app_nexus_5x
-    data:
-      title: Sensore OFFLINE!!
-      message: il sensore sala è offline
-  - service: notify.mobile_app_mi_9_se
-    data:
-      title: Sensore OFFLINE!!
-      message: il sensore sala è offline
-  mode: single
-- id: '1613233279494'
-  alias: se Sensor/2/status=offline --> spengo termostato notte + notifica
+  - service: switch.turn_on
+    target:
+      entity_id: switch.caldaia
+  mode: parallel
+  max: 10
+- id: '1633942630783'
+  alias: Caldaia OFF SE tutti i termostati sono spenti
   description: ''
   trigger:
-  - platform: mqtt
-    topic: home-assistant/sensor/2/status
-    payload: offline
-  condition: []
+  - platform: state
+    entity_id: switch.pompa_bagno
+    to: 'off'
+  - platform: state
+    entity_id: switch.pompa_zona_notte
+    to: 'off'
+  - platform: state
+    entity_id: switch.pompa_sala
+    id: sala
+    to: 'off'
+  - platform: state
+    entity_id: switch.pompa_laboratorio
+    to: 'off'
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: switch.caldaia
+      state: 'on'
+    - condition: state
+      entity_id: switch.pompa_bagno
+      state: 'off'
+    - condition: state
+      entity_id: switch.pompa_laboratorio
+      state: 'off'
+    - condition: state
+      entity_id: switch.pompa_sala
+      state: 'off'
+    - condition: state
+      entity_id: switch.pompa_zona_notte
+      state: 'off'
   action:
-  - service: climate.turn_off
-    data: {}
-    entity_id: climate.casa_zona_notte_termostato
-  - service: notify.mobile_app_nexus_5x
-    data:
-      title: Sensore OFFLINE!!
-      message: il sensore zona notte è offline
-  - service: notify.mobile_app_mi_9_se
-    data:
-      title: Sensore OFFLINE!!
-      message: il sensore zona notte è offline
+  - service: switch.turn_off
+    target:
+      entity_id: switch.caldaia
   mode: single
-- id: '1613233348661'
-  alias: se Sensor/3/status=offline --> spengo termostato bagno
+- id: '1636332802302'
+  alias: Sensore temperatura cucina unavailable
   description: ''
   trigger:
-  - platform: mqtt
-    topic: home-assistant/sensor/3/status
-    payload: offline
+  - platform: state
+    entity_id: sensor.casa_cucina_temperatura
+    to: unavailable
   condition: []
   action:
-  - service: climate.turn_off
-    data: {}
-    entity_id: climate.casa_bagno_termostato
-  - service: notify.mobile_app_nexus_5x
+  - service: notify.mobile_app_mi_9_se_ezio
     data:
-      title: Sensore OFFLINE!!
-      message: il sensore bagno è offline
-  - service: notify.mobile_app_mi_9_se
+      message: Sensore cucina
+      title: Sensore unavailable
+  mode: single
+- id: '1636335277782'
+  alias: Sensore temperatura bagno unavailable
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: sensor.casa_bagno_temperatura
+    to: unavailable
+  condition: []
+  action:
+  - service: notify.mobile_app_mi_9_se_ezio
     data:
-      title: Sensore OFFLINE!!
-      message: il sensore bagno è offline
+      message: Sensore bagno
+      title: Sensore unavailable
+  mode: single
+- id: '1636443613299'
+  alias: Sensore temperatura zona notte unavailable
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: sensor.casa_zona_notte_temperatura
+    to: unavailable
+  condition: []
+  action:
+  - service: notify.mobile_app_mi_9_se_ezio
+    data:
+      message: Sensore zona notte
+      title: Sensore unavailable
+  mode: single
+- id: '1636460833405'
+  alias: Sensore temperatura sala unavailable
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: sensor.casa_sala_temperatura
+    to: unavailable
+  condition: []
+  action:
+  - service: notify.mobile_app_mi_9_se_ezio
+    data:
+      message: Sensore sala
+      title: Sensore unavailable
+  mode: single
+- id: '1643921032478'
+  alias: Sensore temperatura bagnino unavailable
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: sensor.casa_bagnino_temperatura
+    to: unavailable
+  condition: []
+  action:
+  - service: notify.mobile_app_mi_9_se_ezio
+    data:
+      message: Sensore bagnino
+      title: Sensore unavailable
   mode: single

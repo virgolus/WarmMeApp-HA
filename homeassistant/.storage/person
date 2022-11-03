@@ -1,22 +1,30 @@
 {
-    "version": 2,
-    "key": "person",
-    "data": {
-        "items": [
-            {
-                "name": "Ezio Vergine",
-                "user_id": "734bd21808fc4e32b551d1ba89a2a729",
-                "device_trackers": [],
-                "id": "ezio_vergine",
-                "picture": null
-            },
-            {
-                "name": "Enrico Vergine",
-                "device_trackers": [],
-                "user_id": "936fdfcfb7174eaa9979eb8f76a34d34",
-                "picture": "/api/image/serve/937bead17c5804a59653239919b6df44/512x512",
-                "id": "enrico_vergine"
-            }
-        ]
-    }
+  "version": 2,
+  "minor_version": 1,
+  "key": "person",
+  "data": {
+    "items": [
+      {
+        "name": "Ezio Vergine",
+        "user_id": "734bd21808fc4e32b551d1ba89a2a729",
+        "device_trackers": [],
+        "id": "ezio_vergine",
+        "picture": null
+      },
+      {
+        "name": "Enrico Vergine",
+        "device_trackers": [],
+        "user_id": "936fdfcfb7174eaa9979eb8f76a34d34",
+        "picture": "/api/image/serve/937bead17c5804a59653239919b6df44/512x512",
+        "id": "enrico_vergine"
+      },
+      {
+        "name": "Lucia",
+        "device_trackers": [],
+        "user_id": "0a2dccd6e996423d8adf143623f2c319",
+        "picture": null,
+        "id": "lucia"
+      }
+    ]
+  }
 }

@@ -25,8 +25,8 @@ print("connecting to broker ",broker)
 client.on_publish=on_publish
 client.connect(broker) #connect
 
-command_topic=config['mqtt']['actuator_topic']+"/1/command"
-state_topic=config['mqtt']['actuator_topic']+"/1/state"
+command_topic=config['mqtt']['actuator_topic']+"/4/command"
+state_topic=config['mqtt']['actuator_topic']+"/4/state"
 print(state_topic)
 
 #logging.debug("topic: "+state_topic+" payload: "+str('OFF'))

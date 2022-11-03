@@ -1,107 +1,217 @@
 {
-    "version": 1,
-    "key": "core.config_entries",
-    "data": {
-        "entries": [
-            {
-                "entry_id": "ad51956d9fc094c1cfff5a457b50779f",
-                "version": 1,
-                "domain": "met",
-                "title": "Home",
-                "data": {
-                    "track_home": true
-                },
-                "options": {},
-                "system_options": {
-                    "disable_new_entities": false
-                },
-                "source": "onboarding",
-                "connection_class": "cloud_poll",
-                "unique_id": null
-            },
-            {
-                "entry_id": "880d2d4f00e063a1de100c1ce73a4801",
-                "version": 1,
-                "domain": "mqtt",
-                "title": "192.168.1.49",
-                "data": {
-                    "broker": "192.168.1.39",
-                    "port": 1883,
-                    "birth_message": {
-                        "topic": "homeassistant/status",
-                        "payload": "online",
-                        "qos": 0,
-                        "retain": true
-                    },
-                    "will_message": {
-                        "topic": "homeassistant/status",
-                        "payload": "offline",
-                        "qos": 0,
-                        "retain": true
-                    },
-                    "discovery": true
-                },
-                "options": {},
-                "system_options": {
-                    "disable_new_entities": false
-                },
-                "source": "user",
-                "connection_class": "local_push",
-                "unique_id": null
-            },
-            {
-                "entry_id": "09210d8aae21972766f40bbb3694487c",
-                "version": 1,
-                "domain": "local_ip",
-                "title": "local_ip",
-                "data": {},
-                "options": {},
-                "system_options": {
-                    "disable_new_entities": false
-                },
-                "source": "user",
-                "connection_class": "local_poll",
-                "unique_id": null
-            },
-            {
-                "entry_id": "da747aedae5852a9883fdeb50b53c61c",
-                "version": 1,
-                "domain": "hacs",
-                "title": "",
-                "data": {
-                    "token": "e46efc84a3e0af87eb014569f3d16c0a492daa74"
-                },
-                "options": {
-                    "sidepanel_title": "HACS",
-                    "sidepanel_icon": "hacs:hacs",
-                    "release_limit": 5,
-                    "country": "ALL",
-                    "appdaemon": false,
-                    "netdaemon": false,
-                    "debug": false,
-                    "experimental": false
-                },
-                "system_options": {
-                    "disable_new_entities": false
-                },
-                "source": "user",
-                "connection_class": "cloud_poll",
-                "unique_id": null
-            },
-            {
-                "entry_id": "3b2d40e80130215f98210f882c8e2169",
-                "version": 2,
-                "domain": "scheduler",
-                "title": "Scheduler integration",
-                "data": {},
-                "options": {},
-                "system_options": {
-                    "disable_new_entities": false
-                },
-                "source": "user",
-                "connection_class": "local_poll",
-                "unique_id": "174983a0a45f"
-            }
-        ]
-    }
+  "version": 1,
+  "minor_version": 1,
+  "key": "core.config_entries",
+  "data": {
+    "entries": [
+      {
+        "entry_id": "ad51956d9fc094c1cfff5a457b50779f",
+        "version": 1,
+        "domain": "met",
+        "title": "Home",
+        "data": {
+          "track_home": true
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "onboarding",
+        "unique_id": null,
+        "disabled_by": null
+      },
+      {
+        "entry_id": "880d2d4f00e063a1de100c1ce73a4801",
+        "version": 1,
+        "domain": "mqtt",
+        "title": "127.0.0.1",
+        "data": {
+          "broker": "127.0.0.1",
+          "port": 1883,
+          "birth_message": {
+            "topic": "homeassistant/status",
+            "payload": "online",
+            "qos": 0,
+            "retain": true
+          },
+          "will_message": {
+            "topic": "homeassistant/status",
+            "payload": "offline",
+            "qos": 0,
+            "retain": true
+          },
+          "discovery": false
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "user",
+        "unique_id": null,
+        "disabled_by": null
+      },
+      {
+        "entry_id": "09210d8aae21972766f40bbb3694487c",
+        "version": 1,
+        "domain": "local_ip",
+        "title": "local_ip",
+        "data": {},
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "user",
+        "unique_id": null,
+        "disabled_by": null
+      },
+      {
+        "entry_id": "3b2d40e80130215f98210f882c8e2169",
+        "version": 2,
+        "domain": "scheduler",
+        "title": "Scheduler integration",
+        "data": {},
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "user",
+        "unique_id": "174983a0a45f",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "00f740d9a7f644d4e57e82d45f13de97",
+        "version": 1,
+        "domain": "hacs",
+        "title": "",
+        "data": {
+          "token": "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"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "user",
+        "unique_id": null,
+        "disabled_by": null
+      },
+      {
+        "entry_id": "04b7cf9d9c9d811be31818d9301ad116",
+        "version": 1,
+        "domain": "spotify",
+        "title": "Spotify",
+        "data": {},
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "ignore",
+        "unique_id": null,
+        "disabled_by": null
+      },
+      {
+        "entry_id": "9978f844382272688b357efd4bf98836",
+        "version": 1,
+        "domain": "fritz",
+        "title": "7530",
+        "data": {
+          "host": "192.168.1.1"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "ignore",
+        "unique_id": "123402409-bccb-40e7-8e6c-DC15C8D50D79",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "5ef88d2f8a94b50bad7cbf1fda87cc94",
+        "version": 1,
+        "domain": "upnp",
+        "title": "FRITZ!Box 7530",
+        "data": {
+          "hostname": "192.168.1.1",
+          "mac_address": "dc:15:c8:d5:0d:79",
+          "location": "http://192.168.1.1:49000/igddesc.xml",
+          "host": "192.168.1.1"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "ignore",
+        "unique_id": "uuid:75802409-bccb-40e7-8e6c-DC15C8D50D79::urn:schemas-upnp-org:device:InternetGatewayDevice:1",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "75b2d926792468e46a99fc5450066e62",
+        "version": 1,
+        "domain": "fritzbox",
+        "title": "FRITZ!Box 7530",
+        "data": {
+          "host": "192.168.1.1"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "ignore",
+        "unique_id": "123402409-bccb-40e7-8e6c-DC15C8D50D79",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "d8cd62b38ecdab2b0ac2b89815e7de9e",
+        "version": 1,
+        "domain": "upnp",
+        "title": "InternetGatewayDeviceV2 - FRITZ!Box 7530",
+        "data": {
+          "hostname": "192.168.1.1",
+          "mac_address": "dc:15:c8:d5:0d:79",
+          "location": "http://192.168.1.1:49000/igd2desc.xml",
+          "host": "192.168.1.1"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "ignore",
+        "unique_id": "uuid:75802409-bccb-40e7-9f6c-DC15C8D50D79::urn:schemas-upnp-org:device:InternetGatewayDevice:2",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "2f9067e2ad5a434e5e792236c84d208b",
+        "version": 1,
+        "domain": "ipp",
+        "title": "EPSON XP-4100 Series",
+        "data": {
+          "host": "192.168.1.32",
+          "name": "EPSON XP-4100 Series"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "ignore",
+        "unique_id": "cfe92100-67c4-11d4-a45f-381a52368884",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "111788d3235550428bfffde5ad735f45",
+        "version": 1,
+        "domain": "fritz",
+        "title": "7530",
+        "data": {
+          "host": "192.168.1.1"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "ignore",
+        "unique_id": "123402409-bccb-40e7-8e6c-DC15C8034992",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "87b0dbbb3286be159e840aaae3d63de2",
+        "version": 1,
+        "domain": "sun",
+        "title": "Sun",
+        "data": {},
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "import",
+        "unique_id": null,
+        "disabled_by": null
+      }
+    ]
+  }
 }

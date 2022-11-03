@@ -1,0 +1,11 @@
+[Unit]
+Description=Tunnel server Bagolino
+After=multi-user.target
+Requires=network.target
+
+[Service]
+Type=idle
+ExecStart=/usr/bin/ssh -nNTv -o ServerAliveInterval=60 -o ServerAliveCountMax=3 -o IdentitiesOnly=yes -o StrictHostKeyChecking=no -i /home/pi/.ssh/id_rsa -R 8123:localhost:8123 -R 2222:localhost:22 virgolus@85.90.245.49
+
+[Install]
+WantedBy=multi-user.target

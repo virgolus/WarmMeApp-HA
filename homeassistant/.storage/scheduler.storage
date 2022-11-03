@@ -1,0 +1,509 @@
+{
+  "version": 3,
+  "minor_version": 1,
+  "key": "scheduler.storage",
+  "data": {
+    "schedules": [
+      {
+        "schedule_id": "9c5354",
+        "timeslots": [
+          {
+            "start": "00:00:00",
+            "stop": "12:00:00",
+            "conditions": [],
+            "condition_type": null,
+            "track_conditions": false,
+            "actions": [
+              {
+                "service": "climate.set_hvac_mode",
+                "entity_id": "climate.casa_sala_termostato",
+                "service_data": {
+                  "hvac_mode": "off"
+                }
+              }
+            ]
+          },
+          {
+            "start": "12:00:00",
+            "stop": "18:00:00",
+            "conditions": [],
+            "condition_type": null,
+            "track_conditions": false,
+            "actions": [
+              {
+                "service": "climate.set_temperature",
+                "entity_id": "climate.casa_sala_termostato",
+                "service_data": {
+                  "hvac_mode": "heat",
+                  "temperature": 17
+                }
+              }
+            ]
+          },
+          {
+            "start": "18:00:00",
+            "stop": "00:00:00",
+            "conditions": [],
+            "condition_type": null,
+            "track_conditions": false,
+            "actions": [
+              {
+                "service": "climate.set_hvac_mode",
+                "entity_id": "climate.casa_sala_termostato",
+                "service_data": {
+                  "hvac_mode": "off"
+                }
+              }
+            ]
+          }
+        ],
+        "weekdays": [
+          "mon",
+          "tue",
+          "wed",
+          "thu",
+          "fri"
+        ],
+        "start_date": null,
+        "end_date": null,
+        "repeat_type": "repeat",
+        "name": "Sala settimana",
+        "enabled": true
+      },
+      {
+        "schedule_id": "70770d",
+        "timeslots": [
+          {
+            "start": "00:00:00",
+            "stop": "01:50:00",
+            "conditions": [],
+            "condition_type": null,
+            "track_conditions": false,
+            "actions": [
+              {
+                "service": "climate.set_hvac_mode",
+                "entity_id": "climate.casa_bagno_termostato",
+                "service_data": {
+                  "hvac_mode": "off"
+                }
+              }
+            ]
+          },
+          {
+            "start": "01:50:00",
+            "stop": "11:00:00",
+            "conditions": [],
+            "condition_type": null,
+            "track_conditions": false,
+            "actions": [
+              {
+                "service": "climate.set_temperature",
+                "entity_id": "climate.casa_bagno_termostato",
+                "service_data": {
+                  "hvac_mode": "heat",
+                  "temperature": 19.5
+                }
+              }
+            ]
+          },
+          {
+            "start": "11:00:00",
+            "stop": "20:00:00",
+            "conditions": [],
+            "condition_type": null,
+            "track_conditions": false,
+            "actions": [
+              {
+                "service": "climate.set_hvac_mode",
+                "entity_id": "climate.casa_bagno_termostato",
+                "service_data": {
+                  "hvac_mode": "off"
+                }
+              }
+            ]
+          },
+          {
+            "start": "20:00:00",
+            "stop": "21:00:00",
+            "conditions": [],
+            "condition_type": null,
+            "track_conditions": false,
+            "actions": [
+              {
+                "service": "climate.set_temperature",
+                "entity_id": "climate.casa_bagno_termostato",
+                "service_data": {
+                  "hvac_mode": "heat",
+                  "temperature": 20
+                }
+              }
+            ]
+          },
+          {
+            "start": "21:00:00",
+            "stop": "00:00:00",
+            "conditions": [],
+            "condition_type": null,
+            "track_conditions": false,
+            "actions": [
+              {
+                "service": "climate.set_hvac_mode",
+                "entity_id": "climate.casa_bagno_termostato",
+                "service_data": {
+                  "hvac_mode": "off"
+                }
+              }
+            ]
+          }
+        ],
+        "weekdays": [
+          "daily"
+        ],
+        "start_date": null,
+        "end_date": null,
+        "repeat_type": "repeat",
+        "name": "Bagno",
+        "enabled": false
+      },
+      {
+        "schedule_id": "491863",
+        "timeslots": [
+          {
+            "start": "00:00:00",
+            "stop": "10:00:00",
+            "conditions": [],
+            "condition_type": null,
+            "track_conditions": false,
+            "actions": [
+              {
+                "service": "climate.set_hvac_mode",
+                "entity_id": "climate.casa_sala_termostato",
+                "service_data": {
+                  "hvac_mode": "off"
+                }
+              }
+            ]
+          },
+          {
+            "start": "10:00:00",
+            "stop": "18:00:00",
+            "conditions": [],
+            "condition_type": null,
+            "track_conditions": false,
+            "actions": [
+              {
+                "service": "climate.set_temperature",
+                "entity_id": "climate.casa_sala_termostato",
+                "service_data": {
+                  "hvac_mode": "heat",
+                  "temperature": 19
+                }
+              }
+            ]
+          },
+          {
+            "start": "18:00:00",
+            "stop": "00:00:00",
+            "conditions": [],
+            "condition_type": null,
+            "track_conditions": false,
+            "actions": [
+              {
+                "service": "climate.set_hvac_mode",
+                "entity_id": "climate.casa_sala_termostato",
+                "service_data": {
+                  "hvac_mode": "off"
+                }
+              }
+            ]
+          }
+        ],
+        "weekdays": [
+          "sat",
+          "sun"
+        ],
+        "start_date": null,
+        "end_date": null,
+        "repeat_type": "repeat",
+        "name": "Sala weekend",
+        "enabled": false
+      },
+      {
+        "schedule_id": "c44ed8",
+        "timeslots": [
+          {
+            "start": "00:00:00",
+            "stop": "12:00:00",
+            "conditions": [],
+            "condition_type": null,
+            "track_conditions": false,
+            "actions": [
+              {
+                "service": "climate.set_hvac_mode",
+                "entity_id": "climate.casa_bagnino_termostato",
+                "service_data": {
+                  "hvac_mode": "off"
+                }
+              }
+            ]
+          },
+          {
+            "start": "12:00:00",
+            "stop": "14:00:00",
+            "conditions": [],
+            "condition_type": null,
+            "track_conditions": false,
+            "actions": [
+              {
+                "service": "climate.set_temperature",
+                "entity_id": "climate.casa_bagnino_termostato",
+                "service_data": {
+                  "hvac_mode": "heat",
+                  "temperature": 20
+                }
+              }
+            ]
+          },
+          {
+            "start": "14:00:00",
+            "stop": "16:00:00",
+            "conditions": [],
+            "condition_type": null,
+            "track_conditions": false,
+            "actions": [
+              {
+                "service": "climate.set_temperature",
+                "entity_id": "climate.casa_bagnino_termostato",
+                "service_data": {
+                  "hvac_mode": "heat",
+                  "temperature": 20
+                }
+              }
+            ]
+          },
+          {
+            "start": "16:00:00",
+            "stop": "18:00:00",
+            "conditions": [],
+            "condition_type": null,
+            "track_conditions": false,
+            "actions": [
+              {
+                "service": "climate.set_temperature",
+                "entity_id": "climate.casa_bagnino_termostato",
+                "service_data": {
+                  "hvac_mode": "heat",
+                  "temperature": 20
+                }
+              }
+            ]
+          },
+          {
+            "start": "18:00:00",
+            "stop": "21:00:00",
+            "conditions": [],
+            "condition_type": null,
+            "track_conditions": false,
+            "actions": [
+              {
+                "service": "climate.set_temperature",
+                "entity_id": "climate.casa_bagnino_termostato",
+                "service_data": {
+                  "hvac_mode": "heat",
+                  "temperature": 20
+                }
+              }
+            ]
+          }
+        ],
+        "weekdays": [
+          "daily"
+        ],
+        "start_date": null,
+        "end_date": null,
+        "repeat_type": "repeat",
+        "name": "Bagnino",
+        "enabled": false
+      },
+      {
+        "schedule_id": "909f42",
+        "timeslots": [
+          {
+            "start": "00:00:00",
+            "stop": "12:00:00",
+            "conditions": [],
+            "condition_type": null,
+            "track_conditions": false,
+            "actions": [
+              {
+                "service": "climate.set_hvac_mode",
+                "entity_id": "climate.casa_bagnino_termostato",
+                "service_data": {
+                  "hvac_mode": "off"
+                }
+              }
+            ]
+          },
+          {
+            "start": "12:00:00",
+            "stop": "13:00:00",
+            "conditions": [],
+            "condition_type": null,
+            "track_conditions": false,
+            "actions": [
+              {
+                "service": "climate.set_temperature",
+                "entity_id": "climate.casa_bagnino_termostato",
+                "service_data": {
+                  "hvac_mode": "heat",
+                  "temperature": 25
+                }
+              }
+            ]
+          },
+          {
+            "start": "13:00:00",
+            "stop": "14:00:00",
+            "conditions": [],
+            "condition_type": null,
+            "track_conditions": false,
+            "actions": [
+              {
+                "service": "climate.set_hvac_mode",
+                "entity_id": "climate.casa_bagnino_termostato",
+                "service_data": {
+                  "hvac_mode": "off"
+                }
+              }
+            ]
+          },
+          {
+            "start": "14:00:00",
+            "stop": "15:00:00",
+            "conditions": [],
+            "condition_type": null,
+            "track_conditions": false,
+            "actions": [
+              {
+                "service": "climate.set_temperature",
+                "entity_id": "climate.casa_bagnino_termostato",
+                "service_data": {
+                  "hvac_mode": "heat",
+                  "temperature": 25
+                }
+              }
+            ]
+          },
+          {
+            "start": "15:00:00",
+            "stop": "16:00:00",
+            "conditions": [],
+            "condition_type": null,
+            "track_conditions": false,
+            "actions": [
+              {
+                "service": "climate.set_hvac_mode",
+                "entity_id": "climate.casa_bagnino_termostato",
+                "service_data": {
+                  "hvac_mode": "off"
+                }
+              }
+            ]
+          },
+          {
+            "start": "16:00:00",
+            "stop": "17:00:00",
+            "conditions": [],
+            "condition_type": null,
+            "track_conditions": false,
+            "actions": [
+              {
+                "service": "climate.set_temperature",
+                "entity_id": "climate.casa_bagnino_termostato",
+                "service_data": {
+                  "hvac_mode": "heat",
+                  "temperature": 25
+                }
+              }
+            ]
+          },
+          {
+            "start": "17:00:00",
+            "stop": "18:00:00",
+            "conditions": [],
+            "condition_type": null,
+            "track_conditions": false,
+            "actions": [
+              {
+                "service": "climate.set_hvac_mode",
+                "entity_id": "climate.casa_bagnino_termostato",
+                "service_data": {
+                  "hvac_mode": "off"
+                }
+              }
+            ]
+          },
+          {
+            "start": "18:00:00",
+            "stop": "19:00:00",
+            "conditions": [],
+            "condition_type": null,
+            "track_conditions": false,
+            "actions": [
+              {
+                "service": "climate.set_temperature",
+                "entity_id": "climate.casa_bagnino_termostato",
+                "service_data": {
+                  "hvac_mode": "heat",
+                  "temperature": 25
+                }
+              }
+            ]
+          },
+          {
+            "start": "19:00:00",
+            "stop": "20:00:00",
+            "conditions": [],
+            "condition_type": null,
+            "track_conditions": false,
+            "actions": [
+              {
+                "service": "climate.set_hvac_mode",
+                "entity_id": "climate.casa_bagnino_termostato",
+                "service_data": {
+                  "hvac_mode": "off"
+                }
+              }
+            ]
+          },
+          {
+            "start": "20:00:00",
+            "stop": "21:00:00",
+            "conditions": [],
+            "condition_type": null,
+            "track_conditions": false,
+            "actions": [
+              {
+                "service": "climate.set_temperature",
+                "entity_id": "climate.casa_bagnino_termostato",
+                "service_data": {
+                  "hvac_mode": "heat",
+                  "temperature": 16
+                }
+              }
+            ]
+          }
+        ],
+        "weekdays": [
+          "daily"
+        ],
+        "start_date": null,
+        "end_date": null,
+        "repeat_type": "repeat",
+        "name": "Bagnino a manella",
+        "enabled": false
+      }
+    ],
+    "tags": []
+  }
+}

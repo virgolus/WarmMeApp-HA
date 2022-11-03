@@ -1,0 +1,17 @@
+/home/pi/WarmMeApp-HA/homeassistant/*.log {
+    daily
+    missingok
+    rotate 2
+    compress
+    notifempty
+    copytruncate
+}
+
+/home/pi/WarmMeApp-HA/logs/*.log {
+    daily
+    missingok
+    rotate 2
+    compress
+    notifempty
+    copytruncate
+}

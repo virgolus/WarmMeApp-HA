@@ -10,10 +10,11 @@ docker run -d \
   -e TZ=MY_TIME_ZONE \
   -v /home/pi/WarmMeApp-HA/homeassistant:/config \
   --network=host \
-  ghcr.io/home-assistant/raspberrypi3-homeassistant:stable
+  ghcr.io/home-assistant/raspberrypi3-homeassistant:2022.10.5
 ```
+
 ### Home Assistant - HACS
-Dalla dirrectory WarmMe-HA/homeassistant lanciareil comando
+Dalla directory WarmMe-HA/homeassistant lanciare il comando
 ```
 wget -q -O - https://install.hacs.xyz | bash -
 ```
@@ -22,8 +23,26 @@ wget -q -O - https://install.hacs.xyz | bash -
 ```
 docker run -it --name mosquitto -p 1883:1883 -v /home/pi/WarmMeApp-HA/mosquitto:/mosquitto/ --restart unless-stopped eclipse-mosquitto
 ```
+
 ## Properties
 Copy warmme.properties.template as warmme.properties in the pi user home and fill the missing properties values.
+
+## Swap file dimension
+```
+sudo nano /etc/dphys-swapfile
+CONF_SWAPSIZE=2048
+sudo dphys-swapfile setup
+sudo dphys-swapfile swapon
+```
+
+### WarmMe core
+- install python2.7
+- install pip2.7
+curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
+sudo python2 get-pip.py
+- cd /home/pi/WarmMeApp-HA/warmme
+- pip install -r requirements.txt
+- pip2 install -r requirements2.7.txt
 
 ### Autostart
 For all files in directory WarmMeApp-HA/scripts/autostart_services:
@@ -33,4 +52,26 @@ For all files in directory WarmMeApp-HA/scripts/autostart_services:
 - sudo systemctl daemon-reload
 - sudo systemctl enable name-of-your-service.service
 ```
+
+## Logrotate
+copy files from .scripts/logrotate to /etc/logrotate.d/
+
+## Crontab 
+```
+0 22 * * mon docker restart home-assistant >> /home/pi/WarmMeApp-HA/logs/crontab.log 2>&1
+0 23 * * mon systemctl restart tunnel-bagolino.service >> /home/pi/WarmMeApp-HA/logs/crontab.log 2>&1
+0 23 * * mon systemctl restart warmme-core.service >> /home/pi/WarmMeApp-HA/logs/crontab.log 2>&1
+```
+
+# Mappatura cavi quadro mamma
+0 caldaia
+1 sopra
+2 sotto
+3 bagno
+4 laboratorio
+
+
+
+
+
 

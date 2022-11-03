@@ -1,0 +1,44 @@
+{
+    "version": 1,
+    "key": "cloud",
+    "data": {
+        "alexa_default_expose": [
+            "climate",
+            "cover",
+            "fan",
+            "humidifier",
+            "light",
+            "lock",
+            "scene",
+            "script",
+            "sensor",
+            "switch",
+            "vacuum",
+            "water_heater"
+        ],
+        "alexa_entity_configs": {},
+        "cloud_user": "f8958056b5b842518b39bf3d88e719dd",
+        "cloudhooks": {},
+        "alexa_enabled": false,
+        "google_enabled": false,
+        "remote_enabled": true,
+        "google_default_expose": [
+            "climate",
+            "cover",
+            "fan",
+            "humidifier",
+            "light",
+            "lock",
+            "scene",
+            "script",
+            "sensor",
+            "switch",
+            "vacuum",
+            "water_heater"
+        ],
+        "google_entity_configs": {},
+        "google_local_webhook_id": "dc241a401911856412b8fcca6fa6e75745def0a97666ffdfa7072b971aae7403",
+        "google_secure_devices_pin": null,
+        "username": "cda00d4e-69ad-47d5-97fa-df72940d603e"
+    }
+}

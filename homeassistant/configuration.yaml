@@ -1,6 +1,13 @@
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
 
+# http:
+#    server_host: 0.0.0.0
+#    use_x_forwarded_for: true
+#    trusted_proxies:
+#      - 85.90.245.49
+#      - 127.0.0.1
+
 # Text to speech
 tts:
   - platform: google_translate
@@ -10,117 +17,22 @@ automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
 
-sensor mqtt_temperature_1:
-  - platform: mqtt
-    state_topic: "home-assistant/sensor/1"
-    availability:
-      - topic: "home-assistant/sensor/1/status"
-    payload_available: "online"
-    payload_not_available: "offline"
-    name: "Casa Sala (temperatura)"
-    unit_of_measurement: '°C'
-    value_template: "{{ (value_json.temperature | float ) | round(1) }}"
-    device_class: "temperature"
-
-sensor mqtt_Battery_1:
-  - platform: mqtt
-    state_topic: "home-assistant/sensor/1"
-    name: "Casa Sala (battery)"
-    unit_of_measurement: 'V'
-    value_template: "{{ (value_json.battery | float ) | round(1) }}"
-    device_class: "voltage"
-
-sensor mqtt_humidity_1:
-  - platform: mqtt
-    state_topic: "home-assistant/sensor/1"
-    name: "Casa Sala (umidita)"
-    unit_of_measurement: '%'
-    value_template: "{{ (value_json.humidity | float ) | round(1) }}"
-
-sensor mqtt_temperature_2:
-  - platform: mqtt
-    state_topic: "home-assistant/sensor/2"
-    availability:
-      - topic: "home-assistant/sensor/2/status"
-    payload_available: "online"
-    payload_not_available: "offline"
-    name: "Casa Zona notte (temperatura)"
-    unit_of_measurement: '°C'
-    value_template: "{{ (value_json.temperature | float ) | round(1) }}"
-    device_class: "temperature"
-
-sensor mqtt_Battery_2:
-  - platform: mqtt
-    state_topic: "home-assistant/sensor/2"
-    name: "Casa Zona notte (battery)"
-    unit_of_measurement: 'V'
-    value_template: "{{ (value_json.battery | float ) | round(1) }}"
-    device_class: "voltage"    
-
-sensor mqtt_humidity_2:
-  - platform: mqtt
-    state_topic: "home-assistant/sensor/2"
-    name: "Casa Zona notte (umidita)"
-    unit_of_measurement: '%'
-    value_template: "{{ (value_json.humidity | float ) | round(1) }}"
-
-sensor mqtt_temperature_3:
-  - platform: mqtt
-    state_topic: "home-assistant/sensor/3"
-    availability:
-      - topic: "home-assistant/sensor/3/status"
-    payload_available: "online"
-    payload_not_available: "offline"
-    name: "Casa Bagno (temperatura)"
-    unit_of_measurement: '°C'
-    value_template: "{{ value_json.temperature }}"
-    device_class: "temperature"
-
-sensor mqtt_Battery_3:
-  - platform: mqtt
-    state_topic: "home-assistant/sensor/3"
-    name: "Casa Bagno (battery)"
-    unit_of_measurement: 'V'
-    value_template: "{{ (value_json.battery | float ) | round(1) }}"
-    device_class: "voltage"    
-
-sensor mqtt_humidity_3:
-  - platform: mqtt
-    state_topic: "home-assistant/sensor/3"
-    name: "Casa Bagno (umidita)"
-    unit_of_measurement: '%'
-    value_template: "{{ (value_json.humidity | float ) | round(1) }}"
-
-sensor mqtt_temperature_4:
-  - platform: mqtt
-    state_topic: "home-assistant/sensor/4"
-    availability:
-      - topic: "home-assistant/sensor/4/status"
-    payload_available: "online"
-    payload_not_available: "offline"
-    name: "Casa Cucina (temperatura)"
-    unit_of_measurement: '°C'
-    value_template: "{{ (value_json.temperature | float ) | round(1) }}"
-    device_class: "temperature"
-
-sensor mqtt_Battery_4:
-  - platform: mqtt
-    state_topic: "home-assistant/sensor/4"
-    name: "Casa Cucina (battery)"
-    unit_of_measurement: 'V'
-    value_template: "{{ (value_json.battery | float ) | round(1) }}"
-    device_class: "voltage"  
-
-sensor mqtt_humidity_4:
-  - platform: mqtt
-    state_topic: "home-assistant/sensor/4"
-    name: "Casa Cucina (umidità)"
-    unit_of_measurement: '%'
-    value_template: "{{ (value_json.humidity | float ) | round(1) }}"
+sensor date_time:
+  - platform: time_date
+    display_options:
+      - 'time'
+      - 'date'
+      - 'date_time'
+      - 'date_time_utc'
+      - 'date_time_iso'
+      - 'time_date'
+      - 'time_utc'
+      - 'beat'
 
 climate casa_sala:
   - platform: generic_thermostat
     name: "Casa Sala (termostato)"
+    unique_id: climate_sala
     target_sensor: sensor.casa_sala_temperatura
     heater: switch.pompa_sala
     min_temp: 16
@@ -130,12 +42,13 @@ climate casa_sala:
     min_cycle_duration:
       seconds: 30
     initial_hvac_mode: "off"
-    hot_tolerance: 0.2
-    cold_tolerance: 0.2
+    hot_tolerance: 0.4
+    cold_tolerance: 0.4
 
 climate casa_zona_notte:
   - platform: generic_thermostat
     name: "Casa zona notte (termostato)"
+    unique_id: climate_zona_notte
     target_sensor: sensor.casa_zona_notte_temperatura
     heater: switch.pompa_zona_notte
     min_temp: 16
@@ -145,12 +58,13 @@ climate casa_zona_notte:
     min_cycle_duration:
       seconds: 30
     initial_hvac_mode: "off"
-    hot_tolerance: 0.2
-    cold_tolerance: 0.2
+    hot_tolerance: 0.4
+    cold_tolerance: 0.4
 
 climate casa_bagno:
   - platform: generic_thermostat
     name: "Casa bagno (termostato)"
+    unique_id: climate_bagno
     target_sensor: sensor.casa_bagno_temperatura
     heater: switch.pompa_bagno
     min_temp: 16
@@ -160,58 +74,149 @@ climate casa_bagno:
     min_cycle_duration:
       seconds: 30
     initial_hvac_mode: "off"
-    hot_tolerance: 0.2
-    cold_tolerance: 0.2
+    hot_tolerance: 0.4
+    cold_tolerance: 0.4
 
-switch pompa_sala:
-  - platform: mqtt
-    name: pompa_sala
-    state_topic: "home-assistant/pump/1/state"
-    command_topic: "home-assistant/pump/1/command"
-    qos: 1
-    payload_on: "ON"
-    payload_off: "OFF"
-    retain: true
+climate casa_bagnino:
+  - platform: generic_thermostat
+    name: "Casa bagnino (termostato)"
+    unique_id: climate_bagnino
+    target_sensor: sensor.casa_bagnino_temperatura
+    heater: switch.pompa_bagno
+    min_temp: 16
+    max_temp: 25
+    ac_mode: false
+    target_temp: 20
+    min_cycle_duration:
+      seconds: 30
+    initial_hvac_mode: "off"
+    hot_tolerance: 0.5
+    cold_tolerance: 0.5
 
-switch pompa_zona_notte:
-  - platform: mqtt
-    name: pompa_zona_notte
-    state_topic: "home-assistant/pump/2/state"
-    command_topic: "home-assistant/pump/2/command"
-    qos: 1
-    payload_on: "ON"
-    payload_off: "OFF"
-    retain: true
-
-switch pompa_bagno:
-  - platform: mqtt
-    name: pompa_bagno
-    state_topic: "home-assistant/pump/3/state"
-    command_topic: "home-assistant/pump/3/command"
-    qos: 1
-    payload_on: "ON"
-    payload_off: "OFF"
-    retain: true
-
-switch pompa_laboratorio:
-  - platform: mqtt
-    name: pompa_laboratorio
-    state_topic: "home-assistant/pump/4/state"
-    command_topic: "home-assistant/pump/4/command"
-    qos: 1
-    payload_on: "ON"
-    payload_off: "OFF"
-    retain: true
-
-switch caldaia:
-  - platform: mqtt
-    name: caldaia
-    state_topic: "home-assistant/pump/5/state"
-    command_topic: "home-assistant/pump/5/command"
-    qos: 1
-    payload_on: "ON"
-    payload_off: "OFF"
-    retain: true
+mqtt:
+  switch:
+    - name: "Pompa sala"
+      unique_id: pompa_sala
+      state_topic: "home-assistant/pump/1/state"
+      command_topic: "home-assistant/pump/1/command"
+      qos: 1
+      retain: true
+    - name: "Pompa zona notte"
+      unique_id: pompa_zona_notte
+      state_topic: "home-assistant/pump/2/state"
+      command_topic: "home-assistant/pump/2/command"
+      qos: 1
+      retain: true
+    - name: "Pompa bagno"
+      unique_id: pompa_bagno
+      state_topic: "home-assistant/pump/3/state"
+      command_topic: "home-assistant/pump/3/command"
+      qos: 1
+      retain: true
+    - name: "Pompa laboratorio"
+      unique_id: pompa_laboratorio
+      state_topic: "home-assistant/pump/4/state"
+      command_topic: "home-assistant/pump/4/command"
+      qos: 1
+      retain: true
+    - name: "Caldaia"
+      unique_id: caldaia
+      state_topic: "home-assistant/pump/5/state"
+      command_topic: "home-assistant/pump/5/command"
+      qos: 1
+      retain: true
+  sensor:
+    - name: "Casa Sala (temperatura)"
+      state_topic: "home-assistant/sensor/1"
+      payload_available: "online"
+      payload_not_available: "offline"
+      unit_of_measurement: '°C'
+      value_template: "{{ (value_json.temperature | float ) | round(1) }}"
+      device_class: "temperature"
+      expire_after: 3600
+    - name: "Casa Sala (battery)"
+      state_topic: "home-assistant/sensor/1"
+      unit_of_measurement: 'V'
+      value_template: "{{ (value_json.battery | float ) | round(1) }}"
+      device_class: "voltage"
+    - name: "Casa Sala (umidita)"
+      state_topic: "home-assistant/sensor/1"
+      unit_of_measurement: '%'
+      value_template: "{{ (value_json.humidity | float ) | round(1) }}"
+    - name: "Casa Zona notte (temperatura)"
+      state_topic: "home-assistant/sensor/2"
+      availability:
+        - topic: "home-assistant/sensor/2/status"
+      payload_available: "online"
+      payload_not_available: "offline"
+      unit_of_measurement: '°C'
+      value_template: "{{ (value_json.temperature | float ) | round(1) }}"
+      device_class: "temperature"
+      expire_after: 3600
+    - name: "Casa Zona notte (battery)"
+      state_topic: "home-assistant/sensor/2"
+      unit_of_measurement: 'V'
+      value_template: "{{ (value_json.battery | float ) | round(1) }}"
+      device_class: "voltage"
+    - name: "Casa Zona notte (umidita)"
+      state_topic: "home-assistant/sensor/2"
+      unit_of_measurement: '%'
+      value_template: "{{ (value_json.humidity | float ) | round(1) }}"
+    - name: "Casa Bagno (temperatura)"
+      state_topic: "home-assistant/sensor/3"
+      availability:
+        - topic: "home-assistant/sensor/3/status"
+      payload_available: "online"
+      payload_not_available: "offline"
+      unit_of_measurement: '°C'
+      value_template: "{{ value_json.temperature }}"
+      device_class: "temperature"
+      expire_after: 3600
+    - name: "Casa Bagno (battery)"
+      state_topic: "home-assistant/sensor/3"
+      unit_of_measurement: 'V'
+      value_template: "{{ (value_json.battery | float ) | round(1) }}"
+      device_class: "voltage"    
+    - name: "Casa Bagno (umidita)"
+      state_topic: "home-assistant/sensor/3"
+      unit_of_measurement: '%'
+      value_template: "{{ (value_json.humidity | float ) | round(1) }}"
+    - name: "Casa Cucina (temperatura)"
+      state_topic: "home-assistant/sensor/4"
+      availability:
+        - topic: "home-assistant/sensor/4/status"
+      payload_available: "online"
+      payload_not_available: "offline" 
+      unit_of_measurement: '°C'
+      value_template: "{{ (value_json.temperature | float ) | round(1) }}"
+      device_class: "temperature"
+      expire_after: 3600
+    - name: "Casa Cucina (battery)"
+      state_topic: "home-assistant/sensor/4"
+      unit_of_measurement: 'V'
+      value_template: "{{ (value_json.battery | float ) | round(1) }}"
+      device_class: "voltage"
+    - name: "Casa Cucina (umidità)"  
+      state_topic: "home-assistant/sensor/4"
+      unit_of_measurement: '%'
+      value_template: "{{ (value_json.humidity | float ) | round(1) }}"
+    - name: "Casa Bagnino (temperatura)"
+      state_topic: "home-assistant/sensor/5"
+      availability:
+        - topic: "home-assistant/sensor/5/status"
+      payload_available: "online"
+      payload_not_available: "offline" 
+      unit_of_measurement: '°C'
+      value_template: "{{ (value_json.temperature | float ) | round(1) }}"
+      device_class: "temperature"
+      expire_after: 3600
+    - name: "Casa Bagnino (battery)"  
+      state_topic: "home-assistant/sensor/5"
+      unit_of_measurement: 'V'
+      value_template: "{{ (value_json.battery | float ) | round(1) }}"
+      device_class: "voltage"
 
 python_script:
+
 logger:
+  default: info

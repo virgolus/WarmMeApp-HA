@@ -18,7 +18,13 @@ timerSensorCheck=3600		#intervallo check stato sensori
 
 config = configparser.ConfigParser()
 config.read('/home/pi/warmme.properties')
-logging.basicConfig(filename='/home/pi/WarmMeApp-HA/logs/jemRF-sensors.log', filemode='w',format='%(asctime)s - %(message)s', level=logging.DEBUG)
+
+logging.basicConfig(filename='/home/pi/WarmMeApp-HA/logs/jemRF-sensors.log',
+    filemode='a',
+    level=logging.DEBUG,
+    format="[%(asctime)s] %(levelname)s [%(name)s.%(funcName)s:%(lineno)d] %(message)s",
+    datefmt='%Y-%m-%dT%H:%M:%S')
+
 broker=config['mqtt']['url']
 
 class sensor:
@@ -34,8 +40,10 @@ class sensor:
       msgReady=False
       if "BATT" in value:
         self.battery=value[4:-1]
+        msgReady=True
       if "TMPA" in value and not '-' in value:
         self.temp=value[4:]
+        msgReady=True
       if "HUM" in value:
         self.hum=value[3:]
         msgReady=True
@@ -45,7 +53,8 @@ class sensor:
 #elenco sensori:
 ListofSensors=[sensor('94','1'), #sala
                sensor('95','2'), #notte
-               sensor('96','3'), #bagno
+               sensor('96','3'), #bagno up
+               sensor('35','5'), #bagno down
                sensor('93','4')] #cucina
 
 def findSensor(List,id):
@@ -61,14 +70,14 @@ def checkSensorstatus(ListofSensors):
         timediff=timeNow-asensor.lastReading
         logging.debug("sensorID: " + asensor.HAid + " diff from last reading: "+ str(timediff))
         if timediff.seconds >timeOut:
-          status_topic=config['mqtt']['sensor_topic']+"/"+asensor.HAid+"/status"
-          client= mqtt.Client("client_status"+str(randint(0, 100)))
+          status_topic=config['mqtt']['sensor_topic'] + "/" + asensor.HAid + "/status"
+          client= mqtt.Client("client_status" + str(randint(0, 100)))
           client.on_publish=on_publish
           client.connect(broker)
           client.publish(status_topic,payload="offline")
 
 def on_publish(client,userdata,result):
-    logging.debug("data published")
+  logging.debug("data published")
 
 def inbound_message_processing():
   try:
@@ -89,15 +98,16 @@ def inbound_message_processing():
                   'humidity':Mysensor.hum,
                   'battery':Mysensor.battery
                 }
-                topic=config['mqtt']['sensor_topic']+"/"+Mysensor.HAid
+                topic=config['mqtt']['sensor_topic'] + "/" + Mysensor.HAid
                 client= mqtt.Client("pi_rf_"+str(randint(0, 100)))
                 client.on_publish=on_publish
                 client.connect(broker)
                 client.publish(topic,payload=json.dumps(jsonMessage))
-                status_topic=config['mqtt']['sensor_topic']+"/"+Mysensor.HAid+"/status"
+                status_topic=config['mqtt']['sensor_topic'] + "/" + Mysensor.HAid + "/status"
                 client.publish(status_topic,payload="online")
-                logging.debug(topic)
-                logging.debug(json.dumps(jsonMessage))
+
+                logging.debug("tomqtt -> " + topic)
+                logging.debug("tomqtt -> " + json.dumps(jsonMessage))
 
         if rflib.event.is_set():
             break
