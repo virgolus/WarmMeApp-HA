@@ -74,33 +74,57 @@
         "name": "HACS",
         "sw_version": "1.28.3",
         "via_device_id": null
-      }
-    ],
-    "deleted_devices": [
+      },
       {
-        "config_entries": [],
+        "area_id": null,
+        "config_entries": [
+          "e78b7426604ec5b05d3212d28b5ad0fb"
+        ],
+        "configuration_url": null,
         "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "6a0949706d608e300976d62720e3fe76",
         "identifiers": [
           [
             "mobile_app",
             "abc5dd1bba4841f0"
           ]
         ],
-        "id": "6a0949706d608e300976d62720e3fe76",
-        "orphaned_timestamp": 1667349509.4196744
+        "manufacturer": "Xiaomi",
+        "model": "Mi 9 SE",
+        "name_by_user": null,
+        "name": "Mi 9 SE",
+        "sw_version": "30",
+        "via_device_id": null
       },
       {
-        "config_entries": [],
+        "area_id": null,
+        "config_entries": [
+          "56ef7144d77322415e495a68ea12867b"
+        ],
+        "configuration_url": null,
         "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "782ee4026c1a4b3d9e33aa9ca6eb6468",
         "identifiers": [
           [
             "mobile_app",
             "fff13e19f6c213a9"
           ]
         ],
-        "id": "782ee4026c1a4b3d9e33aa9ca6eb6468",
-        "orphaned_timestamp": 1667349516.8602726
-      },
+        "manufacturer": "samsung",
+        "model": "SM-P610",
+        "name_by_user": null,
+        "name": "Talete mamma",
+        "sw_version": "31",
+        "via_device_id": null
+      }
+    ],
+    "deleted_devices": [
       {
         "config_entries": [],
         "connections": [],

@@ -80,9 +80,18 @@
         "domain": "hacs",
         "title": "",
         "data": {
-          "token": "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"
+          "token": "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"
         },
-        "options": {},
+        "options": {
+          "sidepanel_title": "HACS",
+          "sidepanel_icon": "hacs:hacs",
+          "release_limit": 5,
+          "country": "ALL",
+          "appdaemon": false,
+          "netdaemon": false,
+          "debug": false,
+          "experimental": false
+        },
         "pref_disable_new_entities": false,
         "pref_disable_polling": false,
         "source": "user",
@@ -210,6 +219,223 @@
         "pref_disable_polling": false,
         "source": "import",
         "unique_id": null,
+        "disabled_by": null
+      },
+      {
+        "entry_id": "e78b7426604ec5b05d3212d28b5ad0fb",
+        "version": 1,
+        "domain": "mobile_app",
+        "title": "Mi 9 SE",
+        "data": {
+          "app_id": "io.homeassistant.companion.android",
+          "app_name": "Home Assistant",
+          "app_version": "2022.10.2-full (2770)",
+          "device_name": "Mi 9 SE",
+          "manufacturer": "Xiaomi",
+          "model": "Mi 9 SE",
+          "os_name": "Android",
+          "os_version": "30",
+          "supports_encryption": false,
+          "app_data": {
+            "push_websocket_channel": true,
+            "push_url": "https://mobile-apps.home-assistant.io/api/sendPush/android/v1",
+            "push_token": "fMkLcAMPRz-FCX0jZ1N21o:APA91bGOWnT5tseu6whaZa5kR7oQRBhDpdplcf7fyNDELC6hSg-0g664owSXUnZpcWDPn7Wa_NztdHreyXZ2_08jumstYzI2bJYu0ePNWXYxgUDXWo01jk804nMrILLcmjVq6Vvw0xZ1"
+          },
+          "device_id": "abc5dd1bba4841f0",
+          "webhook_id": "e52d7df8382018873259bfc35a0d73c86080f491192dfac3d4b0cf12bf3dd2a0",
+          "user_id": "734bd21808fc4e32b551d1ba89a2a729"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "registration",
+        "unique_id": "io.homeassistant.companion.android-abc5dd1bba4841f0",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "5beb1133ecde07ea554a935a4f7ed781",
+        "version": 1,
+        "domain": "soundtouch",
+        "title": "SoundTouch 20 leCoc",
+        "data": {
+          "host": "192.168.1.28"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "ignore",
+        "unique_id": "A81B6A513115",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "2a101ed76c7ac983c55a0d1ac6011dfd",
+        "version": 1,
+        "domain": "fritzbox",
+        "title": "cantina",
+        "data": {},
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "ignore",
+        "unique_id": "123402409-bccb-40e7-8e6c-74427FF67371",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "3b2b98dbe4ea352b741cd5b0b0b5df0c",
+        "version": 1,
+        "domain": "fritz",
+        "title": "cantina",
+        "data": {},
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "ignore",
+        "unique_id": "123402409-bccb-40e7-8e6c-74427FF67371",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "fddbe1234698b3b2bf1efce63a7a8caf",
+        "version": 1,
+        "domain": "dlna_dms",
+        "title": "AVM FRITZ!Mediaserver",
+        "data": {},
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "ignore",
+        "unique_id": "uuid:fa095ecc-e13e-40e7-8e6c-dc15c8d50d79::urn:schemas-upnp-org:device:MediaServer:1",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "d7d0c666dda3608c88c48a358c2da5b6",
+        "version": 1,
+        "domain": "fritz",
+        "title": "piano-terra",
+        "data": {},
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "ignore",
+        "unique_id": "123402409-bccb-40e7-8e6c-DC15C88DBE80",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "481640e96cd055a08a0c8ea44bde8646",
+        "version": 1,
+        "domain": "fritzbox",
+        "title": "piano-terra",
+        "data": {},
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "ignore",
+        "unique_id": "123402409-bccb-40e7-8e6c-DC15C88DBE80",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "8fe9eaf7f6ebb9afe3e244cd31c92691",
+        "version": 1,
+        "domain": "tuya",
+        "title": "Tuya",
+        "data": {},
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "ignore",
+        "unique_id": null,
+        "disabled_by": null
+      },
+      {
+        "entry_id": "56ef7144d77322415e495a68ea12867b",
+        "version": 1,
+        "domain": "mobile_app",
+        "title": "Talete mamma",
+        "data": {
+          "app_id": "io.homeassistant.companion.android",
+          "app_name": "Home Assistant",
+          "app_version": "2022.6.0-full (2398)",
+          "device_name": "Talete mamma",
+          "manufacturer": "samsung",
+          "model": "SM-P610",
+          "os_name": "Android",
+          "os_version": "31",
+          "supports_encryption": false,
+          "app_data": {
+            "push_websocket_channel": true,
+            "push_url": "https://mobile-apps.home-assistant.io/api/sendPush/android/v1",
+            "push_token": "eZBySiBSRUG_D5I1TrYBUx:APA91bEE5rrK29ha_h-nXEn60DyZsbMfEBMtUwfVg46oNu3-WmRWfJqxHKGm8PwdKHjqXsNymY3I11mHvvBaenw-ORZf3A5Nrtug-04P7BsuPdvJlkTzCF1Lcr9wzdesWQeybO1QylNQ"
+          },
+          "device_id": "fff13e19f6c213a9",
+          "webhook_id": "688cb5120e7d7c59cb772c6a0826dc697abbdb641d9a9ddba71f27f19ddd6420",
+          "user_id": "734bd21808fc4e32b551d1ba89a2a729"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "registration",
+        "unique_id": "io.homeassistant.companion.android-fff13e19f6c213a9",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "ea61840d973adfd994e3bf40266b3444",
+        "version": 1,
+        "domain": "cast",
+        "title": "Google Cast",
+        "data": {},
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "ignore",
+        "unique_id": "cast",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "bcfc337b39f5dbc7d5c8c1d3e679be00",
+        "version": 1,
+        "domain": "upnp",
+        "title": "FRITZ!Box 7530",
+        "data": {
+          "mac_address": "dc:15:c8:03:49:92",
+          "location": "http://192.168.1.1:49000/igddesc.xml",
+          "host": "192.168.1.1"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "ignore",
+        "unique_id": "uuid:75802409-bccb-40e7-8e6c-DC15C8034992::urn:schemas-upnp-org:device:InternetGatewayDevice:1",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "1de7503db45f6ced76a6f5c5097939b5",
+        "version": 1,
+        "domain": "dlna_dms",
+        "title": "AVM FRITZ!Mediaserver",
+        "data": {
+          "url": "http://192.168.1.1:49000/MediaServerDevDesc.xml"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "ignore",
+        "unique_id": "uuid:fa095ecc-e13e-40e7-8e6c-dc15c8034992::urn:schemas-upnp-org:device:MediaServer:1",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "3e9baed71a06a6eb56aad750dd280c67",
+        "version": 1,
+        "domain": "upnp",
+        "title": "InternetGatewayDeviceV2 - FRITZ!Box 7530",
+        "data": {
+          "mac_address": "dc:15:c8:03:49:92",
+          "location": "http://192.168.1.1:49000/igd2desc.xml",
+          "host": "192.168.1.1"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "ignore",
+        "unique_id": "uuid:75802409-bccb-40e7-9f6c-DC15C8034992::urn:schemas-upnp-org:device:InternetGatewayDevice:2",
         "disabled_by": null
       }
     ]

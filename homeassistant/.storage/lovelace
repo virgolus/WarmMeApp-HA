@@ -11,9 +11,6 @@
           "title": "Home",
           "badges": [
             {
-              "entity": "binary_sensor.updater"
-            },
-            {
               "entity": "person.ezio_vergine"
             },
             {
@@ -129,7 +126,8 @@
                   "entity": "sensor.casa_cucina_umidita"
                 }
               ],
-              "title": "Cucina"
+              "title": "Cucina",
+              "state_color": true
             },
             {
               "type": "entities",

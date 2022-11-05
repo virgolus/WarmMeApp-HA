@@ -7,7 +7,10 @@
       {
         "name": "Ezio Vergine",
         "user_id": "734bd21808fc4e32b551d1ba89a2a729",
-        "device_trackers": [],
+        "device_trackers": [
+          "device_tracker.mi_9_se",
+          "device_tracker.talete_mamma"
+        ],
         "id": "ezio_vergine",
         "picture": null
       },

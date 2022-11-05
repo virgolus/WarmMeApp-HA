@@ -163,7 +163,7 @@
         "end_date": null,
         "repeat_type": "repeat",
         "name": "Bagno",
-        "enabled": false
+        "enabled": true
       },
       {
         "schedule_id": "491863",
@@ -226,7 +226,7 @@
         "end_date": null,
         "repeat_type": "repeat",
         "name": "Sala weekend",
-        "enabled": false
+        "enabled": true
       },
       {
         "schedule_id": "c44ed8",
@@ -323,7 +323,7 @@
         "end_date": null,
         "repeat_type": "repeat",
         "name": "Bagnino",
-        "enabled": false
+        "enabled": true
       },
       {
         "schedule_id": "909f42",
@@ -501,7 +501,7 @@
         "end_date": null,
         "repeat_type": "repeat",
         "name": "Bagnino a manella",
-        "enabled": false
+        "enabled": true
       }
     ],
     "tags": []

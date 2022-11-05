@@ -13,16 +13,16 @@
           "user_id": "734bd21808fc4e32b551d1ba89a2a729",
           "friendly_name": "Ezio Vergine"
         },
-        "last_changed": "2022-11-03T12:57:05.801820+00:00",
-        "last_updated": "2022-11-03T12:57:47.889233+00:00",
+        "last_changed": "2022-11-05T13:38:02.065972+00:00",
+        "last_updated": "2022-11-05T13:38:28.620471+00:00",
         "context": {
-          "id": "01GGYS3B3H8SD7FAXD5Z5MZ6CG",
+          "id": "01GH4078MC1FC6Z6VFWB32XZ5G",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-03T15:57:02.327500+00:00"
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
     },
     {
       "state": {
@@ -35,16 +35,16 @@
           "entity_picture": "/api/image/serve/937bead17c5804a59653239919b6df44/512x512",
           "friendly_name": "Enrico Vergine"
         },
-        "last_changed": "2022-11-03T12:57:05.802879+00:00",
-        "last_updated": "2022-11-03T12:57:47.890162+00:00",
+        "last_changed": "2022-11-05T13:38:02.066497+00:00",
+        "last_updated": "2022-11-05T13:38:28.621158+00:00",
         "context": {
-          "id": "01GGYS3B3J2JQW94537XNDWQM5",
+          "id": "01GH4078MD1P2XNABBEK543M5W",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-03T15:57:02.327500+00:00"
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
     },
     {
       "state": {
@@ -56,198 +56,21 @@
           "user_id": "0a2dccd6e996423d8adf143623f2c319",
           "friendly_name": "Lucia"
         },
-        "last_changed": "2022-11-03T12:57:05.803707+00:00",
-        "last_updated": "2022-11-03T12:57:47.890895+00:00",
+        "last_changed": "2022-11-05T13:38:02.067190+00:00",
+        "last_updated": "2022-11-05T13:38:28.621716+00:00",
         "context": {
-          "id": "01GGYS3B3JJ9EEB68BD8TZPQK6",
+          "id": "01GH4078MDMYS6VJZJVQNDA9C8",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-03T15:57:02.327500+00:00"
-    },
-    {
-      "state": {
-        "entity_id": "automation.se_switch_caldaia_off_spegnimento_termostati",
-        "state": "on",
-        "attributes": {
-          "last_triggered": "2022-11-03T15:52:06.439052+00:00",
-          "mode": "single",
-          "current": 0,
-          "id": "1633387372844",
-          "friendly_name": "Termostati OFF se spengo caldaia"
-        },
-        "last_changed": "2022-11-03T12:57:17.137974+00:00",
-        "last_updated": "2022-11-03T15:52:06.601066+00:00",
-        "context": {
-          "id": "01GGZ32GH5BVRAS2WR7VFQH28F",
-          "parent_id": "01GGZ32GFQ722J3TZ46KYMQ9QA",
-          "user_id": null
-        }
-      },
-      "extra_data": null,
-      "last_seen": "2022-11-03T15:57:02.327500+00:00"
-    },
-    {
-      "state": {
-        "entity_id": "automation.new_automation",
-        "state": "on",
-        "attributes": {
-          "last_triggered": "2022-11-03T15:53:21.460557+00:00",
-          "mode": "parallel",
-          "current": 0,
-          "max": 10,
-          "id": "1633939987095",
-          "friendly_name": "Caldaia ON SE attivo almeno un termostato"
-        },
-        "last_changed": "2022-11-03T12:57:17.139937+00:00",
-        "last_updated": "2022-11-03T15:53:21.493711+00:00",
-        "context": {
-          "id": "01GGZ34SSHR4SXHZ6RBCGWTQ2X",
-          "parent_id": "01GGZ34SQX3GY2D6VDK5TDWQDK",
-          "user_id": null
-        }
-      },
-      "extra_data": null,
-      "last_seen": "2022-11-03T15:57:02.327500+00:00"
-    },
-    {
-      "state": {
-        "entity_id": "automation.caldaia_off_se_tutti_i_termostati_sono_spenti",
-        "state": "on",
-        "attributes": {
-          "last_triggered": "2022-11-03T15:52:06.397093+00:00",
-          "mode": "single",
-          "current": 0,
-          "id": "1633942630783",
-          "friendly_name": "Caldaia OFF SE tutti i termostati sono spenti"
-        },
-        "last_changed": "2022-11-03T12:57:17.144102+00:00",
-        "last_updated": "2022-11-03T15:52:06.429167+00:00",
-        "context": {
-          "id": "01GGZ32GFQ722J3TZ46KYMQ9QA",
-          "parent_id": "01GGZ32GEGZWD5EA56EFB7R1X3",
-          "user_id": null
-        }
-      },
-      "extra_data": null,
-      "last_seen": "2022-11-03T15:57:02.327500+00:00"
-    },
-    {
-      "state": {
-        "entity_id": "automation.cucina_si_spacca",
-        "state": "on",
-        "attributes": {
-          "last_triggered": "2022-11-03T14:26:16.988153+00:00",
-          "mode": "single",
-          "current": 0,
-          "id": "1636332802302",
-          "friendly_name": "Sensore temperatura cucina unavailable"
-        },
-        "last_changed": "2022-11-03T12:57:17.145873+00:00",
-        "last_updated": "2022-11-03T14:26:17.021748+00:00",
-        "context": {
-          "id": "01GGYY5BRTVE32EVBNAPZDDF4P",
-          "parent_id": "01GGYY5BR91ZDPA3YGQC440VD8",
-          "user_id": null
-        }
-      },
-      "extra_data": null,
-      "last_seen": "2022-11-03T15:57:02.327500+00:00"
-    },
-    {
-      "state": {
-        "entity_id": "automation.sensore_bagno_non_funziona_da_keepalive",
-        "state": "on",
-        "attributes": {
-          "last_triggered": "2022-11-03T14:26:16.972509+00:00",
-          "mode": "single",
-          "current": 0,
-          "id": "1636335277782",
-          "friendly_name": "Sensore temperatura bagno unavailable"
-        },
-        "last_changed": "2022-11-03T12:57:17.147542+00:00",
-        "last_updated": "2022-11-03T14:26:17.003567+00:00",
-        "context": {
-          "id": "01GGYY5BRA6YKQFBCH8T78P3HM",
-          "parent_id": "01GGYY5BR4NHQKYVKBJA0X34K3",
-          "user_id": null
-        }
-      },
-      "extra_data": null,
-      "last_seen": "2022-11-03T15:57:02.327500+00:00"
-    },
-    {
-      "state": {
-        "entity_id": "automation.sensor_error_sensore_zona_notte_non_funziona",
-        "state": "on",
-        "attributes": {
-          "last_triggered": "2022-11-03T14:26:16.933041+00:00",
-          "mode": "single",
-          "current": 0,
-          "id": "1636443613299",
-          "friendly_name": "Sensore temperatura zona notte unavailable"
-        },
-        "last_changed": "2022-11-03T12:57:17.149248+00:00",
-        "last_updated": "2022-11-03T14:26:16.954734+00:00",
-        "context": {
-          "id": "01GGYY5BQ26S9CCYK33Z0SE891",
-          "parent_id": "01GGYY5BPXWW2BZ33FDDSGEA32",
-          "user_id": null
-        }
-      },
-      "extra_data": null,
-      "last_seen": "2022-11-03T15:57:02.327500+00:00"
-    },
-    {
-      "state": {
-        "entity_id": "automation.sensore_temperatura_sala_unavailable",
-        "state": "on",
-        "attributes": {
-          "last_triggered": "2022-11-03T14:26:16.726168+00:00",
-          "mode": "single",
-          "current": 0,
-          "id": "1636460833405",
-          "friendly_name": "Sensore temperatura sala unavailable"
-        },
-        "last_changed": "2022-11-03T12:57:17.150766+00:00",
-        "last_updated": "2022-11-03T14:26:16.750955+00:00",
-        "context": {
-          "id": "01GGYY5BGMCAKMAFZJ20EBMTRC",
-          "parent_id": "01GGYY5BGE68N8KA7FTH4ZXFEN",
-          "user_id": null
-        }
-      },
-      "extra_data": null,
-      "last_seen": "2022-11-03T15:57:02.327500+00:00"
-    },
-    {
-      "state": {
-        "entity_id": "automation.sensore_temperatura_bagnino_unavailable",
-        "state": "on",
-        "attributes": {
-          "last_triggered": "2022-11-03T14:26:17.005724+00:00",
-          "mode": "single",
-          "current": 0,
-          "id": "1643921032478",
-          "friendly_name": "Sensore temperatura bagnino unavailable"
-        },
-        "last_changed": "2022-11-03T12:57:17.152694+00:00",
-        "last_updated": "2022-11-03T14:26:17.035666+00:00",
-        "context": {
-          "id": "01GGYY5BSCXS41T9VTPJZYRNEK",
-          "parent_id": "01GGYY5BRP3HNBZ01T1GP8BYSQ",
-          "user_id": null
-        }
-      },
-      "extra_data": null,
-      "last_seen": "2022-11-03T15:57:02.327500+00:00"
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
     },
     {
       "state": {
         "entity_id": "climate.casa_sala_termostato",
-        "state": "heat",
+        "state": "off",
         "attributes": {
           "hvac_modes": [
             "heat",
@@ -256,22 +79,22 @@
           "min_temp": 16.0,
           "max_temp": 25.0,
           "target_temp_step": 0.1,
-          "current_temperature": 12.5,
-          "temperature": 17.0,
-          "hvac_action": "heating",
+          "current_temperature": null,
+          "temperature": 19.0,
+          "hvac_action": "off",
           "friendly_name": "Casa Sala (termostato)",
           "supported_features": 1
         },
-        "last_changed": "2022-11-03T15:52:17.987261+00:00",
-        "last_updated": "2022-11-03T15:53:21.446927+00:00",
+        "last_changed": "2022-11-05T13:38:24.054358+00:00",
+        "last_updated": "2022-11-05T13:38:24.678723+00:00",
         "context": {
-          "id": "01GGZ34SS61S8WEWBY9N5NYACF",
+          "id": "01GH40746GCGT087E5PN4DKY98",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-03T15:57:02.327500+00:00"
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
     },
     {
       "state": {
@@ -291,16 +114,16 @@
           "friendly_name": "Casa zona notte (termostato)",
           "supported_features": 1
         },
-        "last_changed": "2022-11-03T15:51:48.307945+00:00",
-        "last_updated": "2022-11-03T15:51:48.307945+00:00",
+        "last_changed": "2022-11-05T13:38:24.055253+00:00",
+        "last_updated": "2022-11-05T13:38:24.055253+00:00",
         "context": {
-          "id": "01GGZ31YSFYX11R4G2WB87M5MX",
-          "parent_id": "01GGZ31YRFNTEQBHE3KPS0WDVC",
+          "id": "01GH40745Q2SSZ908JJKKWFBXX",
+          "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-03T15:57:02.327500+00:00"
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
     },
     {
       "state": {
@@ -320,16 +143,16 @@
           "friendly_name": "Casa bagno (termostato)",
           "supported_features": 1
         },
-        "last_changed": "2022-11-03T12:57:41.862963+00:00",
-        "last_updated": "2022-11-03T12:57:41.862963+00:00",
+        "last_changed": "2022-11-05T13:38:24.055979+00:00",
+        "last_updated": "2022-11-05T13:38:24.055979+00:00",
         "context": {
-          "id": "01GGYS3576QYA8HKGPE592XEM4",
+          "id": "01GH40745Q88D92JVQ6ZYZ4A9D",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-03T15:57:02.327500+00:00"
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
     },
     {
       "state": {
@@ -344,179 +167,266 @@
           "max_temp": 25.0,
           "target_temp_step": 0.1,
           "current_temperature": null,
-          "temperature": 20.0,
+          "temperature": 25.0,
           "hvac_action": "off",
           "friendly_name": "Casa bagnino (termostato)",
           "supported_features": 1
         },
-        "last_changed": "2022-11-03T15:51:48.450419+00:00",
-        "last_updated": "2022-11-03T15:51:48.450419+00:00",
+        "last_changed": "2022-11-05T13:38:24.057078+00:00",
+        "last_updated": "2022-11-05T13:38:24.679623+00:00",
         "context": {
-          "id": "01GGZ31YSFYX11R4G2WB87M5MX",
-          "parent_id": "01GGZ31YRFNTEQBHE3KPS0WDVC",
+          "id": "01GH40746QYGYERT31D49457MC",
+          "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-03T15:57:02.327500+00:00"
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
     },
     {
       "state": {
-        "entity_id": "switch.pompa_sala",
+        "entity_id": "automation.se_switch_caldaia_off_spegnimento_termostati",
         "state": "on",
         "attributes": {
-          "friendly_name": "Pompa sala"
+          "last_triggered": "2022-11-03T21:14:50.491249+00:00",
+          "mode": "single",
+          "current": 0,
+          "id": "1633387372844",
+          "friendly_name": "Termostati OFF se spengo caldaia"
         },
-        "last_changed": "2022-11-03T15:53:21.445168+00:00",
-        "last_updated": "2022-11-03T15:53:21.445168+00:00",
+        "last_changed": "2022-11-05T13:38:24.089951+00:00",
+        "last_updated": "2022-11-05T13:38:24.089951+00:00",
         "context": {
-          "id": "01GGZ34SQX3GY2D6VDK5TDWQDK",
+          "id": "01GH40746S8S8GKVWC0HQ21FZM",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-03T15:57:02.327500+00:00"
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
     },
     {
       "state": {
-        "entity_id": "switch.pompa_zona_notte",
-        "state": "off",
-        "attributes": {
-          "friendly_name": "Pompa zona notte"
-        },
-        "last_changed": "2022-11-03T15:50:11.135562+00:00",
-        "last_updated": "2022-11-03T15:50:11.135562+00:00",
-        "context": {
-          "id": "01GGZ2YZWAWEMEQBSMGQNQRF43",
-          "parent_id": null,
-          "user_id": "734bd21808fc4e32b551d1ba89a2a729"
-        }
-      },
-      "extra_data": null,
-      "last_seen": "2022-11-03T15:57:02.327500+00:00"
-    },
-    {
-      "state": {
-        "entity_id": "switch.pompa_bagno",
-        "state": "off",
-        "attributes": {
-          "friendly_name": "Pompa bagno"
-        },
-        "last_changed": "2022-11-03T15:51:48.216698+00:00",
-        "last_updated": "2022-11-03T15:51:48.216698+00:00",
-        "context": {
-          "id": "01GGZ31YNZJ7B7DZ34AXED997G",
-          "parent_id": null,
-          "user_id": "734bd21808fc4e32b551d1ba89a2a729"
-        }
-      },
-      "extra_data": null,
-      "last_seen": "2022-11-03T15:57:02.327500+00:00"
-    },
-    {
-      "state": {
-        "entity_id": "switch.pompa_laboratorio",
-        "state": "off",
-        "attributes": {
-          "friendly_name": "Pompa laboratorio"
-        },
-        "last_changed": "2022-11-03T15:51:48.235143+00:00",
-        "last_updated": "2022-11-03T15:51:48.235143+00:00",
-        "context": {
-          "id": "01GGZ31YNZJ7B7DZ34AXED997G",
-          "parent_id": null,
-          "user_id": "734bd21808fc4e32b551d1ba89a2a729"
-        }
-      },
-      "extra_data": null,
-      "last_seen": "2022-11-03T15:57:02.327500+00:00"
-    },
-    {
-      "state": {
-        "entity_id": "switch.caldaia",
+        "entity_id": "automation.new_automation",
         "state": "on",
         "attributes": {
-          "friendly_name": "Caldaia"
+          "last_triggered": "2022-11-03T21:14:47.663038+00:00",
+          "mode": "parallel",
+          "current": 0,
+          "max": 10,
+          "id": "1633939987095",
+          "friendly_name": "Caldaia ON SE attivo almeno un termostato"
         },
-        "last_changed": "2022-11-03T15:53:21.501594+00:00",
-        "last_updated": "2022-11-03T15:53:21.501594+00:00",
+        "last_changed": "2022-11-05T13:38:24.090755+00:00",
+        "last_updated": "2022-11-05T13:38:24.090755+00:00",
         "context": {
-          "id": "01GGZ34SSHR4SXHZ6RBCGWTQ2X",
-          "parent_id": "01GGZ34SQX3GY2D6VDK5TDWQDK",
+          "id": "01GH40746TWJ9JZ1AY585QN8M0",
+          "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-11-03T15:57:02.327500+00:00"
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "automation.caldaia_off_se_tutti_i_termostati_sono_spenti",
+        "state": "on",
+        "attributes": {
+          "last_triggered": "2022-11-03T21:14:50.470682+00:00",
+          "mode": "single",
+          "current": 0,
+          "id": "1633942630783",
+          "friendly_name": "Caldaia OFF SE tutti i termostati sono spenti"
+        },
+        "last_changed": "2022-11-05T13:38:24.091482+00:00",
+        "last_updated": "2022-11-05T13:38:24.091482+00:00",
+        "context": {
+          "id": "01GH40746V5Z3KGBW13SHV85M3",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "automation.cucina_si_spacca",
+        "state": "on",
+        "attributes": {
+          "last_triggered": "2022-11-03T14:26:16.988153+00:00",
+          "mode": "single",
+          "current": 0,
+          "id": "1636332802302",
+          "friendly_name": "Sensore temperatura cucina unavailable"
+        },
+        "last_changed": "2022-11-05T13:38:24.092119+00:00",
+        "last_updated": "2022-11-05T13:38:24.092119+00:00",
+        "context": {
+          "id": "01GH40746WBJ5WZEZFP4W1DEJC",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "automation.sensore_bagno_non_funziona_da_keepalive",
+        "state": "on",
+        "attributes": {
+          "last_triggered": "2022-11-03T14:26:16.972509+00:00",
+          "mode": "single",
+          "current": 0,
+          "id": "1636335277782",
+          "friendly_name": "Sensore temperatura bagno unavailable"
+        },
+        "last_changed": "2022-11-05T13:38:24.092737+00:00",
+        "last_updated": "2022-11-05T13:38:24.092737+00:00",
+        "context": {
+          "id": "01GH40746WFWP5PDKY91C8KJCZ",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "automation.sensor_error_sensore_zona_notte_non_funziona",
+        "state": "on",
+        "attributes": {
+          "last_triggered": "2022-11-03T14:26:16.933041+00:00",
+          "mode": "single",
+          "current": 0,
+          "id": "1636443613299",
+          "friendly_name": "Sensore temperatura zona notte unavailable"
+        },
+        "last_changed": "2022-11-05T13:38:24.093353+00:00",
+        "last_updated": "2022-11-05T13:38:24.093353+00:00",
+        "context": {
+          "id": "01GH40746XZ9CMZ02YMZMT9AKM",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "automation.sensore_temperatura_sala_unavailable",
+        "state": "on",
+        "attributes": {
+          "last_triggered": "2022-11-03T14:26:16.726168+00:00",
+          "mode": "single",
+          "current": 0,
+          "id": "1636460833405",
+          "friendly_name": "Sensore temperatura sala unavailable"
+        },
+        "last_changed": "2022-11-05T13:38:24.094054+00:00",
+        "last_updated": "2022-11-05T13:38:24.094054+00:00",
+        "context": {
+          "id": "01GH40746YPDFX1PAR2B0JFYW8",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "automation.sensore_temperatura_bagnino_unavailable",
+        "state": "on",
+        "attributes": {
+          "last_triggered": "2022-11-03T14:26:17.005724+00:00",
+          "mode": "single",
+          "current": 0,
+          "id": "1643921032478",
+          "friendly_name": "Sensore temperatura bagnino unavailable"
+        },
+        "last_changed": "2022-11-05T13:38:24.094677+00:00",
+        "last_updated": "2022-11-05T13:38:24.094677+00:00",
+        "context": {
+          "id": "01GH40746Y0WBR4XS0DHBSEVB4",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.casa_sala_temperatura",
-        "state": "12.5",
+        "state": "unavailable",
         "attributes": {
           "unit_of_measurement": "°C",
           "device_class": "temperature",
           "friendly_name": "Casa Sala (temperatura)"
         },
-        "last_changed": "2022-11-03T15:53:21.397935+00:00",
-        "last_updated": "2022-11-03T15:53:21.397935+00:00",
+        "last_changed": "2022-11-05T13:38:24.699105+00:00",
+        "last_updated": "2022-11-05T13:38:24.699105+00:00",
         "context": {
-          "id": "01GGZ34SQNXWPRNQGVRPA5Z3ES",
+          "id": "01GH4074SVKFNT2FK74Q9P6799",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": {
-        "native_value": "12.5",
+        "native_value": null,
         "native_unit_of_measurement": "°C"
       },
-      "last_seen": "2022-11-03T15:57:02.327500+00:00"
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.casa_sala_battery",
-        "state": "3.0",
+        "state": "unknown",
         "attributes": {
           "unit_of_measurement": "V",
           "device_class": "voltage",
           "friendly_name": "Casa Sala (battery)"
         },
-        "last_changed": "2022-11-03T15:51:27.476580+00:00",
-        "last_updated": "2022-11-03T15:51:27.476580+00:00",
+        "last_changed": "2022-11-05T13:38:24.899300+00:00",
+        "last_updated": "2022-11-05T13:38:24.899300+00:00",
         "context": {
-          "id": "01GGZ31AFMBAGZD2D7K5C393NV",
+          "id": "01GH407503HPZYBHX00TBS1987",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": {
-        "native_value": "3.0",
+        "native_value": null,
         "native_unit_of_measurement": "V"
       },
-      "last_seen": "2022-11-03T15:57:02.327500+00:00"
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.casa_sala_umidita",
-        "state": "28.0",
+        "state": "unknown",
         "attributes": {
           "unit_of_measurement": "%",
           "friendly_name": "Casa Sala (umidita)"
         },
-        "last_changed": "2022-11-03T15:53:21.396392+00:00",
-        "last_updated": "2022-11-03T15:53:21.396392+00:00",
+        "last_changed": "2022-11-05T13:38:24.931274+00:00",
+        "last_updated": "2022-11-05T13:38:24.931274+00:00",
         "context": {
-          "id": "01GGZ34SQMVNHN1VMTPHQTHWQ2",
+          "id": "01GH407513S8JNDKZ3DEJP4XCV",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": {
-        "native_value": "28.0",
+        "native_value": null,
         "native_unit_of_measurement": "%"
       },
-      "last_seen": "2022-11-03T15:57:02.327500+00:00"
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
     },
     {
       "state": {
@@ -527,10 +437,10 @@
           "device_class": "voltage",
           "friendly_name": "Casa Zona notte (battery)"
         },
-        "last_changed": "2022-11-03T14:26:16.784662+00:00",
-        "last_updated": "2022-11-03T14:26:16.784662+00:00",
+        "last_changed": "2022-11-05T13:38:25.036752+00:00",
+        "last_updated": "2022-11-05T13:38:25.036752+00:00",
         "context": {
-          "id": "01GGYY5BJGV1V3EYZADEN63G0A",
+          "id": "01GH40754CTPZMDV0JTM7ECM6M",
           "parent_id": null,
           "user_id": null
         }
@@ -539,7 +449,344 @@
         "native_value": null,
         "native_unit_of_measurement": "V"
       },
-      "last_seen": "2022-11-03T15:57:02.327500+00:00"
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.mi_9_se_battery_level",
+        "state": "27",
+        "attributes": {
+          "state_class": "measurement",
+          "unit_of_measurement": "%",
+          "device_class": "battery",
+          "icon": "mdi:battery-20",
+          "friendly_name": "Mi 9 SE Battery Level"
+        },
+        "last_changed": "2022-11-05T13:38:25.042344+00:00",
+        "last_updated": "2022-11-05T13:38:25.042344+00:00",
+        "context": {
+          "id": "01GH40754JWGP0EC4QT5DW6YR3",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": 27,
+        "native_unit_of_measurement": "%"
+      },
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.mi_9_se_battery_state",
+        "state": "discharging",
+        "attributes": {
+          "icon": "mdi:battery-minus",
+          "friendly_name": "Mi 9 SE Battery State"
+        },
+        "last_changed": "2022-11-05T13:38:25.042960+00:00",
+        "last_updated": "2022-11-05T13:38:25.042960+00:00",
+        "context": {
+          "id": "01GH40754JQD6MEVB4YXTZY58F",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "discharging",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.mi_9_se_charger_type",
+        "state": "none",
+        "attributes": {
+          "icon": "mdi:battery",
+          "friendly_name": "Mi 9 SE Charger Type"
+        },
+        "last_changed": "2022-11-05T13:38:25.043414+00:00",
+        "last_updated": "2022-11-05T13:38:25.043414+00:00",
+        "context": {
+          "id": "01GH40754K6JS6SCB7Q320CJHX",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "none",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.mi_9_se_battery_health",
+        "state": "good",
+        "attributes": {
+          "icon": "mdi:battery-heart-variant",
+          "friendly_name": "Mi 9 SE Battery Health"
+        },
+        "last_changed": "2022-11-05T13:38:25.043844+00:00",
+        "last_updated": "2022-11-05T13:38:25.043844+00:00",
+        "context": {
+          "id": "01GH40754KV10Q4S6SGYGP6B9T",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "good",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.mi_9_se_battery_temperature",
+        "state": "29.0",
+        "attributes": {
+          "state_class": "measurement",
+          "unit_of_measurement": "°C",
+          "device_class": "temperature",
+          "icon": "mdi:battery",
+          "friendly_name": "Mi 9 SE Battery Temperature"
+        },
+        "last_changed": "2022-11-05T13:38:25.044309+00:00",
+        "last_updated": "2022-11-05T13:38:25.044309+00:00",
+        "context": {
+          "id": "01GH40754M671K32B7BD3318FX",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": 29.0,
+        "native_unit_of_measurement": "°C"
+      },
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.mi_9_se_battery_power",
+        "state": "2.68",
+        "attributes": {
+          "state_class": "measurement",
+          "current": 0.733886,
+          "voltage": 3.657,
+          "unit_of_measurement": "W",
+          "device_class": "power",
+          "icon": "mdi:battery-plus",
+          "friendly_name": "Mi 9 SE Battery Power"
+        },
+        "last_changed": "2022-11-05T13:38:25.044760+00:00",
+        "last_updated": "2022-11-05T13:38:25.044760+00:00",
+        "context": {
+          "id": "01GH40754MSM6V6V5DY32TK3B4",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": 2.68,
+        "native_unit_of_measurement": "W"
+      },
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "binary_sensor.mi_9_se_is_charging",
+        "state": "off",
+        "attributes": {
+          "friendly_name": "Mi 9 SE Is Charging",
+          "icon": "mdi:power-plug-off",
+          "device_class": "plug"
+        },
+        "last_changed": "2022-11-05T13:38:25.045161+00:00",
+        "last_updated": "2022-11-05T13:38:25.045161+00:00",
+        "context": {
+          "id": "01GH40754NPAZTV32D5JA093T5",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "device_tracker.mi_9_se",
+        "state": "unknown",
+        "attributes": {
+          "source_type": "gps",
+          "friendly_name": "Mi 9 SE"
+        },
+        "last_changed": "2022-11-05T13:38:25.045688+00:00",
+        "last_updated": "2022-11-05T13:38:25.045688+00:00",
+        "context": {
+          "id": "01GH40754NMZMZBYP2KPDQ9CS1",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.talete_mamma_battery_level",
+        "state": "95",
+        "attributes": {
+          "state_class": "measurement",
+          "unit_of_measurement": "%",
+          "device_class": "battery",
+          "icon": "mdi:battery-90",
+          "friendly_name": "Talete mamma Battery Level"
+        },
+        "last_changed": "2022-11-05T13:38:25.046268+00:00",
+        "last_updated": "2022-11-05T13:38:25.046268+00:00",
+        "context": {
+          "id": "01GH40754P6C19WZQEH80VR03G",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": 95,
+        "native_unit_of_measurement": "%"
+      },
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.talete_mamma_battery_state",
+        "state": "discharging",
+        "attributes": {
+          "icon": "mdi:battery-minus",
+          "friendly_name": "Talete mamma Battery State"
+        },
+        "last_changed": "2022-11-05T13:38:25.048085+00:00",
+        "last_updated": "2022-11-05T13:38:25.048085+00:00",
+        "context": {
+          "id": "01GH40754RP0MPPV6Q4P86VCKC",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "discharging",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.talete_mamma_charger_type",
+        "state": "none",
+        "attributes": {
+          "icon": "mdi:battery",
+          "friendly_name": "Talete mamma Charger Type"
+        },
+        "last_changed": "2022-11-05T13:38:25.048744+00:00",
+        "last_updated": "2022-11-05T13:38:25.048744+00:00",
+        "context": {
+          "id": "01GH40754RWEAW3CEH5KJMR6NJ",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "none",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.talete_mamma_battery_health",
+        "state": "good",
+        "attributes": {
+          "icon": "mdi:battery-heart-variant",
+          "friendly_name": "Talete mamma Battery Health"
+        },
+        "last_changed": "2022-11-05T13:38:25.049218+00:00",
+        "last_updated": "2022-11-05T13:38:25.049218+00:00",
+        "context": {
+          "id": "01GH40754SZT03TKFVVSRN9S1M",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": "good",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "sensor.talete_mamma_battery_temperature",
+        "state": "22.0",
+        "attributes": {
+          "state_class": "measurement",
+          "unit_of_measurement": "°C",
+          "device_class": "temperature",
+          "icon": "mdi:battery",
+          "friendly_name": "Talete mamma Battery Temperature"
+        },
+        "last_changed": "2022-11-05T13:38:25.049788+00:00",
+        "last_updated": "2022-11-05T13:38:25.049788+00:00",
+        "context": {
+          "id": "01GH40754SDM4S1T0XWPV1K2MY",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": {
+        "native_value": 22.0,
+        "native_unit_of_measurement": "°C"
+      },
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "binary_sensor.talete_mamma_is_charging",
+        "state": "off",
+        "attributes": {
+          "device_class": "plug",
+          "icon": "mdi:power-plug-off",
+          "friendly_name": "Talete mamma Is Charging"
+        },
+        "last_changed": "2022-11-05T13:38:25.050198+00:00",
+        "last_updated": "2022-11-05T13:38:25.050198+00:00",
+        "context": {
+          "id": "01GH40754TBFVY7NGT171KDENS",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "device_tracker.talete_mamma",
+        "state": "unknown",
+        "attributes": {
+          "source_type": "gps",
+          "friendly_name": "Talete mamma"
+        },
+        "last_changed": "2022-11-05T13:38:25.050631+00:00",
+        "last_updated": "2022-11-05T13:38:25.050631+00:00",
+        "context": {
+          "id": "01GH40754TMG6BR2A6N4ZZH8N8",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
     },
     {
       "state": {
@@ -549,10 +796,10 @@
           "unit_of_measurement": "%",
           "friendly_name": "Casa Zona notte (umidita)"
         },
-        "last_changed": "2022-11-03T14:26:16.801731+00:00",
-        "last_updated": "2022-11-03T14:26:16.801731+00:00",
+        "last_changed": "2022-11-05T13:38:25.061974+00:00",
+        "last_updated": "2022-11-05T13:38:25.061974+00:00",
         "context": {
-          "id": "01GGYY5BK1M8XWSY6K0Z299T1T",
+          "id": "01GH4075556NE9Z0YMQV1DATX6",
           "parent_id": null,
           "user_id": null
         }
@@ -561,7 +808,7 @@
         "native_value": null,
         "native_unit_of_measurement": "%"
       },
-      "last_seen": "2022-11-03T15:57:02.327500+00:00"
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
     },
     {
       "state": {
@@ -572,10 +819,10 @@
           "device_class": "voltage",
           "friendly_name": "Casa Bagno (battery)"
         },
-        "last_changed": "2022-11-03T14:26:16.822388+00:00",
-        "last_updated": "2022-11-03T14:26:16.822388+00:00",
+        "last_changed": "2022-11-05T13:38:25.077107+00:00",
+        "last_updated": "2022-11-05T13:38:25.077107+00:00",
         "context": {
-          "id": "01GGYY5BKPDX14DMPCQ8M9PTYK",
+          "id": "01GH40755NJYPBE28X7R4QHPT9",
           "parent_id": null,
           "user_id": null
         }
@@ -584,7 +831,7 @@
         "native_value": null,
         "native_unit_of_measurement": "V"
       },
-      "last_seen": "2022-11-03T15:57:02.327500+00:00"
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
     },
     {
       "state": {
@@ -594,10 +841,10 @@
           "unit_of_measurement": "%",
           "friendly_name": "Casa Bagno (umidita)"
         },
-        "last_changed": "2022-11-03T14:26:16.823614+00:00",
-        "last_updated": "2022-11-03T14:26:16.823614+00:00",
+        "last_changed": "2022-11-05T13:38:28.193996+00:00",
+        "last_updated": "2022-11-05T13:38:28.193996+00:00",
         "context": {
-          "id": "01GGYY5BKQW2ACR7X4VM6Z7SC5",
+          "id": "01GH407871C7J5TKET8VXRZP8Q",
           "parent_id": null,
           "user_id": null
         }
@@ -606,7 +853,7 @@
         "native_value": null,
         "native_unit_of_measurement": "%"
       },
-      "last_seen": "2022-11-03T15:57:02.327500+00:00"
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
     },
     {
       "state": {
@@ -617,10 +864,10 @@
           "device_class": "voltage",
           "friendly_name": "Casa Cucina (battery)"
         },
-        "last_changed": "2022-11-03T14:26:16.832748+00:00",
-        "last_updated": "2022-11-03T14:26:16.832748+00:00",
+        "last_changed": "2022-11-05T13:38:28.210649+00:00",
+        "last_updated": "2022-11-05T13:38:28.210649+00:00",
         "context": {
-          "id": "01GGYY5BM0Q8BP5HTXBZHD8XXV",
+          "id": "01GH40787J5CSN6455E75E6Z6G",
           "parent_id": null,
           "user_id": null
         }
@@ -629,7 +876,7 @@
         "native_value": null,
         "native_unit_of_measurement": "V"
       },
-      "last_seen": "2022-11-03T15:57:02.327500+00:00"
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
     },
     {
       "state": {
@@ -639,10 +886,10 @@
           "unit_of_measurement": "%",
           "friendly_name": "Casa Cucina (umidità)"
         },
-        "last_changed": "2022-11-03T14:26:16.834071+00:00",
-        "last_updated": "2022-11-03T14:26:16.834071+00:00",
+        "last_changed": "2022-11-05T13:38:28.266819+00:00",
+        "last_updated": "2022-11-05T13:38:28.266819+00:00",
         "context": {
-          "id": "01GGYY5BM2P987SBMS657CZ5W3",
+          "id": "01GH40789AHFXJE1TYYWYD46WK",
           "parent_id": null,
           "user_id": null
         }
@@ -651,7 +898,7 @@
         "native_value": null,
         "native_unit_of_measurement": "%"
       },
-      "last_seen": "2022-11-03T15:57:02.327500+00:00"
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
     },
     {
       "state": {
@@ -662,10 +909,10 @@
           "device_class": "voltage",
           "friendly_name": "Casa Bagnino (battery)"
         },
-        "last_changed": "2022-11-03T14:26:16.840020+00:00",
-        "last_updated": "2022-11-03T14:26:16.840020+00:00",
+        "last_changed": "2022-11-05T13:38:28.287878+00:00",
+        "last_updated": "2022-11-05T13:38:28.287878+00:00",
         "context": {
-          "id": "01GGYY5BM8DJG2JYD3CDJDHB2H",
+          "id": "01GH40789ZT1YRW5QXD868C5B4",
           "parent_id": null,
           "user_id": null
         }
@@ -674,7 +921,97 @@
         "native_value": null,
         "native_unit_of_measurement": "V"
       },
-      "last_seen": "2022-11-03T15:57:02.327500+00:00"
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "switch.pompa_sala",
+        "state": "unknown",
+        "attributes": {
+          "friendly_name": "Pompa sala"
+        },
+        "last_changed": "2022-11-05T13:38:28.298663+00:00",
+        "last_updated": "2022-11-05T13:38:28.298663+00:00",
+        "context": {
+          "id": "01GH4078AAGD5FYCBFAWSTX3EK",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "switch.pompa_zona_notte",
+        "state": "unknown",
+        "attributes": {
+          "friendly_name": "Pompa zona notte"
+        },
+        "last_changed": "2022-11-05T13:38:28.319303+00:00",
+        "last_updated": "2022-11-05T13:38:28.319303+00:00",
+        "context": {
+          "id": "01GH4078AZ5YMBKWPHJC902KZK",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "switch.pompa_bagno",
+        "state": "unknown",
+        "attributes": {
+          "friendly_name": "Pompa bagno"
+        },
+        "last_changed": "2022-11-05T13:38:28.381237+00:00",
+        "last_updated": "2022-11-05T13:38:28.381237+00:00",
+        "context": {
+          "id": "01GH4078CXVZBSJTMYJMTGZP6S",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "switch.pompa_laboratorio",
+        "state": "unknown",
+        "attributes": {
+          "friendly_name": "Pompa laboratorio"
+        },
+        "last_changed": "2022-11-05T13:38:28.397864+00:00",
+        "last_updated": "2022-11-05T13:38:28.397864+00:00",
+        "context": {
+          "id": "01GH4078DDD5TP1KBTJG76VAH9",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "switch.caldaia",
+        "state": "unknown",
+        "attributes": {
+          "friendly_name": "Caldaia"
+        },
+        "last_changed": "2022-11-05T13:38:28.404192+00:00",
+        "last_updated": "2022-11-05T13:38:28.404192+00:00",
+        "context": {
+          "id": "01GH4078DM93AX44KEJ97NZNCA",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
     },
     {
       "state": {
@@ -685,10 +1022,10 @@
           "device_class": "temperature",
           "friendly_name": "Casa Zona notte (temperatura)"
         },
-        "last_changed": "2022-11-03T14:26:16.925532+00:00",
-        "last_updated": "2022-11-03T14:26:16.925532+00:00",
+        "last_changed": "2022-11-05T13:38:28.410196+00:00",
+        "last_updated": "2022-11-05T13:38:28.410196+00:00",
         "context": {
-          "id": "01GGYY5BPXWW2BZ33FDDSGEA32",
+          "id": "01GH4078DT672J88GCRK1P6NQ0",
           "parent_id": null,
           "user_id": null
         }
@@ -697,7 +1034,7 @@
         "native_value": null,
         "native_unit_of_measurement": "°C"
       },
-      "last_seen": "2022-11-03T15:57:02.327500+00:00"
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
     },
     {
       "state": {
@@ -708,10 +1045,10 @@
           "device_class": "temperature",
           "friendly_name": "Casa Bagno (temperatura)"
         },
-        "last_changed": "2022-11-03T14:26:16.964705+00:00",
-        "last_updated": "2022-11-03T14:26:16.964705+00:00",
+        "last_changed": "2022-11-05T13:38:28.417160+00:00",
+        "last_updated": "2022-11-05T13:38:28.417160+00:00",
         "context": {
-          "id": "01GGYY5BR4NHQKYVKBJA0X34K3",
+          "id": "01GH4078E1S3EBDKVDY5KHCJ6F",
           "parent_id": null,
           "user_id": null
         }
@@ -720,7 +1057,7 @@
         "native_value": null,
         "native_unit_of_measurement": "°C"
       },
-      "last_seen": "2022-11-03T15:57:02.327500+00:00"
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
     },
     {
       "state": {
@@ -731,10 +1068,10 @@
           "device_class": "temperature",
           "friendly_name": "Casa Cucina (temperatura)"
         },
-        "last_changed": "2022-11-03T14:26:16.969932+00:00",
-        "last_updated": "2022-11-03T14:26:16.969932+00:00",
+        "last_changed": "2022-11-05T13:38:28.428153+00:00",
+        "last_updated": "2022-11-05T13:38:28.428153+00:00",
         "context": {
-          "id": "01GGYY5BR91ZDPA3YGQC440VD8",
+          "id": "01GH4078EC33E0XMJ82P4MVBHK",
           "parent_id": null,
           "user_id": null
         }
@@ -743,7 +1080,7 @@
         "native_value": null,
         "native_unit_of_measurement": "°C"
       },
-      "last_seen": "2022-11-03T15:57:02.327500+00:00"
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
     },
     {
       "state": {
@@ -754,10 +1091,10 @@
           "device_class": "temperature",
           "friendly_name": "Casa Bagnino (temperatura)"
         },
-        "last_changed": "2022-11-03T14:26:16.982272+00:00",
-        "last_updated": "2022-11-03T14:26:16.982272+00:00",
+        "last_changed": "2022-11-05T13:38:28.436617+00:00",
+        "last_updated": "2022-11-05T13:38:28.436617+00:00",
         "context": {
-          "id": "01GGYY5BRP3HNBZ01T1GP8BYSQ",
+          "id": "01GH4078EMKBVWZQYK8ME5FGGG",
           "parent_id": null,
           "user_id": null
         }
@@ -766,7 +1103,7 @@
         "native_value": null,
         "native_unit_of_measurement": "°C"
       },
-      "last_seen": "2022-11-03T15:57:02.327500+00:00"
+      "last_seen": "2022-11-05T13:38:28.628020+00:00"
     },
     {
       "state": {
@@ -810,100 +1147,6 @@
     },
     {
       "state": {
-        "entity_id": "sensor.mi_9_se_battery_state",
-        "state": "discharging",
-        "attributes": {
-          "icon": "mdi:battery-minus",
-          "friendly_name": "Mi 9 SE Battery State"
-        },
-        "last_changed": "2022-11-02T00:33:54.150489+00:00",
-        "last_updated": "2022-11-02T00:33:54.150489+00:00",
-        "context": {
-          "id": "01GGTW4GF6YTVSN60M93RA9GFY",
-          "parent_id": null,
-          "user_id": null
-        }
-      },
-      "extra_data": {
-        "native_value": "discharging",
-        "native_unit_of_measurement": null
-      },
-      "last_seen": "2022-11-02T00:38:29.357256+00:00"
-    },
-    {
-      "state": {
-        "entity_id": "sensor.mi_9_se_charger_type",
-        "state": "none",
-        "attributes": {
-          "icon": "mdi:battery",
-          "friendly_name": "Mi 9 SE Charger Type"
-        },
-        "last_changed": "2022-11-02T00:33:54.153195+00:00",
-        "last_updated": "2022-11-02T00:33:54.153195+00:00",
-        "context": {
-          "id": "01GGTW4GF9B6PYAMAZ05EQ9BEZ",
-          "parent_id": null,
-          "user_id": null
-        }
-      },
-      "extra_data": {
-        "native_value": "none",
-        "native_unit_of_measurement": null
-      },
-      "last_seen": "2022-11-02T00:38:29.358942+00:00"
-    },
-    {
-      "state": {
-        "entity_id": "sensor.mi_9_se_battery_temperature",
-        "state": "25.0",
-        "attributes": {
-          "state_class": "measurement",
-          "unit_of_measurement": "°C",
-          "device_class": "temperature",
-          "icon": "mdi:battery",
-          "friendly_name": "Mi 9 SE Battery Temperature"
-        },
-        "last_changed": "2022-11-02T00:33:54.161584+00:00",
-        "last_updated": "2022-11-02T00:33:54.161584+00:00",
-        "context": {
-          "id": "01GGTW4GFHD3PMYQ0DB2VJZ3KP",
-          "parent_id": null,
-          "user_id": null
-        }
-      },
-      "extra_data": {
-        "native_value": 25.0,
-        "native_unit_of_measurement": "°C"
-      },
-      "last_seen": "2022-11-02T00:38:29.367348+00:00"
-    },
-    {
-      "state": {
-        "entity_id": "sensor.mi_9_se_battery_level",
-        "state": "23",
-        "attributes": {
-          "state_class": "measurement",
-          "unit_of_measurement": "%",
-          "device_class": "battery",
-          "icon": "mdi:battery-20",
-          "friendly_name": "Mi 9 SE Battery Level"
-        },
-        "last_changed": "2022-11-02T00:33:54.148358+00:00",
-        "last_updated": "2022-11-02T00:33:54.148358+00:00",
-        "context": {
-          "id": "01GGTW4GF4J4RZHC8JG0RPMFAQ",
-          "parent_id": null,
-          "user_id": null
-        }
-      },
-      "extra_data": {
-        "native_value": 23,
-        "native_unit_of_measurement": "%"
-      },
-      "last_seen": "2022-11-02T00:38:29.355090+00:00"
-    },
-    {
-      "state": {
         "entity_id": "sensor.mi_9_se_ezio_battery_health",
         "state": "unknown",
         "attributes": {
@@ -923,45 +1166,6 @@
         "native_unit_of_measurement": null
       },
       "last_seen": "2022-11-02T00:33:49.254181+00:00"
-    },
-    {
-      "state": {
-        "entity_id": "binary_sensor.mi_9_se_is_charging",
-        "state": "off",
-        "attributes": {
-          "friendly_name": "Mi 9 SE Is Charging",
-          "icon": "mdi:power-plug-off",
-          "device_class": "plug"
-        },
-        "last_changed": "2022-11-02T00:33:51.614153+00:00",
-        "last_updated": "2022-11-02T00:33:51.614153+00:00",
-        "context": {
-          "id": "01GGTW4DZYA6NXGH7PE35QXJY0",
-          "parent_id": null,
-          "user_id": null
-        }
-      },
-      "extra_data": null,
-      "last_seen": "2022-11-02T00:38:29.376437+00:00"
-    },
-    {
-      "state": {
-        "entity_id": "device_tracker.mi_9_se",
-        "state": "unknown",
-        "attributes": {
-          "source_type": "gps",
-          "friendly_name": "Mi 9 SE"
-        },
-        "last_changed": "2022-11-02T00:33:49.277998+00:00",
-        "last_updated": "2022-11-02T00:33:49.277998+00:00",
-        "context": {
-          "id": "01GGTW4BPXE9XY59PB1JVNMAFT",
-          "parent_id": null,
-          "user_id": null
-        }
-      },
-      "extra_data": null,
-      "last_seen": "2022-11-02T00:38:29.378426+00:00"
     },
     {
       "state": {
@@ -1268,55 +1472,6 @@
       },
       "extra_data": null,
       "last_seen": "2022-11-02T00:38:36.812207+00:00"
-    },
-    {
-      "state": {
-        "entity_id": "sensor.mi_9_se_battery_health",
-        "state": "good",
-        "attributes": {
-          "icon": "mdi:battery-heart-variant",
-          "friendly_name": "Mi 9 SE Battery Health"
-        },
-        "last_changed": "2022-11-02T00:33:51.688095+00:00",
-        "last_updated": "2022-11-02T00:33:51.688095+00:00",
-        "context": {
-          "id": "01GGTW4E2872MKNX2CMBS070R6",
-          "parent_id": null,
-          "user_id": null
-        }
-      },
-      "extra_data": {
-        "native_value": "good",
-        "native_unit_of_measurement": null
-      },
-      "last_seen": "2022-11-02T00:38:29.360503+00:00"
-    },
-    {
-      "state": {
-        "entity_id": "sensor.mi_9_se_battery_power",
-        "state": "3.08",
-        "attributes": {
-          "state_class": "measurement",
-          "current": 0.837401,
-          "voltage": 3.677,
-          "unit_of_measurement": "W",
-          "device_class": "power",
-          "icon": "mdi:battery-plus",
-          "friendly_name": "Mi 9 SE Battery Power"
-        },
-        "last_changed": "2022-11-02T00:33:51.796072+00:00",
-        "last_updated": "2022-11-02T00:33:51.796072+00:00",
-        "context": {
-          "id": "01GGTW4E5MSGXKCS27BD7ATGM8",
-          "parent_id": null,
-          "user_id": null
-        }
-      },
-      "extra_data": {
-        "native_value": 3.08,
-        "native_unit_of_measurement": "W"
-      },
-      "last_seen": "2022-11-02T00:38:29.369511+00:00"
     }
   ]
 }

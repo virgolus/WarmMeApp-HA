@@ -36,13 +36,12 @@ sudo dphys-swapfile swapon
 ```
 
 ### WarmMe core
-- install python2.7
-- install pip2.7
-curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
-sudo python2 get-pip.py
 - cd /home/pi/WarmMeApp-HA/warmme
 - pip install -r requirements.txt
-- pip2 install -r requirements2.7.txt
+
+## Raspy serial config
+from raspy-config cli, follow this guide
+https://jemrf.github.io/RF-Documentation/configure_serial_port.html
 
 ### Autostart
 For all files in directory WarmMeApp-HA/scripts/autostart_services:

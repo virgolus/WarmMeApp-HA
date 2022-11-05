@@ -10612,16 +10612,16 @@
       "category": "integration",
       "description": "local handling for Tuya devices",
       "domain": "localtuya",
-      "etag_repository": "W/\"e2f92e8e4e81997f7cd0efba9ea3c13939b16d43e08658dfdba110ebec73affa\"",
+      "etag_repository": "W/\"93fd9866af4a1df83347f122d52a2ae7d7e278b0ccd445e01d050702fab2ce79\"",
       "full_name": "rospogrigio/localtuya",
-      "last_updated": "2022-08-01T20:37:16Z",
-      "new": true,
-      "stargazers_count": 1265,
+      "last_updated": "2022-10-28T09:56:14Z",
+      "stargazers_count": 1426,
       "topics": [
         "localtuya",
         "tuya",
         "tuya-api"
-      ]
+      ],
+      "last_fetched": 1667495050.500384
     },
     "164489685": {
       "repository_manifest": {
@@ -11267,19 +11267,20 @@
         "filename": "skodaconnect.zip"
       },
       "authors": [
-        "@lendy007"
+        "@lendik007",
+        "@Farfar"
       ],
       "category": "integration",
       "description": "Skoda Connect - An home assistant plugin to add integration with your car",
       "domain": "skodaconnect",
-      "etag_repository": "W/\"c21fa1ddcfac31e80cf21f9607eb1bc36409a16f90a751fcc72d39f552f4a87c\"",
+      "etag_repository": "W/\"3b678e4c63a1b776564fbbc373606fc73620ebbfdbbaa614775a6ff9739a82c1\"",
       "full_name": "lendy007/homeassistant-skodaconnect",
-      "last_updated": "2022-07-04T18:03:36Z",
-      "new": true,
-      "stargazers_count": 110,
+      "last_updated": "2022-09-28T17:54:50Z",
+      "stargazers_count": 120,
       "topics": [
         "skoda-connect"
-      ]
+      ],
+      "last_fetched": 1667495126.659096
     },
     "316421110": {
       "repository_manifest": {
@@ -11596,11 +11597,11 @@
       "category": "plugin",
       "description": "📈 A Lovelace card to display advanced graphs and charts based on ApexChartsJS for Home Assistant",
       "domain": "",
-      "downloads": 33622,
-      "etag_repository": "W/\"aeea7acbfd838ae8b512d2712973c0a261dd116b6fdadf0e87766810ce00987c\"",
+      "downloads": 34109,
+      "etag_repository": "W/\"01e423d9b202bd9f70294aecc96b3d1caf04b83f49f89a9e4e32f121a618cdf4\"",
       "full_name": "RomRider/apexcharts-card",
-      "last_updated": "2022-10-17T18:04:37Z",
-      "stargazers_count": 522,
+      "last_updated": "2022-11-04T02:32:36Z",
+      "stargazers_count": 523,
       "topics": [
         "apexcharts",
         "iot"
@@ -11610,17 +11611,17 @@
       "installed": true,
       "last_commit": "d8a6539",
       "last_version": "v2.0.1",
-      "open_issues": 48,
+      "open_issues": 45,
       "published_tags": [
         "v2.0.1",
         "v2.0.0",
         "v1.10.0",
         "v1.9.0"
       ],
-      "pushed_at": "2022-10-17T18:04:37",
+      "pushed_at": "2022-11-04T02:32:36",
       "releases": true,
       "version_installed": "v2.0.1",
-      "last_fetched": 1667487470.74728
+      "last_fetched": 1667655517.226838
     },
     "179808576": {
       "repository_manifest": {
@@ -15983,10 +15984,10 @@
       "description": "HACS gives you a powerful UI to handle downloads of all your custom needs.",
       "domain": "hacs",
       "downloads": 59602,
-      "etag_repository": "W/\"dc4ccd1d1a9ce75fd49552e34bad6ee5a9c9b50e707891a8d1914917340628f0\"",
+      "etag_repository": "W/\"cc0e841ce762c374cc1d2ac2d86c3e824167a25b534adbf5ec20a44fd775c2fd\"",
       "full_name": "hacs/integration",
       "last_updated": "2022-10-31T06:02:44Z",
-      "stargazers_count": 3026,
+      "stargazers_count": 3033,
       "topics": [
         "community",
         "package-manager"
@@ -16010,7 +16011,7 @@
       "releases": true,
       "selected_tag": "1.26.2",
       "version_installed": "1.28.3",
-      "last_fetched": 1667487470.544938
+      "last_fetched": 1667655517.438763
     },
     "286270157": {
       "repository_manifest": {
@@ -16021,11 +16022,11 @@
       "category": "plugin",
       "description": "HA Lovelace card for control of scheduler entities",
       "domain": "",
-      "downloads": 13848,
-      "etag_repository": "W/\"1d9bd1dc5a24adf3dd23a63177013b43ba751ddf33f5ad7f888e54f3f79a0be6\"",
+      "downloads": 14152,
+      "etag_repository": "W/\"095a6edf87f8407643b24800625d36b3c5252714f2bb2be1105535d63b53b91b\"",
       "full_name": "nielsfaber/scheduler-card",
       "last_updated": "2022-09-25T06:23:29Z",
-      "stargazers_count": 484,
+      "stargazers_count": 485,
       "topics": [
         "assistant",
         "automation",
@@ -16054,7 +16055,7 @@
       "pushed_at": "2022-09-25T06:23:29",
       "releases": true,
       "version_installed": "v2.3.7",
-      "last_fetched": 1667487472.361684
+      "last_fetched": 1667655517.371616
     },
     "286186485": {
       "repository_manifest": {
@@ -16067,11 +16068,11 @@
       "category": "integration",
       "description": "Custom component for HA that enables the creation of scheduler entities",
       "domain": "scheduler",
-      "downloads": 311,
-      "etag_repository": "W/\"a3d1c33ed6e4a8782b31a58f8a3ca3df8f9800f80a0104a915b7d3851935e9a0\"",
+      "downloads": 313,
+      "etag_repository": "W/\"9f1c6f000bcc41618de06419aa784fa736521f80247841077fb8fc391bd67ea7\"",
       "full_name": "nielsfaber/scheduler-component",
       "last_updated": "2022-10-24T15:58:07Z",
-      "stargazers_count": 313,
+      "stargazers_count": 317,
       "topics": [
         "scheduler"
       ],
@@ -16082,7 +16083,7 @@
       "last_commit": "b683d53",
       "last_version": "v3.2.10",
       "manifest_name": "Scheduler integration",
-      "open_issues": 7,
+      "open_issues": 8,
       "published_tags": [
         "v3.2.10",
         "v3.2.9",
@@ -16093,7 +16094,7 @@
       "pushed_at": "2022-10-24T15:58:07",
       "releases": true,
       "version_installed": "v3.2.10",
-      "last_fetched": 1667487472.417991
+      "last_fetched": 1667655517.275021
     },
     "158654878": {
       "repository_manifest": {
@@ -16104,11 +16105,11 @@
       "category": "plugin",
       "description": "A different take on the thermostat card for Home Assistant ♨️",
       "domain": "",
-      "downloads": 20570,
-      "etag_repository": "W/\"714adfc85abc7e1070e03133d0a2c6d90c8ed8fd52a37f70b457a1baf04d2c0b\"",
+      "downloads": 20822,
+      "etag_repository": "W/\"95de208e6ce5cfb85ae736ac70effb325d78c59f89658e49465903fff4dc47ef\"",
       "full_name": "nervetattoo/simple-thermostat",
       "last_updated": "2022-10-29T08:58:09Z",
-      "stargazers_count": 585,
+      "stargazers_count": 586,
       "topics": [
         "polymer-3"
       ],
@@ -16128,7 +16129,7 @@
       "pushed_at": "2022-10-29T08:58:09",
       "releases": true,
       "version_installed": "v2.5.0",
-      "last_fetched": 1667487473.058162
+      "last_fetched": 1667655517.304069
     },
     "407627914": {
       "repository_manifest": {
